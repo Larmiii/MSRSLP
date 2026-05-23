@@ -1,0 +1,87 @@
+name: csl_daily_bt_char_lift3d
+data:
+    data_path: D:/Graduate thesis/slrtp_eval_kit/slt_train/data_csl_178_lift3d_slt/
+    version: csl_daily
+    sgn: sign
+    txt: text
+    gls: gloss
+    train: csl_daily.train
+    dev: csl_daily.dev
+    test: csl_daily.test
+    feature_size: 534                  # 178 keypoints 脳 3 (x, y, z)  鈫?Ivashechkin lift body+hands + MP face
+    skeleton_subsample: 1
+    level: char
+    txt_lowercase: false
+    max_sent_length: 400
+    random_train_subset: -1
+    random_dev_subset: -1
+    gls_vocab: gls.vocab
+    txt_vocab: txt.vocab
+
+testing:
+    recognition_beam_sizes: [1]
+    translation_beam_sizes: [1]
+    translation_beam_alphas: [-1]
+
+training:
+    random_seed: 42
+    model_dir: D:/Graduate thesis/slrtp_eval_kit/slt_train/outputs/csl_lift3d_char
+    # === CTC + translation joint with epoch-based warmup ===
+    # rec_w starts at 0 (epoch 1-3), linearly ramps to 0.3 over epoch 4-8, stays 0.3.
+    recognition_loss_weight: 0.3
+    recognition_loss_warmup:
+        start_epoch: 4
+        end_epoch: 8
+    translation_loss_weight: 1.0
+    eval_metric: bleu
+    optimizer: adam
+    learning_rate: 0.0001
+    batch_size: 64
+    num_valid_log: 5
+    epochs: 500
+    early_stopping_metric: eval_metric
+    batch_type: sentence
+    translation_normalization: batch
+    eval_recognition_beam_size: 1
+    eval_translation_beam_size: 1
+    eval_translation_beam_alpha: -1
+    overwrite: true
+    shuffle: true
+    use_cuda: true
+    translation_max_output_length: 80
+    keep_last_ckpts: 1
+    batch_multiplier: 1
+    logging_freq: 100
+    validation_freq: 1000
+    betas: [0.9, 0.998]
+    scheduling: plateau
+    learning_rate_min: 1.0e-09
+    weight_decay: 0.0001
+    patience: 20
+    decrease_factor: 0.5
+    label_smoothing: 0.05
+
+model:
+    initializer: xavier
+    bias_initializer: zeros
+    init_gain: 1.0
+    embed_initializer: xavier
+    embed_init_gain: 1.0
+    tied_softmax: false
+    # B-version architecture: 3-layer h=256 ff=512 (matches PHIX BT config)
+    encoder:
+        type: transformer
+        num_layers: 3
+        num_heads: 8
+        embeddings: { embedding_dim: 256, scale: false, dropout: 0.1, norm_type: batch, activation_type: softsign }
+        hidden_size: 256
+        ff_size: 512
+        dropout: 0.1
+    decoder:
+        type: transformer
+        num_layers: 3
+        num_heads: 8
+        embeddings: { embedding_dim: 256, scale: false, dropout: 0.1, norm_type: batch, activation_type: softsign }
+        hidden_size: 256
+        ff_size: 512
+        dropout: 0.1

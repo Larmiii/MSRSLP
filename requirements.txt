@@ -1,0 +1,34 @@
+# Unified environment for training + SLP generation + SLRTP-canonical evaluation.
+# Python 3.14, validated on Windows + RTX 4090 (CUDA 12.8).
+#
+# Install torch from the PyTorch CUDA index (cu128 wheel is required for Py 3.14 — the
+# default PyPI wheel is CPU-only and will silently fall back). The CUDA index does not
+# carry Py 3.14 wheels for cu121/cu124, so cu128 is the choice here.
+#
+#     pip install -r requirements.txt \
+#         --extra-index-url https://download.pytorch.org/whl/cu128
+#
+# Or, for CPU-only (no GPU training):
+#
+#     pip install -r requirements.txt
+#     # then `pip install torch torchvision` from default PyPI
+#
+# If the cu128 wheel download is slow, fetch the .whl manually and `pip install <path>`.
+
+torch>=2.9
+torchvision
+
+numpy
+tqdm
+transformers      # mBART text encoder (PHIX pipeline)
+einops
+
+# SLRTP back_translation/ + metrics.py
+pyyaml
+jiwer
+sacrebleu
+fastdtw
+portalocker
+
+# Optional: figures in code/scripts/make_*_figures.py
+matplotlib

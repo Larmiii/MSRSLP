@@ -1,0 +1,114 @@
+[*] args: {'dataname': 'phix_lift3d', 'exp_name': 'vq_M2', 'out_dir': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\phix\\vq\\_train_vq_M2', 'batch_size': 64, 'window_size': 64, 'total_iter': 100000, 'warm_up_iter': 1000, 'lr': 0.0002, 'lr_scheduler': [60000], 'gamma': 0.1, 'weight_decay': 0.0, 'commit': 0.02, 'loss_vel': 0.1, 'recons_loss': 'l1_smooth', 'nb_code': 2048, 'nb_code_residual': 2048, 'code_dim': 256, 'output_emb_width': 256, 'down_t': 2, 'stride_t': 2, 'width': 256, 'depth': 3, 'dilation_growth_rate': 3, 'vq_act': 'relu', 'vq_norm': None, 'quantizer': 'ema_reset', 'mu': 0.99, 'beta': 1.0, 'print_iter': 500, 'eval_iter': 2000, 'save_iter': 20000, 'num_workers': 0, 'seed': 42, 'device': 'cuda', 'early_stop_patience': 4, 'early_stop_min_delta': 0.001, 'min_iter_before_early_stop': 5000}
+[*] train: 6078, dev: 425
+[*] R-VQ-VAE: input_dim=534, params=5.48M, nb_code_base=2048, nb_code_residual=2048
+iter      0 | lr 0.00000 | recon 0.4136 | vel 0.4139 | vq 0.0000 | ppl base:1024 res:1024 | elapsed 0s
+iter    500 | lr 0.00010 | recon 0.1626 | vel 0.1626 | vq 0.9476 | ppl base:562 res:420 | elapsed 7s
+iter   1000 | lr 0.00020 | recon 0.1032 | vel 0.1028 | vq 2.7086 | ppl base:600 res:445 | elapsed 15s
+iter   1500 | lr 0.00020 | recon 0.0924 | vel 0.0919 | vq 4.3996 | ppl base:546 res:473 | elapsed 22s
+iter   2000 | lr 0.00020 | recon 0.0903 | vel 0.0900 | vq 5.2227 | ppl base:503 res:405 | elapsed 28s
+    >> DEV iter 2000 recon=0.1783 vq=5.1168
+    >> SAVED best @ dev recon 0.1783 (iter 2000)
+iter   2500 | lr 0.00020 | recon 0.0852 | vel 0.0849 | vq 5.4684 | ppl base:541 res:377 | elapsed 36s
+iter   3000 | lr 0.00020 | recon 0.0842 | vel 0.0839 | vq 5.3273 | ppl base:519 res:408 | elapsed 43s
+iter   3500 | lr 0.00020 | recon 0.0847 | vel 0.0843 | vq 5.4223 | ppl base:521 res:386 | elapsed 50s
+iter   4000 | lr 0.00020 | recon 0.0817 | vel 0.0814 | vq 5.6451 | ppl base:544 res:422 | elapsed 57s
+    >> DEV iter 4000 recon=0.1641 vq=5.4072
+    >> SAVED best @ dev recon 0.1641 (iter 4000)
+iter   4500 | lr 0.00020 | recon 0.0785 | vel 0.0781 | vq 5.4092 | ppl base:539 res:394 | elapsed 64s
+iter   5000 | lr 0.00020 | recon 0.0786 | vel 0.0783 | vq 5.3312 | ppl base:528 res:412 | elapsed 71s
+iter   5500 | lr 0.00020 | recon 0.0767 | vel 0.0765 | vq 5.2749 | ppl base:481 res:400 | elapsed 78s
+iter   6000 | lr 0.00020 | recon 0.0754 | vel 0.0751 | vq 5.2158 | ppl base:512 res:364 | elapsed 85s
+    >> DEV iter 6000 recon=0.1603 vq=5.3416
+    >> SAVED best @ dev recon 0.1603 (iter 6000)
+iter   6500 | lr 0.00020 | recon 0.0764 | vel 0.0762 | vq 5.4116 | ppl base:491 res:386 | elapsed 92s
+iter   7000 | lr 0.00020 | recon 0.0803 | vel 0.0801 | vq 5.5330 | ppl base:540 res:395 | elapsed 100s
+iter   7500 | lr 0.00020 | recon 0.0752 | vel 0.0751 | vq 5.2838 | ppl base:543 res:428 | elapsed 107s
+iter   8000 | lr 0.00020 | recon 0.0771 | vel 0.0768 | vq 5.3305 | ppl base:524 res:423 | elapsed 114s
+    >> DEV iter 8000 recon=0.1541 vq=5.2976
+    >> SAVED best @ dev recon 0.1541 (iter 8000)
+iter   8500 | lr 0.00020 | recon 0.0768 | vel 0.0766 | vq 5.4496 | ppl base:529 res:447 | elapsed 121s
+iter   9000 | lr 0.00020 | recon 0.0735 | vel 0.0732 | vq 5.1708 | ppl base:515 res:402 | elapsed 128s
+iter   9500 | lr 0.00020 | recon 0.0756 | vel 0.0754 | vq 5.4560 | ppl base:517 res:432 | elapsed 135s
+iter  10000 | lr 0.00020 | recon 0.0779 | vel 0.0777 | vq 5.5583 | ppl base:550 res:460 | elapsed 142s
+    >> DEV iter 10000 recon=0.1525 vq=5.3053
+    >> SAVED best @ dev recon 0.1525 (iter 10000)
+iter  10500 | lr 0.00020 | recon 0.0771 | vel 0.0768 | vq 5.3059 | ppl base:518 res:440 | elapsed 149s
+iter  11000 | lr 0.00020 | recon 0.0725 | vel 0.0723 | vq 5.2797 | ppl base:523 res:450 | elapsed 156s
+iter  11500 | lr 0.00020 | recon 0.0707 | vel 0.0706 | vq 5.0414 | ppl base:540 res:409 | elapsed 163s
+iter  12000 | lr 0.00020 | recon 0.0723 | vel 0.0720 | vq 5.2030 | ppl base:539 res:462 | elapsed 171s
+    >> DEV iter 12000 recon=0.1492 vq=5.0989
+    >> SAVED best @ dev recon 0.1492 (iter 12000)
+iter  12500 | lr 0.00020 | recon 0.0717 | vel 0.0715 | vq 5.3249 | ppl base:559 res:450 | elapsed 178s
+iter  13000 | lr 0.00020 | recon 0.0681 | vel 0.0679 | vq 4.8081 | ppl base:550 res:420 | elapsed 185s
+iter  13500 | lr 0.00020 | recon 0.0683 | vel 0.0681 | vq 4.8961 | ppl base:538 res:405 | elapsed 192s
+iter  14000 | lr 0.00020 | recon 0.0723 | vel 0.0721 | vq 5.0840 | ppl base:545 res:423 | elapsed 199s
+    >> DEV iter 14000 recon=0.1481 vq=5.1466
+    >> SAVED best @ dev recon 0.1481 (iter 14000)
+iter  14500 | lr 0.00020 | recon 0.0719 | vel 0.0717 | vq 5.2741 | ppl base:559 res:455 | elapsed 206s
+iter  15000 | lr 0.00020 | recon 0.0668 | vel 0.0666 | vq 5.1088 | ppl base:583 res:484 | elapsed 213s
+iter  15500 | lr 0.00020 | recon 0.0701 | vel 0.0699 | vq 4.8768 | ppl base:549 res:451 | elapsed 220s
+iter  16000 | lr 0.00020 | recon 0.0683 | vel 0.0681 | vq 5.0324 | ppl base:558 res:448 | elapsed 227s
+    >> DEV iter 16000 recon=0.1475 vq=4.9653
+    >> no improvement (1/4), best still 0.1481 @ iter 14000
+iter  16500 | lr 0.00020 | recon 0.0681 | vel 0.0679 | vq 4.9993 | ppl base:561 res:431 | elapsed 235s
+iter  17000 | lr 0.00020 | recon 0.0667 | vel 0.0665 | vq 4.7810 | ppl base:547 res:446 | elapsed 242s
+iter  17500 | lr 0.00020 | recon 0.0682 | vel 0.0681 | vq 4.9813 | ppl base:545 res:473 | elapsed 248s
+iter  18000 | lr 0.00020 | recon 0.0668 | vel 0.0667 | vq 4.8762 | ppl base:578 res:458 | elapsed 256s
+    >> DEV iter 18000 recon=0.1442 vq=4.9596
+    >> SAVED best @ dev recon 0.1442 (iter 18000)
+iter  18500 | lr 0.00020 | recon 0.0632 | vel 0.0630 | vq 4.5977 | ppl base:543 res:454 | elapsed 263s
+iter  19000 | lr 0.00020 | recon 0.0678 | vel 0.0677 | vq 4.8388 | ppl base:603 res:474 | elapsed 270s
+iter  19500 | lr 0.00020 | recon 0.0646 | vel 0.0644 | vq 4.7686 | ppl base:533 res:455 | elapsed 277s
+iter  20000 | lr 0.00020 | recon 0.0684 | vel 0.0682 | vq 4.8591 | ppl base:521 res:412 | elapsed 284s
+    >> DEV iter 20000 recon=0.1457 vq=4.8784
+    >> no improvement (1/4), best still 0.1442 @ iter 18000
+iter  20500 | lr 0.00020 | recon 0.0678 | vel 0.0676 | vq 4.9431 | ppl base:563 res:477 | elapsed 291s
+iter  21000 | lr 0.00020 | recon 0.0658 | vel 0.0656 | vq 4.7757 | ppl base:549 res:441 | elapsed 298s
+iter  21500 | lr 0.00020 | recon 0.0673 | vel 0.0671 | vq 4.9623 | ppl base:564 res:422 | elapsed 305s
+iter  22000 | lr 0.00020 | recon 0.0671 | vel 0.0669 | vq 4.8242 | ppl base:570 res:410 | elapsed 313s
+    >> DEV iter 22000 recon=0.1449 vq=4.8865
+    >> no improvement (2/4), best still 0.1442 @ iter 18000
+iter  22500 | lr 0.00020 | recon 0.0646 | vel 0.0644 | vq 4.6749 | ppl base:546 res:464 | elapsed 320s
+iter  23000 | lr 0.00020 | recon 0.0638 | vel 0.0637 | vq 4.7140 | ppl base:557 res:431 | elapsed 327s
+iter  23500 | lr 0.00020 | recon 0.0665 | vel 0.0662 | vq 4.8337 | ppl base:581 res:465 | elapsed 334s
+iter  24000 | lr 0.00020 | recon 0.0642 | vel 0.0640 | vq 4.6485 | ppl base:586 res:452 | elapsed 341s
+    >> DEV iter 24000 recon=0.1433 vq=4.7986
+    >> no improvement (3/4), best still 0.1442 @ iter 18000
+iter  24500 | lr 0.00020 | recon 0.0666 | vel 0.0664 | vq 4.9005 | ppl base:572 res:493 | elapsed 348s
+iter  25000 | lr 0.00020 | recon 0.0660 | vel 0.0658 | vq 4.9779 | ppl base:589 res:488 | elapsed 355s
+iter  25500 | lr 0.00020 | recon 0.0654 | vel 0.0652 | vq 4.7809 | ppl base:558 res:470 | elapsed 362s
+iter  26000 | lr 0.00020 | recon 0.0650 | vel 0.0648 | vq 4.7264 | ppl base:514 res:458 | elapsed 369s
+    >> DEV iter 26000 recon=0.1429 vq=4.7477
+    >> SAVED best @ dev recon 0.1429 (iter 26000)
+iter  26500 | lr 0.00020 | recon 0.0678 | vel 0.0676 | vq 5.0421 | ppl base:560 res:482 | elapsed 377s
+iter  27000 | lr 0.00020 | recon 0.0619 | vel 0.0617 | vq 4.7099 | ppl base:553 res:477 | elapsed 384s
+iter  27500 | lr 0.00020 | recon 0.0654 | vel 0.0652 | vq 4.8642 | ppl base:523 res:456 | elapsed 391s
+iter  28000 | lr 0.00020 | recon 0.0621 | vel 0.0620 | vq 4.6641 | ppl base:531 res:447 | elapsed 398s
+    >> DEV iter 28000 recon=0.1407 vq=4.6988
+    >> SAVED best @ dev recon 0.1407 (iter 28000)
+iter  28500 | lr 0.00020 | recon 0.0668 | vel 0.0667 | vq 4.6123 | ppl base:570 res:458 | elapsed 405s
+iter  29000 | lr 0.00020 | recon 0.0637 | vel 0.0636 | vq 4.7634 | ppl base:575 res:431 | elapsed 412s
+iter  29500 | lr 0.00020 | recon 0.0637 | vel 0.0636 | vq 4.4995 | ppl base:565 res:479 | elapsed 419s
+iter  30000 | lr 0.00020 | recon 0.0625 | vel 0.0623 | vq 4.4266 | ppl base:562 res:492 | elapsed 426s
+    >> DEV iter 30000 recon=0.1434 vq=4.6672
+    >> no improvement (1/4), best still 0.1407 @ iter 28000
+iter  30500 | lr 0.00020 | recon 0.0632 | vel 0.0631 | vq 4.6206 | ppl base:559 res:529 | elapsed 433s
+iter  31000 | lr 0.00020 | recon 0.0641 | vel 0.0639 | vq 4.6150 | ppl base:601 res:469 | elapsed 441s
+iter  31500 | lr 0.00020 | recon 0.0640 | vel 0.0638 | vq 4.6002 | ppl base:568 res:465 | elapsed 448s
+iter  32000 | lr 0.00020 | recon 0.0591 | vel 0.0589 | vq 4.1273 | ppl base:580 res:455 | elapsed 455s
+    >> DEV iter 32000 recon=0.1403 vq=4.4207
+    >> no improvement (2/4), best still 0.1407 @ iter 28000
+iter  32500 | lr 0.00020 | recon 0.0632 | vel 0.0631 | vq 4.6513 | ppl base:559 res:450 | elapsed 462s
+iter  33000 | lr 0.00020 | recon 0.0623 | vel 0.0621 | vq 4.5939 | ppl base:559 res:514 | elapsed 469s
+iter  33500 | lr 0.00020 | recon 0.0623 | vel 0.0622 | vq 4.5314 | ppl base:570 res:492 | elapsed 476s
+iter  34000 | lr 0.00020 | recon 0.0620 | vel 0.0619 | vq 4.5627 | ppl base:555 res:458 | elapsed 483s
+    >> DEV iter 34000 recon=0.1414 vq=4.5385
+    >> no improvement (3/4), best still 0.1407 @ iter 28000
+iter  34500 | lr 0.00020 | recon 0.0623 | vel 0.0622 | vq 4.5079 | ppl base:571 res:495 | elapsed 490s
+iter  35000 | lr 0.00020 | recon 0.0628 | vel 0.0626 | vq 4.6013 | ppl base:540 res:526 | elapsed 497s
+iter  35500 | lr 0.00020 | recon 0.0618 | vel 0.0617 | vq 4.4652 | ppl base:585 res:496 | elapsed 505s
+iter  36000 | lr 0.00020 | recon 0.0628 | vel 0.0627 | vq 4.5190 | ppl base:584 res:530 | elapsed 512s
+    >> DEV iter 36000 recon=0.1441 vq=4.5035
+    >> no improvement (4/4), best still 0.1407 @ iter 28000
+    >> EARLY STOP at iter 36000
+[OK] done in 8.5 min, best dev recon 0.1407

@@ -1,0 +1,186 @@
+[*] args: {'dataname': 'csl_lift3d', 'tokens_dir': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\csl\\tokens\\vq_M2_interleaved', 'vq_ckpt': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\csl\\vq\\vq_M2.pt', 'exp_name': 'M2_large_glossfree', 'out_dir': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\csl\\trans\\_train_M2_large_glossfree', 'mbart_name': 'facebook/mbart-large-50', 'lang': 'zh_CN', 'text_encoder': 'char', 'char_vocab_path': None, 'char_enc_layers': 2, 'char_enc_dim': 0, 'char_enc_heads': 8, 'char_enc_dropout': 0.1, 'num_vq': 4096, 'embed_dim': 512, 'text_dim': 1024, 'block_size': 320, 'num_layers': 8, 'n_head': 8, 'drop_out_rate': 0.1, 'fc_rate': 4, 'align_dim': 0, 'lambda_align': 0.1, 'predict_length': 0, 'lambda_length': 0.2, 'gloss_supervised': 0, 'gloss_vocab_path': None, 'gloss_dec_layers': 2, 'gloss_dec_dim': 256, 'gloss_dec_heads': 4, 'gloss_max_len': 48, 'lambda_gloss': 0.5, 'batch_size': 16, 'total_iter': 30000, 'warm_up_iter': 1000, 'lr': 0.0001, 'lr_scheduler': [12000, 22000], 'gamma': 0.3, 'weight_decay': 1e-05, 'max_text_len': 128, 'freeze_text': 1, 'label_smoothing': 0.0, 'motion_token_mask_prob': 0.0, 'print_iter': 200, 'eval_iter': 1000, 'save_iter': 10000, 'num_workers': 0, 'seed': 42, 'device': 'cuda', 'early_stop_patience': 6, 'early_stop_min_delta': 0.001, 'min_iter_before_early_stop': 23000, 'max_no_improve_iter': 8000}
+[*] building char-level text encoder from scratch (Walsh-style)
+[*] CharTokenizer: vocab_size=2281 from D:\Graduate thesis\sign_slp_paper_release\data\csl\char_vocab\txt.vocab
+[*] CharTextEncoder: 7.54M params, 2L embed 512 heads 8
+[*] train: 18400, dev: 1077
+[*] CrossAttn Trans params: 38.26M
+[*] including text_enc params in optimizer (text_encoder=char)
+[*] FIX C: max_no_improve_iter = 8000 (hard stop if no new best for this many iters, regardless of lr resets)
+iter      0 | lr 0.000000 | ce 8.4688 | elapsed 0s
+iter    200 | lr 0.000020 | ce 8.0209 | elapsed 6s
+iter    400 | lr 0.000040 | ce 7.7204 | elapsed 12s
+iter    600 | lr 0.000060 | ce 7.3694 | elapsed 17s
+iter    800 | lr 0.000080 | ce 7.1184 | elapsed 22s
+iter   1000 | lr 0.000100 | ce 7.0869 | elapsed 28s
+    >> DEV iter 1000 ce=7.0923
+    >> SAVED best @ dev ce 7.0923 (iter 1000)
+iter   1200 | lr 0.000100 | ce 6.9443 | elapsed 34s
+iter   1400 | lr 0.000100 | ce 7.0164 | elapsed 39s
+iter   1600 | lr 0.000100 | ce 6.8766 | elapsed 45s
+iter   1800 | lr 0.000100 | ce 6.9268 | elapsed 51s
+iter   2000 | lr 0.000100 | ce 6.7293 | elapsed 56s
+    >> DEV iter 2000 ce=6.8018
+    >> SAVED best @ dev ce 6.8018 (iter 2000)
+iter   2200 | lr 0.000100 | ce 6.7307 | elapsed 63s
+iter   2400 | lr 0.000100 | ce 6.7470 | elapsed 69s
+iter   2600 | lr 0.000100 | ce 6.7529 | elapsed 75s
+iter   2800 | lr 0.000100 | ce 6.5697 | elapsed 81s
+iter   3000 | lr 0.000100 | ce 6.6740 | elapsed 86s
+    >> DEV iter 3000 ce=6.6444
+    >> SAVED best @ dev ce 6.6444 (iter 3000)
+iter   3200 | lr 0.000100 | ce 6.4526 | elapsed 92s
+iter   3400 | lr 0.000100 | ce 6.4625 | elapsed 98s
+iter   3600 | lr 0.000100 | ce 6.4628 | elapsed 104s
+iter   3800 | lr 0.000100 | ce 6.5804 | elapsed 110s
+iter   4000 | lr 0.000100 | ce 6.5658 | elapsed 116s
+    >> DEV iter 4000 ce=6.4879
+    >> SAVED best @ dev ce 6.4879 (iter 4000)
+iter   4200 | lr 0.000100 | ce 6.4995 | elapsed 123s
+iter   4400 | lr 0.000100 | ce 6.3482 | elapsed 129s
+iter   4600 | lr 0.000100 | ce 6.4547 | elapsed 134s
+iter   4800 | lr 0.000100 | ce 6.3577 | elapsed 140s
+iter   5000 | lr 0.000100 | ce 6.3269 | elapsed 146s
+    >> DEV iter 5000 ce=6.3644
+    >> SAVED best @ dev ce 6.3644 (iter 5000)
+iter   5200 | lr 0.000100 | ce 6.3410 | elapsed 152s
+iter   5400 | lr 0.000100 | ce 6.2901 | elapsed 158s
+iter   5600 | lr 0.000100 | ce 6.3307 | elapsed 164s
+iter   5800 | lr 0.000100 | ce 6.1839 | elapsed 171s
+iter   6000 | lr 0.000100 | ce 6.2210 | elapsed 178s
+    >> DEV iter 6000 ce=6.2629
+    >> SAVED best @ dev ce 6.2629 (iter 6000)
+iter   6200 | lr 0.000100 | ce 6.1028 | elapsed 185s
+iter   6400 | lr 0.000100 | ce 6.0709 | elapsed 192s
+iter   6600 | lr 0.000100 | ce 5.9910 | elapsed 198s
+iter   6800 | lr 0.000100 | ce 6.3342 | elapsed 205s
+iter   7000 | lr 0.000100 | ce 6.0345 | elapsed 212s
+    >> DEV iter 7000 ce=6.1633
+    >> SAVED best @ dev ce 6.1633 (iter 7000)
+iter   7200 | lr 0.000100 | ce 6.0254 | elapsed 219s
+iter   7400 | lr 0.000100 | ce 5.9192 | elapsed 226s
+iter   7600 | lr 0.000100 | ce 6.1035 | elapsed 233s
+iter   7800 | lr 0.000100 | ce 5.9891 | elapsed 240s
+iter   8000 | lr 0.000100 | ce 5.9978 | elapsed 246s
+    >> DEV iter 8000 ce=6.0580
+    >> SAVED best @ dev ce 6.0580 (iter 8000)
+iter   8200 | lr 0.000100 | ce 5.7019 | elapsed 254s
+iter   8400 | lr 0.000100 | ce 5.9574 | elapsed 261s
+iter   8600 | lr 0.000100 | ce 5.8903 | elapsed 267s
+iter   8800 | lr 0.000100 | ce 5.7661 | elapsed 274s
+iter   9000 | lr 0.000100 | ce 5.8598 | elapsed 281s
+    >> DEV iter 9000 ce=5.9883
+    >> SAVED best @ dev ce 5.9883 (iter 9000)
+iter   9200 | lr 0.000100 | ce 5.6803 | elapsed 288s
+iter   9400 | lr 0.000100 | ce 5.7114 | elapsed 294s
+iter   9600 | lr 0.000100 | ce 5.7125 | elapsed 301s
+iter   9800 | lr 0.000100 | ce 5.7062 | elapsed 308s
+iter  10000 | lr 0.000100 | ce 5.6292 | elapsed 315s
+    >> DEV iter 10000 ce=5.9288
+    >> SAVED best @ dev ce 5.9288 (iter 10000)
+iter  10200 | lr 0.000100 | ce 6.0195 | elapsed 322s
+iter  10400 | lr 0.000100 | ce 5.4748 | elapsed 329s
+iter  10600 | lr 0.000100 | ce 5.5717 | elapsed 336s
+iter  10800 | lr 0.000100 | ce 5.5795 | elapsed 342s
+iter  11000 | lr 0.000100 | ce 5.5480 | elapsed 349s
+    >> DEV iter 11000 ce=5.8873
+    >> SAVED best @ dev ce 5.8873 (iter 11000)
+iter  11200 | lr 0.000100 | ce 5.5407 | elapsed 356s
+iter  11400 | lr 0.000100 | ce 5.5525 | elapsed 363s
+iter  11600 | lr 0.000100 | ce 5.4892 | elapsed 369s
+iter  11800 | lr 0.000100 | ce 5.4179 | elapsed 376s
+iter  12000 | lr 0.000100 | ce 5.5270 | elapsed 383s
+    >> DEV iter 12000 ce=5.8458
+    >> SAVED best @ dev ce 5.8458 (iter 12000)
+iter  12200 | lr 0.000100 | ce 5.6933 | elapsed 390s
+iter  12400 | lr 0.000100 | ce 5.4729 | elapsed 397s
+iter  12600 | lr 0.000100 | ce 5.4546 | elapsed 403s
+iter  12800 | lr 0.000100 | ce 5.3066 | elapsed 410s
+iter  13000 | lr 0.000030 | ce 5.2813 | elapsed 417s
+    >> DEV iter 13000 ce=5.8017
+    >> SAVED best @ dev ce 5.8017 (iter 13000)
+iter  13200 | lr 0.000030 | ce 5.4245 | elapsed 424s
+iter  13400 | lr 0.000030 | ce 5.4179 | elapsed 431s
+iter  13600 | lr 0.000030 | ce 5.3744 | elapsed 438s
+iter  13800 | lr 0.000030 | ce 5.1234 | elapsed 445s
+iter  14000 | lr 0.000030 | ce 5.3578 | elapsed 452s
+    >> DEV iter 14000 ce=5.7514
+    >> SAVED best @ dev ce 5.7514 (iter 14000)
+iter  14200 | lr 0.000030 | ce 5.0262 | elapsed 459s
+iter  14400 | lr 0.000030 | ce 5.4284 | elapsed 466s
+iter  14600 | lr 0.000030 | ce 5.4007 | elapsed 472s
+iter  14800 | lr 0.000030 | ce 5.0744 | elapsed 479s
+iter  15000 | lr 0.000030 | ce 5.2395 | elapsed 486s
+    >> DEV iter 15000 ce=5.7458
+    >> SAVED best @ dev ce 5.7458 (iter 15000)
+iter  15200 | lr 0.000030 | ce 5.3493 | elapsed 493s
+iter  15400 | lr 0.000030 | ce 5.0411 | elapsed 500s
+iter  15600 | lr 0.000030 | ce 5.1694 | elapsed 506s
+iter  15800 | lr 0.000030 | ce 5.1089 | elapsed 513s
+iter  16000 | lr 0.000030 | ce 5.2565 | elapsed 520s
+    >> DEV iter 16000 ce=5.7375
+    >> SAVED best @ dev ce 5.7375 (iter 16000)
+iter  16200 | lr 0.000030 | ce 5.0747 | elapsed 527s
+iter  16400 | lr 0.000030 | ce 5.0728 | elapsed 534s
+iter  16600 | lr 0.000030 | ce 5.0665 | elapsed 541s
+iter  16800 | lr 0.000030 | ce 5.0680 | elapsed 548s
+iter  17000 | lr 0.000030 | ce 5.3256 | elapsed 555s
+    >> DEV iter 17000 ce=5.7312
+    >> SAVED best @ dev ce 5.7312 (iter 17000)
+iter  17200 | lr 0.000030 | ce 5.1987 | elapsed 562s
+iter  17400 | lr 0.000030 | ce 5.0012 | elapsed 569s
+iter  17600 | lr 0.000030 | ce 5.1732 | elapsed 576s
+iter  17800 | lr 0.000030 | ce 5.0909 | elapsed 583s
+iter  18000 | lr 0.000030 | ce 5.1261 | elapsed 590s
+    >> DEV iter 18000 ce=5.7328
+    >> no improvement (1/6), best still 5.7312 @ iter 17000
+iter  18200 | lr 0.000030 | ce 5.2899 | elapsed 597s
+iter  18400 | lr 0.000030 | ce 5.0494 | elapsed 604s
+iter  18600 | lr 0.000030 | ce 5.2298 | elapsed 611s
+iter  18800 | lr 0.000030 | ce 4.9838 | elapsed 618s
+iter  19000 | lr 0.000030 | ce 5.0891 | elapsed 625s
+    >> DEV iter 19000 ce=5.7358
+    >> no improvement (2/6), best still 5.7312 @ iter 17000
+iter  19200 | lr 0.000030 | ce 4.9849 | elapsed 633s
+iter  19400 | lr 0.000030 | ce 5.1694 | elapsed 639s
+iter  19600 | lr 0.000030 | ce 4.8572 | elapsed 646s
+iter  19800 | lr 0.000030 | ce 4.8070 | elapsed 653s
+iter  20000 | lr 0.000030 | ce 4.8495 | elapsed 659s
+    >> DEV iter 20000 ce=5.7409
+    >> no improvement (3/6), best still 5.7312 @ iter 17000
+iter  20200 | lr 0.000030 | ce 5.0964 | elapsed 667s
+iter  20400 | lr 0.000030 | ce 4.9639 | elapsed 674s
+iter  20600 | lr 0.000030 | ce 4.9993 | elapsed 681s
+iter  20800 | lr 0.000030 | ce 4.7874 | elapsed 687s
+iter  21000 | lr 0.000030 | ce 4.9977 | elapsed 694s
+    >> DEV iter 21000 ce=5.7384
+    >> no improvement (4/6), best still 5.7312 @ iter 17000
+iter  21200 | lr 0.000030 | ce 4.9626 | elapsed 701s
+iter  21400 | lr 0.000030 | ce 4.9128 | elapsed 708s
+iter  21600 | lr 0.000030 | ce 5.0656 | elapsed 715s
+iter  21800 | lr 0.000030 | ce 4.9347 | elapsed 721s
+iter  22000 | lr 0.000030 | ce 4.8099 | elapsed 728s
+    >> DEV iter 22000 ce=5.7366
+    >> no improvement (5/6), best still 5.7312 @ iter 17000
+iter  22200 | lr 0.000030 | ce 4.8587 | elapsed 735s
+iter  22400 | lr 0.000030 | ce 4.9174 | elapsed 742s
+iter  22600 | lr 0.000030 | ce 4.9975 | elapsed 749s
+iter  22800 | lr 0.000030 | ce 4.9816 | elapsed 755s
+    [FIX A] lr dropped 0.000030 → 0.000009 at iter 23000: HALF-reset patience (5/6 → 2/6)
+iter  23000 | lr 0.000009 | ce 4.8806 | elapsed 762s
+    >> DEV iter 23000 ce=5.7286
+    >> SAVED best @ dev ce 5.7286 (iter 23000)
+iter  23200 | lr 0.000009 | ce 4.9011 | elapsed 770s
+iter  23400 | lr 0.000009 | ce 4.6664 | elapsed 776s
+iter  23600 | lr 0.000009 | ce 4.6297 | elapsed 784s
+iter  23800 | lr 0.000009 | ce 4.9017 | elapsed 791s
+iter  24000 | lr 0.000009 | ce 4.8546 | elapsed 798s
+    >> DEV iter 24000 ce=5.7310
+    >> no improvement (1/6), best still 5.7286 @ iter 23000
+iter  24200 | lr 0.000009 | ce 4.7877 | elapsed 806s
+iter  24400 | lr 0.000009 | ce 4.8722 | elapsed 812s
+iter  24600 | lr 0.000009 | ce 4.7905 | elapsed 819s
+iter  24800 | lr 0.000009 | ce 4.6630 | elapsed 827s
+iter  25000 | lr 0.000009 | ce 4.8198 | elapsed 833s
+    >> DEV iter 25000 ce=5.7374
+    >> no improvement (2/6), best still 5.7286 @ iter 23000
+iter  25200 | lr 0.000009 | ce 4.7830 | elapsed 839s

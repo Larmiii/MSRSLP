@@ -1,0 +1,84 @@
+[*] args: {'dataname': 'phix_lift3d', 'exp_name': 'vq_M1M2', 'out_dir': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\phix\\vq\\_train_vq_M1M2', 'batch_size': 128, 'window_size': 64, 'total_iter': 100000, 'warm_up_iter': 1000, 'lr': 0.0002, 'lr_scheduler': [50000, 80000], 'gamma': 0.05, 'weight_decay': 0.0, 'commit': 0.02, 'loss_vel': 0.1, 'recons_loss': 'l2', 'nb_base_body': 512, 'nb_base_hand': 512, 'nb_base_face': 512, 'nb_res_body': 512, 'nb_res_hand': 512, 'nb_res_face': 512, 'code_dim': 512, 'output_emb_width': 512, 'down_t': 1, 'stride_t': 2, 'width': 512, 'depth': 3, 'dilation_growth_rate': 3, 'vq_act': 'relu', 'vq_norm': None, 'quantizer': 'ema_reset', 'mu': 0.99, 'beta': 1.0, 'print_iter': 500, 'eval_iter': 2000, 'save_iter': 20000, 'num_workers': 0, 'seed': 42, 'device': 'cuda', 'early_stop_patience': 4, 'early_stop_min_delta': 0.001, 'min_iter_before_early_stop': 5000}
+[*] train: 6078, dev: 425
+[*] MSR-VQ-VAE: streams=['body', 'face', 'hand'], base={'body': 512, 'hand': 512, 'face': 512}, res={'body': 512, 'hand': 512, 'face': 512}, params=14.70M
+iter      0 | lr 0.00000 | recon 0.9861 | vel 0.9860 | vq 0.0433 | ppl body_base:332 body_res:1 face_base:328 face_res:1 hand_base:340 hand_res:1 | elapsed 0s
+iter    500 | lr 0.00010 | recon 0.1357 | vel 0.1348 | vq 1.2458 | ppl body_base:206 body_res:339 face_base:349 face_res:371 hand_base:239 hand_res:413 | elapsed 11s
+iter   1000 | lr 0.00020 | recon 0.0737 | vel 0.0734 | vq 1.8990 | ppl body_base:338 body_res:433 face_base:443 face_res:438 hand_base:386 hand_res:406 | elapsed 22s
+iter   1500 | lr 0.00020 | recon 0.0585 | vel 0.0583 | vq 2.4015 | ppl body_base:399 body_res:434 face_base:434 face_res:453 hand_base:419 hand_res:434 | elapsed 33s
+iter   2000 | lr 0.00020 | recon 0.0483 | vel 0.0481 | vq 2.5373 | ppl body_base:387 body_res:427 face_base:449 face_res:462 hand_base:442 hand_res:416 | elapsed 44s
+    >> DEV iter 2000 recon=0.0483 vq=2.4636
+    >> SAVED best @ dev recon 0.0483 (iter 2000)
+iter   2500 | lr 0.00020 | recon 0.0448 | vel 0.0446 | vq 2.6639 | ppl body_base:413 body_res:417 face_base:439 face_res:456 hand_base:446 hand_res:423 | elapsed 55s
+iter   3000 | lr 0.00020 | recon 0.0400 | vel 0.0399 | vq 2.7898 | ppl body_base:424 body_res:417 face_base:445 face_res:463 hand_base:441 hand_res:419 | elapsed 66s
+iter   3500 | lr 0.00020 | recon 0.0393 | vel 0.0391 | vq 2.7661 | ppl body_base:402 body_res:406 face_base:436 face_res:454 hand_base:450 hand_res:420 | elapsed 77s
+iter   4000 | lr 0.00020 | recon 0.0381 | vel 0.0380 | vq 2.8862 | ppl body_base:417 body_res:420 face_base:450 face_res:455 hand_base:443 hand_res:417 | elapsed 88s
+    >> DEV iter 4000 recon=0.0392 vq=2.8178
+    >> SAVED best @ dev recon 0.0392 (iter 4000)
+iter   4500 | lr 0.00020 | recon 0.0365 | vel 0.0364 | vq 2.8230 | ppl body_base:403 body_res:419 face_base:435 face_res:460 hand_base:435 hand_res:425 | elapsed 99s
+iter   5000 | lr 0.00020 | recon 0.0377 | vel 0.0376 | vq 2.9668 | ppl body_base:420 body_res:435 face_base:450 face_res:460 hand_base:451 hand_res:440 | elapsed 109s
+iter   5500 | lr 0.00020 | recon 0.0349 | vel 0.0348 | vq 2.8831 | ppl body_base:407 body_res:423 face_base:451 face_res:457 hand_base:441 hand_res:437 | elapsed 120s
+iter   6000 | lr 0.00020 | recon 0.0348 | vel 0.0346 | vq 2.8765 | ppl body_base:412 body_res:432 face_base:446 face_res:460 hand_base:435 hand_res:421 | elapsed 131s
+    >> DEV iter 6000 recon=0.0367 vq=2.8824
+    >> SAVED best @ dev recon 0.0367 (iter 6000)
+iter   6500 | lr 0.00020 | recon 0.0341 | vel 0.0339 | vq 2.9767 | ppl body_base:405 body_res:419 face_base:450 face_res:459 hand_base:439 hand_res:423 | elapsed 142s
+iter   7000 | lr 0.00020 | recon 0.0331 | vel 0.0329 | vq 2.7885 | ppl body_base:415 body_res:426 face_base:450 face_res:445 hand_base:429 hand_res:412 | elapsed 153s
+iter   7500 | lr 0.00020 | recon 0.0343 | vel 0.0342 | vq 3.0545 | ppl body_base:413 body_res:420 face_base:450 face_res:461 hand_base:443 hand_res:430 | elapsed 164s
+iter   8000 | lr 0.00020 | recon 0.0325 | vel 0.0324 | vq 2.8946 | ppl body_base:404 body_res:421 face_base:459 face_res:452 hand_base:435 hand_res:410 | elapsed 175s
+    >> DEV iter 8000 recon=0.0348 vq=2.8662
+    >> SAVED best @ dev recon 0.0348 (iter 8000)
+iter   8500 | lr 0.00020 | recon 0.0305 | vel 0.0304 | vq 2.7033 | ppl body_base:371 body_res:408 face_base:438 face_res:447 hand_base:421 hand_res:404 | elapsed 186s
+iter   9000 | lr 0.00020 | recon 0.0326 | vel 0.0324 | vq 2.9074 | ppl body_base:406 body_res:421 face_base:451 face_res:460 hand_base:440 hand_res:418 | elapsed 197s
+iter   9500 | lr 0.00020 | recon 0.0317 | vel 0.0316 | vq 2.8780 | ppl body_base:407 body_res:421 face_base:454 face_res:457 hand_base:439 hand_res:428 | elapsed 207s
+iter  10000 | lr 0.00020 | recon 0.0308 | vel 0.0307 | vq 2.8216 | ppl body_base:408 body_res:433 face_base:447 face_res:460 hand_base:432 hand_res:422 | elapsed 218s
+    >> DEV iter 10000 recon=0.0357 vq=2.8912
+    >> no improvement (1/4), best still 0.0348 @ iter 8000
+iter  10500 | lr 0.00020 | recon 0.0302 | vel 0.0301 | vq 2.8066 | ppl body_base:403 body_res:422 face_base:454 face_res:453 hand_base:429 hand_res:419 | elapsed 229s
+iter  11000 | lr 0.00020 | recon 0.0298 | vel 0.0297 | vq 2.8173 | ppl body_base:413 body_res:423 face_base:454 face_res:455 hand_base:433 hand_res:429 | elapsed 240s
+iter  11500 | lr 0.00020 | recon 0.0294 | vel 0.0292 | vq 2.7176 | ppl body_base:398 body_res:422 face_base:439 face_res:457 hand_base:435 hand_res:416 | elapsed 251s
+iter  12000 | lr 0.00020 | recon 0.0304 | vel 0.0303 | vq 2.8465 | ppl body_base:417 body_res:437 face_base:457 face_res:461 hand_base:438 hand_res:422 | elapsed 262s
+    >> DEV iter 12000 recon=0.0334 vq=2.7968
+    >> SAVED best @ dev recon 0.0334 (iter 12000)
+iter  12500 | lr 0.00020 | recon 0.0295 | vel 0.0294 | vq 2.7859 | ppl body_base:407 body_res:437 face_base:450 face_res:457 hand_base:438 hand_res:427 | elapsed 273s
+iter  13000 | lr 0.00020 | recon 0.0306 | vel 0.0305 | vq 2.8428 | ppl body_base:409 body_res:432 face_base:452 face_res:453 hand_base:438 hand_res:423 | elapsed 284s
+iter  13500 | lr 0.00020 | recon 0.0287 | vel 0.0286 | vq 2.7610 | ppl body_base:399 body_res:421 face_base:447 face_res:455 hand_base:431 hand_res:425 | elapsed 295s
+iter  14000 | lr 0.00020 | recon 0.0298 | vel 0.0297 | vq 2.7951 | ppl body_base:412 body_res:431 face_base:456 face_res:454 hand_base:435 hand_res:423 | elapsed 305s
+    >> DEV iter 14000 recon=0.0331 vq=2.7407
+    >> no improvement (1/4), best still 0.0334 @ iter 12000
+iter  14500 | lr 0.00020 | recon 0.0291 | vel 0.0290 | vq 2.6686 | ppl body_base:406 body_res:429 face_base:445 face_res:454 hand_base:436 hand_res:431 | elapsed 316s
+iter  15000 | lr 0.00020 | recon 0.0286 | vel 0.0285 | vq 2.6980 | ppl body_base:399 body_res:423 face_base:458 face_res:457 hand_base:431 hand_res:429 | elapsed 327s
+iter  15500 | lr 0.00020 | recon 0.0289 | vel 0.0288 | vq 2.6793 | ppl body_base:407 body_res:432 face_base:455 face_res:452 hand_base:431 hand_res:429 | elapsed 338s
+iter  16000 | lr 0.00020 | recon 0.0286 | vel 0.0284 | vq 2.6813 | ppl body_base:401 body_res:432 face_base:451 face_res:456 hand_base:435 hand_res:428 | elapsed 349s
+    >> DEV iter 16000 recon=0.0327 vq=2.6888
+    >> no improvement (2/4), best still 0.0334 @ iter 12000
+iter  16500 | lr 0.00020 | recon 0.0282 | vel 0.0281 | vq 2.6308 | ppl body_base:396 body_res:419 face_base:444 face_res:452 hand_base:437 hand_res:430 | elapsed 359s
+iter  17000 | lr 0.00020 | recon 0.0281 | vel 0.0280 | vq 2.7036 | ppl body_base:400 body_res:428 face_base:453 face_res:453 hand_base:431 hand_res:436 | elapsed 370s
+iter  17500 | lr 0.00020 | recon 0.0268 | vel 0.0267 | vq 2.5524 | ppl body_base:409 body_res:430 face_base:438 face_res:458 hand_base:425 hand_res:429 | elapsed 381s
+iter  18000 | lr 0.00020 | recon 0.0272 | vel 0.0271 | vq 2.5234 | ppl body_base:392 body_res:417 face_base:448 face_res:446 hand_base:427 hand_res:423 | elapsed 392s
+    >> DEV iter 18000 recon=0.0322 vq=2.6411
+    >> SAVED best @ dev recon 0.0322 (iter 18000)
+iter  18500 | lr 0.00020 | recon 0.0268 | vel 0.0267 | vq 2.5082 | ppl body_base:399 body_res:423 face_base:457 face_res:454 hand_base:414 hand_res:427 | elapsed 403s
+iter  19000 | lr 0.00020 | recon 0.0275 | vel 0.0274 | vq 2.5808 | ppl body_base:400 body_res:426 face_base:453 face_res:454 hand_base:435 hand_res:436 | elapsed 414s
+iter  19500 | lr 0.00020 | recon 0.0270 | vel 0.0269 | vq 2.5881 | ppl body_base:402 body_res:425 face_base:450 face_res:447 hand_base:426 hand_res:435 | elapsed 424s
+iter  20000 | lr 0.00020 | recon 0.0272 | vel 0.0271 | vq 2.6107 | ppl body_base:411 body_res:425 face_base:454 face_res:455 hand_base:432 hand_res:445 | elapsed 435s
+    >> DEV iter 20000 recon=0.0326 vq=2.5791
+    >> no improvement (1/4), best still 0.0322 @ iter 18000
+iter  20500 | lr 0.00020 | recon 0.0261 | vel 0.0260 | vq 2.5235 | ppl body_base:398 body_res:426 face_base:444 face_res:453 hand_base:428 hand_res:438 | elapsed 446s
+iter  21000 | lr 0.00020 | recon 0.0270 | vel 0.0269 | vq 2.5663 | ppl body_base:401 body_res:426 face_base:454 face_res:457 hand_base:439 hand_res:439 | elapsed 457s
+iter  21500 | lr 0.00020 | recon 0.0273 | vel 0.0272 | vq 2.5378 | ppl body_base:402 body_res:424 face_base:453 face_res:447 hand_base:431 hand_res:439 | elapsed 468s
+iter  22000 | lr 0.00020 | recon 0.0279 | vel 0.0278 | vq 2.6616 | ppl body_base:419 body_res:441 face_base:456 face_res:458 hand_base:451 hand_res:445 | elapsed 479s
+    >> DEV iter 22000 recon=0.0325 vq=2.5519
+    >> no improvement (2/4), best still 0.0322 @ iter 18000
+iter  22500 | lr 0.00020 | recon 0.0266 | vel 0.0265 | vq 2.5251 | ppl body_base:408 body_res:426 face_base:454 face_res:453 hand_base:438 hand_res:442 | elapsed 490s
+iter  23000 | lr 0.00020 | recon 0.0259 | vel 0.0258 | vq 2.4700 | ppl body_base:407 body_res:432 face_base:451 face_res:460 hand_base:421 hand_res:436 | elapsed 501s
+iter  23500 | lr 0.00020 | recon 0.0276 | vel 0.0274 | vq 2.6138 | ppl body_base:419 body_res:440 face_base:455 face_res:461 hand_base:441 hand_res:451 | elapsed 512s
+iter  24000 | lr 0.00020 | recon 0.0259 | vel 0.0258 | vq 2.4491 | ppl body_base:408 body_res:433 face_base:453 face_res:459 hand_base:435 hand_res:435 | elapsed 522s
+    >> DEV iter 24000 recon=0.0321 vq=2.5267
+    >> no improvement (3/4), best still 0.0322 @ iter 18000
+iter  24500 | lr 0.00020 | recon 0.0267 | vel 0.0266 | vq 2.4932 | ppl body_base:406 body_res:436 face_base:452 face_res:449 hand_base:441 hand_res:447 | elapsed 533s
+iter  25000 | lr 0.00020 | recon 0.0260 | vel 0.0259 | vq 2.4828 | ppl body_base:404 body_res:424 face_base:458 face_res:456 hand_base:435 hand_res:443 | elapsed 544s
+iter  25500 | lr 0.00020 | recon 0.0253 | vel 0.0252 | vq 2.3454 | ppl body_base:400 body_res:423 face_base:447 face_res:456 hand_base:435 hand_res:434 | elapsed 555s
+iter  26000 | lr 0.00020 | recon 0.0257 | vel 0.0255 | vq 2.4183 | ppl body_base:403 body_res:425 face_base:453 face_res:455 hand_base:430 hand_res:434 | elapsed 566s
+    >> DEV iter 26000 recon=0.0316 vq=2.4681
+    >> no improvement (4/4), best still 0.0322 @ iter 18000
+    >> EARLY STOP at iter 26000
+[OK] done in 9.4 min, best dev recon 0.0322

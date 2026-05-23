@@ -1,0 +1,124 @@
+[*] args: {'dataname': 'phix_lift3d', 'tokens_dir': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\phix\\tokens_v2/vq_baseline_v2', 'vq_ckpt': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\phix\\vq_v2\\vq_baseline_v2.pt', 'exp_name': 'trans_baseline_v2_mbart', 'out_dir': 'D:\\Graduate thesis\\sign_slp_paper_release\\checkpoints\\phix\\trans_v2\\_train_trans_baseline_v2_mbart', 'mbart_name': 'facebook/mbart-large-50', 'lang': 'de_DE', 'text_encoder': 'mbart', 'char_vocab_path': None, 'char_enc_layers': 2, 'char_enc_dim': 0, 'char_enc_heads': 8, 'char_enc_dropout': 0.1, 'num_vq': 512, 'embed_dim': 512, 'text_dim': 1024, 'block_size': 160, 'num_layers': 9, 'n_head': 8, 'drop_out_rate': 0.1, 'fc_rate': 4, 'align_dim': 0, 'lambda_align': 0.1, 'predict_length': 0, 'lambda_length': 0.2, 'gloss_supervised': 0, 'gloss_vocab_path': None, 'gloss_dec_layers': 2, 'gloss_dec_dim': 256, 'gloss_dec_heads': 4, 'gloss_max_len': 48, 'lambda_gloss': 0.5, 'batch_size': 16, 'total_iter': 20000, 'warm_up_iter': 1000, 'lr': 0.0001, 'lr_scheduler': [10000, 15000], 'gamma': 0.1, 'weight_decay': 1e-05, 'max_text_len': 128, 'freeze_text': 1, 'label_smoothing': 0.0, 'motion_token_mask_prob': 0.0, 'print_iter': 200, 'eval_iter': 1000, 'save_iter': 5000, 'num_workers': 0, 'seed': 42, 'device': 'cuda', 'early_stop_patience': 8, 'early_stop_min_delta': 0.001, 'min_iter_before_early_stop': 3000, 'max_no_improve_iter': 8000}
+[*] loading mBART-50 tokenizer + encoder...
+[*] mBART encoder FROZEN
+[*] train: 7060, dev: 515
+[*] CrossAttn Trans params: 38.97M
+[*] FIX B: min_iter_before_early_stop bumped 3000 → 16000 (last lr milestone 15000 + 1000 buffer)
+[*] FIX C: max_no_improve_iter = 8000 (hard stop if no new best for this many iters, regardless of lr resets)
+iter      0 | lr 0.000000 | ce 6.3570 | elapsed 0s
+iter    200 | lr 0.000020 | ce 6.1075 | elapsed 6s
+iter    400 | lr 0.000040 | ce 5.9141 | elapsed 12s
+iter    600 | lr 0.000060 | ce 5.7773 | elapsed 18s
+iter    800 | lr 0.000080 | ce 5.6817 | elapsed 24s
+iter   1000 | lr 0.000100 | ce 5.3824 | elapsed 30s
+    >> DEV iter 1000 ce=5.3564
+    >> SAVED best @ dev ce 5.3564 (iter 1000)
+iter   1200 | lr 0.000100 | ce 5.1950 | elapsed 37s
+iter   1400 | lr 0.000100 | ce 5.1839 | elapsed 43s
+iter   1600 | lr 0.000100 | ce 5.1855 | elapsed 49s
+iter   1800 | lr 0.000100 | ce 4.8241 | elapsed 55s
+iter   2000 | lr 0.000100 | ce 4.7121 | elapsed 61s
+    >> DEV iter 2000 ce=4.9685
+    >> SAVED best @ dev ce 4.9685 (iter 2000)
+iter   2200 | lr 0.000100 | ce 4.8852 | elapsed 67s
+iter   2400 | lr 0.000100 | ce 4.7515 | elapsed 73s
+iter   2600 | lr 0.000100 | ce 4.5210 | elapsed 79s
+iter   2800 | lr 0.000100 | ce 4.3923 | elapsed 85s
+iter   3000 | lr 0.000100 | ce 4.6158 | elapsed 91s
+    >> DEV iter 3000 ce=4.9379
+    >> SAVED best @ dev ce 4.9379 (iter 3000)
+iter   3200 | lr 0.000100 | ce 4.3172 | elapsed 98s
+iter   3400 | lr 0.000100 | ce 4.1959 | elapsed 104s
+iter   3600 | lr 0.000100 | ce 4.1859 | elapsed 110s
+iter   3800 | lr 0.000100 | ce 4.1414 | elapsed 116s
+iter   4000 | lr 0.000100 | ce 3.7363 | elapsed 122s
+    >> DEV iter 4000 ce=5.0642
+    >> no improvement (1/8), best still 4.9379 @ iter 3000
+iter   4200 | lr 0.000100 | ce 4.1892 | elapsed 128s
+iter   4400 | lr 0.000100 | ce 4.0024 | elapsed 134s
+iter   4600 | lr 0.000100 | ce 3.6594 | elapsed 140s
+iter   4800 | lr 0.000100 | ce 3.8920 | elapsed 146s
+iter   5000 | lr 0.000100 | ce 3.4126 | elapsed 152s
+    >> DEV iter 5000 ce=5.3153
+    >> no improvement (2/8), best still 4.9379 @ iter 3000
+iter   5200 | lr 0.000100 | ce 3.3872 | elapsed 159s
+iter   5400 | lr 0.000100 | ce 3.0463 | elapsed 165s
+iter   5600 | lr 0.000100 | ce 3.1919 | elapsed 171s
+iter   5800 | lr 0.000100 | ce 2.9357 | elapsed 177s
+iter   6000 | lr 0.000100 | ce 2.9727 | elapsed 182s
+    >> DEV iter 6000 ce=5.6958
+    >> no improvement (3/8), best still 4.9379 @ iter 3000
+iter   6200 | lr 0.000100 | ce 2.5362 | elapsed 189s
+iter   6400 | lr 0.000100 | ce 2.6021 | elapsed 195s
+iter   6600 | lr 0.000100 | ce 2.6620 | elapsed 201s
+iter   6800 | lr 0.000100 | ce 2.4795 | elapsed 207s
+iter   7000 | lr 0.000100 | ce 2.4662 | elapsed 213s
+    >> DEV iter 7000 ce=6.1336
+    >> no improvement (4/8), best still 4.9379 @ iter 3000
+iter   7200 | lr 0.000100 | ce 2.1903 | elapsed 219s
+iter   7400 | lr 0.000100 | ce 2.1347 | elapsed 225s
+iter   7600 | lr 0.000100 | ce 1.8687 | elapsed 231s
+iter   7800 | lr 0.000100 | ce 2.0861 | elapsed 237s
+iter   8000 | lr 0.000100 | ce 1.7460 | elapsed 243s
+    >> DEV iter 8000 ce=6.6687
+    >> no improvement (5/8), best still 4.9379 @ iter 3000
+iter   8200 | lr 0.000100 | ce 1.9466 | elapsed 250s
+iter   8400 | lr 0.000100 | ce 1.5752 | elapsed 256s
+iter   8600 | lr 0.000100 | ce 1.7554 | elapsed 262s
+iter   8800 | lr 0.000100 | ce 1.6168 | elapsed 268s
+iter   9000 | lr 0.000100 | ce 1.4046 | elapsed 274s
+    >> DEV iter 9000 ce=7.1390
+    >> no improvement (6/8), best still 4.9379 @ iter 3000
+iter   9200 | lr 0.000100 | ce 1.4712 | elapsed 280s
+iter   9400 | lr 0.000100 | ce 1.1330 | elapsed 286s
+iter   9600 | lr 0.000100 | ce 1.3259 | elapsed 292s
+iter   9800 | lr 0.000100 | ce 1.1509 | elapsed 298s
+iter  10000 | lr 0.000100 | ce 1.2424 | elapsed 304s
+    >> DEV iter 10000 ce=7.5461
+    >> no improvement (7/8), best still 4.9379 @ iter 3000
+iter  10200 | lr 0.000100 | ce 1.1224 | elapsed 311s
+iter  10400 | lr 0.000100 | ce 1.0102 | elapsed 317s
+iter  10600 | lr 0.000100 | ce 0.8473 | elapsed 323s
+iter  10800 | lr 0.000100 | ce 0.9914 | elapsed 329s
+    [FIX A] lr dropped 0.000100 → 0.000010 at iter 11000: HALF-reset patience (7/8 → 3/8)
+iter  11000 | lr 0.000010 | ce 1.0251 | elapsed 335s
+    >> DEV iter 11000 ce=7.8636
+    >> no improvement (4/8), best still 4.9379 @ iter 3000
+iter  11200 | lr 0.000010 | ce 0.6703 | elapsed 341s
+iter  11400 | lr 0.000010 | ce 0.6651 | elapsed 347s
+iter  11600 | lr 0.000010 | ce 0.5965 | elapsed 353s
+iter  11800 | lr 0.000010 | ce 0.6853 | elapsed 359s
+iter  12000 | lr 0.000010 | ce 0.5545 | elapsed 365s
+    >> DEV iter 12000 ce=8.0102
+    >> no improvement (5/8), best still 4.9379 @ iter 3000
+iter  12200 | lr 0.000010 | ce 0.5021 | elapsed 371s
+iter  12400 | lr 0.000010 | ce 0.4880 | elapsed 377s
+iter  12600 | lr 0.000010 | ce 0.4997 | elapsed 383s
+iter  12800 | lr 0.000010 | ce 0.4114 | elapsed 389s
+iter  13000 | lr 0.000010 | ce 0.5202 | elapsed 395s
+    >> DEV iter 13000 ce=8.1388
+    >> no improvement (6/8), best still 4.9379 @ iter 3000
+iter  13200 | lr 0.000010 | ce 0.4319 | elapsed 402s
+iter  13400 | lr 0.000010 | ce 0.4268 | elapsed 408s
+iter  13600 | lr 0.000010 | ce 0.4646 | elapsed 414s
+iter  13800 | lr 0.000010 | ce 0.3862 | elapsed 420s
+iter  14000 | lr 0.000010 | ce 0.4814 | elapsed 426s
+    >> DEV iter 14000 ce=8.2358
+    >> no improvement (7/8), best still 4.9379 @ iter 3000
+iter  14200 | lr 0.000010 | ce 0.3855 | elapsed 432s
+iter  14400 | lr 0.000010 | ce 0.3911 | elapsed 438s
+iter  14600 | lr 0.000010 | ce 0.3830 | elapsed 444s
+iter  14800 | lr 0.000010 | ce 0.3426 | elapsed 450s
+iter  15000 | lr 0.000010 | ce 0.3849 | elapsed 456s
+    >> DEV iter 15000 ce=8.3150
+    >> no improvement (8/8), best still 4.9379 @ iter 3000
+iter  15200 | lr 0.000010 | ce 0.3689 | elapsed 463s
+iter  15400 | lr 0.000010 | ce 0.3705 | elapsed 469s
+iter  15600 | lr 0.000010 | ce 0.4211 | elapsed 475s
+iter  15800 | lr 0.000010 | ce 0.3335 | elapsed 481s
+    [FIX A] lr dropped 0.000010 → 0.000001 at iter 16000: HALF-reset patience (8/8 → 4/8)
+iter  16000 | lr 0.000001 | ce 0.3149 | elapsed 487s
+    >> DEV iter 16000 ce=8.4204
+    >> no improvement (5/8), best still 4.9379 @ iter 3000
+    >> HARD STOP at iter 16000 (iters_since_best=13000 > max_no_improve=8000; FIX C — best @ iter 3000)
+[OK] done in 8.1 min, best dev ce 4.9379

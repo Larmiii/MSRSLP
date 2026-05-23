@@ -1,0 +1,53 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Virtual environments (this project uses .venv/) ----
+.venv/
+venv/
+env/
+
+# ---- IDE / OS ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+
+# ---- Large project artifacts (NOT in GitHub release) ----
+# Data: PHIX + CSL .pt files (multi-GB each)
+data/
+
+# Checkpoints: VQ + Transformer .pt weights (many >100MB)
+checkpoints/
+
+# Results: all generated pickles + intermediate preds (.pickle / .pt / slp_pickles/),
+# but keep the final ablation summary markdown.
+results/*
+!results/ABLATION_SUMMARY.md
+
+# Archive of v1 experiments (paper-unused historical backup)
+_archive_v1_phix/
+
+# SLRTP eval kit: keep the source code, exclude the bundled BT model weights
+# (best.ckpt ~77MB each) and the third-party PHIX data hardlinks.
+bt_eval_kit/slrtp_official/backTranslation_PHIX_model/best.ckpt
+bt_eval_kit/slrtp_official/backTranslation_CSL_model/best.ckpt
+bt_eval_kit/slrtp_official/data_official/
+bt_eval_kit/slrtp_official/results/
+bt_eval_kit/slrtp_official/__pycache__/
+
+# Local wheels we may keep cached
+*.whl
+wheels/
+
+# Stray temp / IDE state
+.claude/
+
+# Mac / Windows misc
+*.tmp
