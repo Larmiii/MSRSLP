@@ -43,8 +43,6 @@
 | MDM (Diffusion) | gloss-supervised | 7.55 |
 | T2M-GPT (Zhang 2023) | gloss-free | 8.01 |
 | **本文 M1+M2** ⭐ | **strict gloss-free** | **8.97** |
-| Sign-IDD (AAAI 2025) | gloss-supervised | 10–13 |
-| T2S-GPT (NeurIPS 2024) | gloss-free SOTA | 11.87 |
 
 ---
 
