@@ -39,7 +39,9 @@
 
 | 方法 | 类型 | TEST B4 |
 |---|---|---|
+| Team 2 (hfut-lmc, CVPRW 2025) | gloss-free | 2.05 |
 | Progressive Transformer (Saunders 2020) | gloss-supervised | 4.38 |
+| Transformer (SLRTP 2025 baseline) | gloss-free | 5.43 |
 | MDM (Diffusion) | gloss-supervised | 7.55 |
 | T2M-GPT (Zhang 2023) | gloss-free | 8.01 |
 | **本文 M1+M2** ⭐ | **strict gloss-free** | **8.97** |
