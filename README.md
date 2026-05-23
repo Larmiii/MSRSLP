@@ -149,6 +149,45 @@ CPU-only 或 Python 3.11–3.13 用户：删掉 `--extra-index-url` 直接装即
 
 ---
 
+## 数据 / Checkpoints 下载
+
+GitHub 仓库只含代码 + README + 训练日志 + ablation 表（~31 MB）。数据、checkpoints、BT 评测模型分 4 个 zip 打包到 Google Drive，按需下载：
+
+| 包 | 大小 | 内容 | 链接 |
+|---|---|---|---|
+| `data_phix.zip` | 1.9 GB | `data/phix/` — PHIX-14T lift3d 数据 (train/dev/test) + 德语 char vocab | [下载](https://drive.google.com/file/d/1jV6O5I9ogh69jeB3mJFJf1ObzHV7GPI3/view?usp=sharing) |
+| `data_csl.zip` | 4.9 GB | `data/csl/` — CSL-Daily lift3d 数据 (train/dev/test) + 中文 char vocab | [下载](https://drive.google.com/file/d/1eu5f1BtYv6aj-i3cUdzCN2r9G0zMXVIn/view?usp=sharing) |
+| `checkpoints.zip` | 7.8 GB | `checkpoints/` — 全部 VQ (4×2) + Trans (4×2) ablation 权重 + token 缓存 | [下载](https://drive.google.com/file/d/1THicz0DE_88TVOEdVOHe-g5zX_0t5Rbd/view?usp=sharing) |
+| `bt_eval_official.zip` | 2.5 GB | `bt_eval_kit/slrtp_official/data_official/` (SLRTP 官方 PHIX 数据 + oracle GT + PT baseline preds) + 两个 `backTranslation_*_model/best.ckpt` (PHIX + CSL BT 模型权重) | [下载](https://drive.google.com/file/d/1DjQPYFe_z5p7mkNEVpDUzkHickSaAtfw/view?usp=sharing) |
+
+按数据集组合：
+
+- **只跑 PHIX 复现** = `data_phix.zip` + `checkpoints.zip` + `bt_eval_official.zip` ≈ 12.2 GB
+- **只跑 CSL 复现** = `data_csl.zip` + `checkpoints.zip` + `bt_eval_official.zip` ≈ 15.2 GB（BT 模型在 bt_eval_official.zip 里）
+- **完整复现** = 全部 4 个 ≈ 17.2 GB
+
+### 解压步骤
+
+下载完后把 zip 放到 clone 下来的项目根（README.md 所在那层），然后：
+
+```powershell
+# 用 7-Zip
+& "C:\Program Files\7-Zip\7z.exe" x data_phix.zip
+& "C:\Program Files\7-Zip\7z.exe" x data_csl.zip
+& "C:\Program Files\7-Zip\7z.exe" x checkpoints.zip
+& "C:\Program Files\7-Zip\7z.exe" x bt_eval_official.zip
+
+# 或 PowerShell 自带（慢一些）
+Expand-Archive data_phix.zip -DestinationPath .
+# ...其他三个同理
+```
+
+zip 内部保留了完整的相对路径，解压后会自动叠加到 `data/`、`checkpoints/`、`bt_eval_kit/slrtp_official/` 等目录里，无需手动 mv。
+
+> **注意：** `data/phix/phix_lift3d.{dev,test,train}.pt` 跟 `bt_eval_kit/slrtp_official/data_official/{dev,test,train}.pt` 在我们本地是硬链接（同一份数据用两个路径访问，省 ~2 GB 磁盘）。zip 不保留硬链接关系，解压后会得到两份独立拷贝（共 ~2 GB 冗余）。功能上不受影响。若想节省磁盘可手动改回硬链接，或把其中一处删掉后用 `mklink /H` 重建。
+
+---
+
 ## 数据准备
 
 `data/` 中的 .pt 文件结构（dict format）：
@@ -489,4 +528,4 @@ A: 见 `slrtp_eval_kit/slt_train/scripts/`（外部目录，未打包到 release
 
 实验细节 / 复现问题：作者 (chengyaozhu91@gmail.com)。
 
-数据 / ckpt 不在 GitHub release 里（体积过大），完整版下载链接见论文附录。
+数据 / ckpt 不在 GitHub release 里（体积过大），下载链接见上面"数据 / Checkpoints 下载"一节。
