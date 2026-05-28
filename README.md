@@ -46,16 +46,20 @@
 | T2M-GPT (Zhang 2023) | gloss-free | 8.01 |
 | **本文 M1+M2** ⭐ | **strict gloss-free** | **8.97** |
 
-### CSL SOTA 对比 (TEST B4)
+### CSL SOTA 对比 (TEST B4, keypoint-based SLP)
 
-| 方法 | 类型 | TEST B4 |
-|---|---|---|
-| Baseline (单流 VQ, num_vq=4096) | strict gloss-free | 1.02 |
-| + M2 (residual) | strict gloss-free | 1.06 |
-| + M1 (multi-stream, 3 streams × 1024) | strict gloss-free | 1.91 |
-| **本文 M1+M2** ⭐ | **strict gloss-free** | **3.43** |
+| 方法 | 年份 | 监督设定 | 路线 | TEST B4 |
+|---|---|---|---|---|
+| T2M-GPT (GLOS 复现) | 2025 | gloss-free | VQ-VAE + AR | 2.05 |
+| MotionGPT (GLOS 复现) | 2025 | gloss-free | LLM motion | 2.08 |
+| MDM (GLOS 复现) | 2025 | — | diffusion | 3.01 |
+| A²V-SLP (Tasyurek 2026) | 2026 | gloss-free | NAR VAE | 3.15 |
+| DARSLP (Tasyurek 2025) | 2025 | gloss-free | NAR latent | 3.35 |
+| **本文 M1+M2** ⭐ | **2026** | **strict gloss-free** | **VQ-VAE + AR** | **3.43** |
+| MoMask (GLOS 复现) | 2025 | gloss-free | masked motion | 3.57 |
+| GLOS (Lee 2025) | 2025 | gloss-supervised | latent diffusion | 13.27 |
 
-> CSL-Daily 由于 char-level BLEU 数值天然偏低（中文每字一个 token，n-gram 匹配空间显著小于德语单词），且现有 CSL SLP 文献多采用不同 BT 模型 / 分词协议，**文献中可直接比较的数字较少**。本文 M1+M2 = 3.43 (TEST B4) 在 SLRTP-canonical 协议下据我们所知是当前公开最高数字。
+> CSL-Daily 上 keypoint-based SLP 工作出现较晚，且各论文使用各自训练的反向翻译器，跨行数字仅作量级参考，不构成严格可比关系。排除 gloss-supervised 的 GLOS 后，gloss-free 设定下最新公开结果分布在 2–3.6 区间，本文 M1+M2 = 3.43 处于该区间上沿。中段 4 行 (T2M-GPT / MotionGPT / MDM / MoMask) 由 GLOS 在 CSL-Daily 上同 BT 重跑，内部相互可比，可作为本文方法与通用动作模型直接迁移结果的对照。我们额外开源了 SLRTP 同协议自训的 `backTranslation_CSL_model`，以便后续工作在统一 BT 下做相互对比。
 
 ---
 
