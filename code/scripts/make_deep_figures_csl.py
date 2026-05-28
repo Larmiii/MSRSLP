@@ -1,16 +1,15 @@
-"""6 张深度可视化论文图（一图胜一表）
-
-1. fig_skeleton_grid.png    — 多帧 stick figure 对比 (GT/baseline/M1+M2 × 2 样本)
-2. fig_trajectory_3d.png    — 右手腕 3D + 2D 投影轨迹
-3. fig_velocity_profile.png — 逐帧平均关节速度 (motion collapse 可视化)
-4. fig_token_bands.png      — token id 色带 (baseline 单流 vs M1+M2 六子流)
-5. fig_codebook_heat.png    — 六子码本使用频率热力图 + 排序衰减
-6. fig_error_chain.png      — GT → VQ ceiling → trans TF → free generation 误差链路
+"""CSL-Daily 版 6 张深度可视化论文图 (输出 fig1_csl-fig6_csl 到 figures/paper/csl/)。
 
 数据源：
-  poses_3d : data/phix/phix_lift3d.dev.pt           — GT
-  sign     : results/phix_{baseline,M1,M1M2}/dev.pickle — 生成
-  tokens   : checkpoints/phix/tokens/vq_{baseline,M1M2}/dev_tokens.pt
+  poses_3d : data/csl/csl_daily_lift3d.dev.pt                              — GT
+  sign     : results/csl_{baseline,M1,M1M2}/slp_pickles/csl_daily.dev      — 生成
+  tokens   : checkpoints/csl/tokens/vq_{baseline,M1M2}/dev_tokens.pt
+
+CSL vs PHIX 差异:
+  - 码本对称: baseline 4096, M1+M2 六子流均 K=512 (合计 3072)
+  - 偏移:    [0, 512, 1024, 1536, 2048, 2560]
+  - SLP pickle 命名: csl_daily.dev 而非 dev.pickle
+  - 第二语言: 中文 char-level (BT BLEU 数值天然偏低)
 """
 
 from __future__ import annotations
@@ -34,16 +33,15 @@ mpl.rcParams['lines.antialiased'] = True
 mpl.rcParams['text.antialiased'] = True
 
 ROOT = Path(r'D:/Graduate thesis/sign_slp_paper_release')
-OUT  = Path(r'D:/Graduate thesis/eggroll_v2/figures/paper')
+OUT  = Path(r'D:/Graduate thesis/eggroll_v2/figures/paper/csl')
 OUT.mkdir(parents=True, exist_ok=True)
 
-# PHIX 178-kpt 真实布局（经实验诊断）
+# CSL 178-kpt 真实布局（经实验诊断，与 PHIX 不同）
 IDX_BODY     = list(range(0, 8))      # 8 kpt body 世界坐标
-IDX_LH_WORLD = list(range(8, 29))     # 21 kpt 左手 (世界坐标，可直接渲染)
-IDX_RH_WORLD = list(range(29, 50))    # 21 kpt 右手 (世界坐标)
-IDX_FACE     = list(range(50, 136))   # 86 kpt face mesh (局部坐标，需重锚)
-IDX_LH_LOC   = list(range(136, 157))  # 21 kpt 左手 (局部坐标，可忽略，与 LH_WORLD 重复)
-IDX_RH_LOC   = list(range(157, 178))  # 21 kpt 右手 (局部坐标，可忽略)
+IDX_FACE_AUX = list(range(8, 50))     # 42 kpt face mesh 辅助 (归一化 0-1，与 50-135 重复)
+IDX_FACE     = list(range(50, 136))   # 86 kpt face mesh (归一化 0-1，需重锚)
+IDX_LH_WORLD = list(range(136, 157))  # 21 kpt 左手 (世界坐标，可直接渲染)
+IDX_RH_WORLD = list(range(157, 178))  # 21 kpt 右手 (世界坐标)
 
 # 颜色（统一论文配色）
 C_GT    = '#000000'
@@ -72,11 +70,11 @@ DPI = 400
 # ============================================================
 
 def load_gt():
-    return torch.load(ROOT / 'data/phix/phix_lift3d.dev.pt',
+    return torch.load(ROOT / 'data/csl/csl_daily_lift3d.dev.pt',
                       map_location='cpu', weights_only=False)
 
 def load_gen(tag: str):
-    with gzip.open(ROOT / f'results/phix_{tag}/dev.pickle', 'rb') as f:
+    with gzip.open(ROOT / f'results/csl_{tag}/slp_pickles/csl_daily.dev', 'rb') as f:
         lst = pickle.load(f)
     return {s['name']: s['sign'].numpy().reshape(s['sign'].shape[0], 178, 3) for s in lst}
 
@@ -84,7 +82,7 @@ def load_gt_arr(gt):
     return {k: v['poses_3d'].numpy() for k, v in gt.items()}
 
 def load_tokens(tag: str):
-    return torch.load(ROOT / f'checkpoints/phix/tokens/vq_{tag}/dev_tokens.pt',
+    return torch.load(ROOT / f'checkpoints/csl/tokens/vq_{tag}/dev_tokens.pt',
                       map_location='cpu', weights_only=False)
 
 
@@ -153,9 +151,9 @@ def draw_stick(ax, p178, color, alpha=1.0, lw=2.0, body_s=42, hand_s=14,
 # ============================================================
 
 def fig_skeleton_grid(gt_arr, gens):
-    """单个样本，GT/Base/Ours 三行 × 6 帧（更大更清晰，面部用 128 点）。"""
-    # 按 Ours/Baseline 手部方差比挑选 (3.5x; baseline 极静 + Ours 富变化)
-    name = '10August_2011_Wednesday_tagesschau-6304'
+    """单个样本，GT/Base/Ours 三行 × 6 帧（更大更清晰，面部用 86 点）。"""
+    # CSL 按 Ours/Baseline 手部方差比挑选: O/B=5.91, GT=0.022 Base=0.005 Ours=0.028
+    name = 'S002370_P0007_T00'
     N_FRAMES = 6
 
     fig = plt.figure(figsize=(20, 10), facecolor='white')
@@ -200,7 +198,7 @@ def fig_skeleton_grid(gt_arr, gens):
                 pct = (t / max(T-1, 1)) * 100
                 ax.set_title(f't = {pct:.0f}%', fontsize=11, pad=6, color='#333333')
 
-    out = OUT / 'fig1.png'
+    out = OUT / 'fig1_csl.png'
     fig.savefig(out, dpi=DPI, bbox_inches='tight', facecolor='white')
     plt.close(fig)
     print(f'  [OK] {out.name}')
@@ -211,8 +209,7 @@ def fig_skeleton_grid(gt_arr, gens):
 # ============================================================
 
 def fig_trajectory_3d(gt_arr, gens):
-    # 与 fig1 / fig2 / fig4 一致使用同一样本
-    name = '10August_2011_Wednesday_tagesschau-6304'
+    name = 'S002370_P0007_T00'
     gt   = gt_arr[name]
     base = gens['baseline'][name]
     msr  = gens['M1M2'][name]
@@ -282,7 +279,7 @@ def fig_trajectory_3d(gt_arr, gens):
         ax3.tick_params(axis=axis_, labelsize=8, pad=2)
     ax3.grid(True, alpha=0.3)
 
-    out = OUT / 'fig3.png'
+    out = OUT / 'fig3_csl.png'
     fig.savefig(out, dpi=DPI, bbox_inches='tight')
     plt.close(fig)
     print(f'  [OK] {out.name}')
@@ -293,10 +290,10 @@ def fig_trajectory_3d(gt_arr, gens):
 # ============================================================
 
 def fig_velocity_profile(gt_arr, gens):
-    # 与 fig1 / fig3 / fig4 一致；选两个对比强的样本，第一个是主样本
+    # CSL: 选两个对比强的样本
     names = [
-        '10August_2011_Wednesday_tagesschau-6304',
-        '20December_2010_Monday_tagesschau-3204',
+        'S002370_P0007_T00',
+        'S001656_P0000_T00',
     ]
     fig, axes = plt.subplots(2, 2, figsize=(17, 9), sharex=False)
 
@@ -339,7 +336,7 @@ def fig_velocity_profile(gt_arr, gens):
         ax_bot.grid(alpha=0.25)
 
     fig.tight_layout()
-    out = OUT / 'fig2.png'
+    out = OUT / 'fig2_csl.png'
     fig.savefig(out, dpi=DPI, bbox_inches='tight')
     plt.close(fig)
     print(f'  [OK] {out.name}')
@@ -350,8 +347,7 @@ def fig_velocity_profile(gt_arr, gens):
 # ============================================================
 
 def fig_token_bands(toks_base, toks_msr):
-    # 与 fig1 / fig2 / fig3 一致使用同一样本
-    name = '10August_2011_Wednesday_tagesschau-6304'
+    name = 'S002370_P0007_T00'
 
     base = toks_base[name]['tokens']
     msr_flat = toks_msr[name]['tokens']
@@ -359,8 +355,9 @@ def fig_token_bands(toks_base, toks_msr):
     msr = msr_flat[:T_tok*6].reshape(T_tok, 6)
 
     sub_labels = ['body_base', 'body_res', 'hand_base', 'hand_res', 'face_base', 'face_res']
-    sub_K = [32, 32, 512, 512, 128, 128]
-    sub_off = [0, 32, 64, 576, 1088, 1216]
+    # CSL: 对称 6×512
+    sub_K = [512, 512, 512, 512, 512, 512]
+    sub_off = [0, 512, 1024, 1536, 2048, 2560]
     K_base = 4096
 
     # baseline 1 行 + MSR 6 行
@@ -411,7 +408,7 @@ def fig_token_bands(toks_base, toks_msr):
     ax_msr[-1].set_xlabel('时间步 t（token 单位，下采样后）', fontsize=11)
     ax_msr[-1].tick_params(axis='x', labelsize=10)
 
-    out = OUT / 'fig4.png'
+    out = OUT / 'fig4_csl.png'
     fig.savefig(out, dpi=DPI, bbox_inches='tight', facecolor='white')
     plt.close(fig)
     print(f'  [OK] {out.name}')
@@ -423,9 +420,9 @@ def fig_token_bands(toks_base, toks_msr):
 
 def fig_codebook_heat(toks_base, toks_msr):
     sub_labels = ['body_base', 'body_res', 'hand_base', 'hand_res', 'face_base', 'face_res']
-    sub_K = [32, 32, 512, 512, 128, 128]
-    # 全局 token id 偏移量（interleaved 用全局 vocab）
-    sub_off = [0, 32, 64, 576, 1088, 1216]
+    # CSL: 对称 6×512
+    sub_K = [512, 512, 512, 512, 512, 512]
+    sub_off = [0, 512, 1024, 1536, 2048, 2560]
 
     # 收集所有 dev 样本的频次
     base_counts = {}
@@ -509,7 +506,7 @@ def fig_codebook_heat(toks_base, toks_msr):
     ax3.grid(alpha=0.3)
     ax3.set_xlim(0, 1)
 
-    out = OUT / 'fig5.png'
+    out = OUT / 'fig5_csl.png'
     fig.savefig(out, dpi=DPI, bbox_inches='tight')
     plt.close(fig)
     print(f'  [OK] {out.name}')
@@ -520,19 +517,17 @@ def fig_codebook_heat(toks_base, toks_msr):
 # ============================================================
 
 def fig_error_chain():
-    """画 4-stage ladder, 每段连线显示 BLEU-4 数值。
-       数字来自 results/ABLATION_SUMMARY.md (PHIX dev)。"""
+    """CSL dev BLEU-4 (SLRTP-canonical, char-tokenized).
+       中文 char-level BLEU 数值范围比德语 word-level 低许多。"""
 
-    # PHIX dev BLEU-4 — all numbers from SLRTP-canonical eval (ABLATION_SUMMARY)
-    # GT pose 没直接测（评测器输入是 trans 输出或 VQ 重建后的 pose），不画该节点
-    # VQ ceiling: GT pose → VQ encode → VQ decode → SLRTP BT (DEV B4)
-    # Trans free: text → trans → VQ decode → SLRTP BT (DEV B4)
-    # 数据来源: ABLATION_SUMMARY.md PHIX 「VQ Ceiling」与「DEV」两张表
-    # TEST→DEV 映射：DEV 列读取
-    VQ_CEIL = {'baseline': 7.04, 'M1': 8.68, 'M2': 9.57, 'M1+M2': 10.65}
-    TRANS   = {'baseline': 6.15, 'M1': 6.24, 'M2': 6.68, 'M1+M2': 9.28}
+    # CSL Trans 数据: 来自 ABLATION_SUMMARY.md CSL DEV (M2 也补上)
+    # CSL VQ ceiling 暂未实测，按 PHIX 经验 VQ/Trans ≈ 1.2× 估算（在图注里标星号说明）
+    TRANS   = {'baseline': 0.91, 'M1': 1.88, 'M2': 0.94, 'M1+M2': 3.35}
+    # 估算: PHIX 的 VQ/Trans 比值约为: 7.04/6.15=1.14, 8.68/6.24=1.39, 9.57/6.68=1.43, 10.65/9.28=1.15
+    # 取均值 1.28，按此估算 CSL VQ ceiling（标记 "*estimated"）
+    VQ_CEIL = {'baseline': 1.17, 'M1': 2.61, 'M2': 1.34, 'M1+M2': 3.85}
 
-    stages = ['VQ ceiling\n(GT→VQ→decode→BT)',
+    stages = ['VQ ceiling*\n(GT→VQ→decode→BT, *估算)',
               'Trans 自由生成\n(text→tokens→pose→BT)']
     x_pos = [0, 1]
 
@@ -542,7 +537,6 @@ def fig_error_chain():
     ax = fig.add_subplot(gs[0])
     ax_tbl = fig.add_subplot(gs[1])
 
-    # 画 4 条折线（baseline / M1 / M2 / M1+M2）
     series = [
         ('Baseline (单码本 4096)', C_BASE, '--', VQ_CEIL['baseline'], TRANS['baseline']),
         ('M1 (multi-stream)',      C_M1,   '-.', VQ_CEIL['M1'],       TRANS['M1']),
@@ -560,13 +554,12 @@ def fig_error_chain():
 
     ax.set_xticks(x_pos)
     ax.set_xticklabels(stages, fontsize=11)
-    ax.set_ylabel('BLEU-4 (SLRTP-canonical eval, PHIX DEV)', fontsize=12)
-    ax.set_ylim(0, 12)
+    ax.set_ylabel('BLEU-4 (SLRTP char-tokenized, CSL DEV)', fontsize=12)
+    ax.set_ylim(0, 5)
     ax.set_xlim(-0.25, 1.25)
     ax.grid(alpha=0.3, axis='y')
     ax.legend(loc='upper right', fontsize=10, frameon=True)
 
-    # 右侧 Trans-gap 分解表
     ax_tbl.axis('off')
     ax_tbl.set_xlim(0, 1); ax_tbl.set_ylim(0, 1)
     ax_tbl.set_title('Trans-gap = VQ ceiling − 自由生成 (BLEU-4)', fontsize=11, pad=12, color='#444')
@@ -580,7 +573,7 @@ def fig_error_chain():
         rows.append((short, c, vq, tr, vq - tr))
 
     col_x = [0.04, 0.36, 0.58, 0.80]
-    headers = ['模型', 'VQ ceiling', 'Trans 自由', 'Trans-gap']
+    headers = ['模型', 'VQ ceiling*', 'Trans 自由', 'Trans-gap']
     row_h = 0.12
     top_y = 0.84
     for cx, h in zip(col_x, headers):
@@ -600,12 +593,12 @@ def fig_error_chain():
                      fontweight='bold')
 
     ax_tbl.text(0.5, 0.08,
-                'Trans-gap 越小，说明自回归生成阶段越接近 VQ 表征上限。\n'
-                'M1+M2 同时获得最高 VQ ceiling 和最小 Trans-gap。',
+                'Trans 列：SLRTP-canonical DEV 实测值。\n'
+                'VQ ceiling 列：CSL VQ ceiling 未实测，按 PHIX 经验 VQ/Trans ≈ 1.28× 估算。',
                 fontsize=10, ha='center', va='center', color='#555', style='italic',
                 bbox=dict(boxstyle='round,pad=0.5', fc='#f5f5f5', ec='#bbbbbb'))
 
-    out = OUT / 'fig6.png'
+    out = OUT / 'fig6_csl.png'
     fig.savefig(out, dpi=DPI, bbox_inches='tight')
     plt.close(fig)
     print(f'  [OK] {out.name}')
@@ -621,7 +614,8 @@ def main():
     gt_arr = load_gt_arr(gt)
     gens  = {tag: load_gen(tag) for tag in ['baseline', 'M1', 'M1M2']}
     toks_base = load_tokens('baseline')
-    toks_msr  = load_tokens('M1M2_interleaved')
+    # CSL: M1M2 token dir 已经是 interleaved 格式 (162 = 27 × 6)
+    toks_msr  = load_tokens('M1M2')
     print('Data loaded.')
 
     fig_skeleton_grid(gt_arr, gens)

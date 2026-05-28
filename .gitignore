@@ -26,6 +26,9 @@ data/
 # Checkpoints: VQ + Transformer .pt weights (many >100MB)
 checkpoints/
 
+# DFM training outputs (exploration, not in paper main results)
+output_sign/
+
 # Results: all generated pickles + intermediate preds (.pickle / .pt / slp_pickles/),
 # but keep the final ablation summary markdown.
 results/*

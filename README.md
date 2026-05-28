@@ -500,6 +500,50 @@ A: 见 `slrtp_eval_kit/slt_train/scripts/`（外部目录，未打包到 release
 
 ---
 
+## 未采用的探索 (Negative results)
+
+完整 release 内附带两组未进入论文主结果的对比实验，便于复现验证 / future work 参考。
+
+### 1) Discrete Flow Matching (DFM) 作为生成器
+
+在共享同一套 M1+M2 VQ tokenizer + mBART 文本编码器的前提下，把 AR transformer 替换为 **discrete flow matching**（参考 Stark et al. NeurIPS 2024 的离散 token 速度场建模），用 classifier-free guidance 做推理：
+
+- `code/src/train_dfm_sign.py` — 训练 (cross-attn DFM transformer)
+- `code/src/models/t2m_dfm_cross.py` — 模型
+- `code/eval/eval_dfm_phix.py` — 推理 + SLRTP eval
+- `code/scripts/sweep_dfm_inference{,_v2}.ps1` — 推理超参 sweep (steps / CFG / temperature / len_mult)
+
+**PHIX M1+M2 tokens, SLRTP-canonical TEST B4**：
+
+| 方法 | steps | CFG | T | TEST B4 |
+|---|---|---|---|---|
+| AR (论文主方法) | — | — | — | **8.97** |
+| DFM s50_cfg3_len10 | 50 | 3.0 | 1.0 | 7.60 |
+| DFM s24_cfg3_len12 | 24 | 3.0 | 1.0 | 7.45 |
+| DFM s24_cfg3 | 24 | 3.0 | 1.0 | 7.43 |
+| DFM s24_cfg3_t08 | 24 | 3.0 | 0.8 | 7.34 |
+| DFM s24_cfg2 | 24 | 2.0 | 1.0 | 6.82 |
+| DFM s16_cfg2 | 16 | 2.0 | 1.0 | 7.22 |
+| DFM s24_cfg1 | 24 | 1.0 (no CFG) | 1.0 | 4.80 |
+| DFM s24_cfg4_len10 | 24 | 4.0 | 1.0 | 6.67 |
+
+**结论**：同 tokenizer 下，DFM 最佳配置（50 步 + CFG=3）TEST B4 仍比 AR 低约 1.4。AR 在 PHIX 这种 7K 低数据量场景下，凭借 strong-prior + per-stream rep penalty 的稳健性显著占优。DFM 代码保留以备 future work / 更大数据量再评估。DFM ckpts 因负结果未上传 Drive，需要复现可重训（参数同 AR transformer，约 17K iter ≈ 17 分钟 RTX 4090）。
+
+### 2) AR 解码超参 sweep
+
+为说明论文采用 `T=0.9 / top_k=20 / rep_penalty=1.5 / max_run=4` 的合理性，跑了 4 组对照（同 M1+M2 ckpt）：
+
+| config | T | top_k | rep_penalty | max_run | DEV B4 | TEST B4 |
+|---|---|---|---|---|---|---|
+| **default (论文)** | 0.9 | 20 | 1.5 | 4 | **9.28** | **8.97** |
+| lowtemp | 0.7 | 20 | 1.5 | 4 | 6.92 | 7.37 |
+| widetop | 0.9 | 50 | 1.5 | 4 | 6.06 | 5.77 |
+| norep | 0.9 | 20 | 1.0 | ∞ | 7.16 | 6.54 |
+
+低温过度收敛、放宽 top_k 增加噪声、关掉 rep penalty 让流陷入 mode collapse——三者都明显劣化。Sweep 脚本：`code/scripts/sweep_phix_decoding_slrtp.ps1`。
+
+---
+
 ## 引用
 
 ```bibtex
