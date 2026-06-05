@@ -68,6 +68,22 @@ Trans / ceiling ratio (TEST B4): baseline 81%, M1 75%, M2 81%, **M1+M2 77%**.
 
 Note: Chinese CHRF is character-level, not directly comparable to German word-level CHRF.
 
+### VQ Ceiling (CSL DEV, n=1077, GT pose → encode/decode → BT, char-level, backTranslation_CSL_model)
+
+Measured 2026-06-04 via `code/eval/compute_vq_ceiling_bleu.py` + `code/eval/slrtp_eval_csl.py --no-subsample`.
+Results in `results/csl_vqceil_{baseline,M1,M2,M1M2}/csl_vqceil_*_dev.json`.
+
+| Variant | Ceiling B4 | Ceiling B1 | CHRF | ROUGE | WER↓ | DTW-MJE | AR B4 (free-gen) | trans-gap | util (AR/ceil) |
+|---|---|---|---|---|---|---|---|---|---|
+| Baseline | 4.21 | 17.99 | 4.98 | 18.32 | 98.02 | 0.0177 | 0.91 | 3.30 | 22% |
+| M1 | 8.62 | 22.65 | 8.67 | 23.29 | 92.38 | 0.0136 | 1.88 | 6.74 | 22% |
+| M2 | 3.58 | 16.86 | 4.47 | 17.13 | 98.40 | 0.0191 | 0.94 | 2.64 | 26% |
+| **M1+M2** | **12.03** | **26.27** | **11.74** | **26.61** | **88.95** | **0.0092** | **3.35** | **8.68** | **28%** |
+
+Sanity: re-running the M1+M2 free-gen pickle through the same evaluator reproduced DEV B4 3.35 / B1 19.41 / CHRF 4.84 / ROUGE 20.92 / WER 93.99 exactly (matches the DEV table), confirming the ceiling and free-gen share one BT evaluator.
+
+Trans / ceiling ratio (DEV B4): baseline 22%, M1 22%, M2 26%, **M1+M2 28%**. Unlike PHIX (~77–81% utilization), CSL utilization is far lower — the AR generator, not the quantizer, is the dominant bottleneck on CSL-Daily.
+
 ---
 
 ## Δ vs baseline (TEST B4)

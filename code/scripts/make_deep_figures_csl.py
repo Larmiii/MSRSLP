@@ -14,6 +14,7 @@ CSL vs PHIX 差异:
 
 from __future__ import annotations
 import gzip
+import os
 import pickle
 from pathlib import Path
 
@@ -32,8 +33,10 @@ mpl.rcParams['figure.dpi'] = 150
 mpl.rcParams['lines.antialiased'] = True
 mpl.rcParams['text.antialiased'] = True
 
-ROOT = Path(r'D:/Graduate thesis/sign_slp_paper_release')
-OUT  = Path(r'D:/Graduate thesis/eggroll_v2/figures/paper/csl')
+# 仓库根目录（从脚本位置推导，可移植）
+ROOT = Path(__file__).resolve().parents[2]
+# 图输出目录：默认写到仓库内 figures/paper/csl；生成论文图时用环境变量 SLP_FIG_OUT 覆盖。
+OUT  = Path(os.environ.get('SLP_FIG_OUT', str(ROOT / 'figures' / 'paper'))) / 'csl'
 OUT.mkdir(parents=True, exist_ok=True)
 
 # CSL 178-kpt 真实布局（经实验诊断，与 PHIX 不同）
@@ -163,10 +166,11 @@ def fig_skeleton_grid(gt_arr, gens):
     gt = gt_arr[name]
     T_gt = gt.shape[0]
     seqs = [
-        ('GT',           gt,                     C_GT),
-        ('Baseline',     gens['baseline'][name], C_BASE),
-        ('Ours (M1+M2)', gens['M1M2'][name],     C_MSR),
+        ('真实序列',         gt,                     C_GT),
+        ('基线',             gens['baseline'][name], C_BASE),
+        ('本文方法 (M1+M2)', gens['M1M2'][name],     C_MSR),
     ]
+    row_tags = ['(a)', '(b)', '(c)']
 
     # 坐标范围：根据 body 关键点 + 肩宽估算头部和双手空间
     body_pts = np.concatenate([s[1][:, IDX_BODY, :2].reshape(-1, 2) for s in seqs], axis=0)
@@ -192,8 +196,8 @@ def fig_skeleton_grid(gt_arr, gens):
             for sp in ax.spines.values():
                 sp.set_edgecolor('#bbbbbb'); sp.set_linewidth(0.6)
             if c_i == 0:
-                ax.set_ylabel(lbl, fontsize=15, fontweight='bold', color=col,
-                              labelpad=10)
+                ax.set_ylabel(f'{row_tags[r_i]} {lbl}', fontsize=15, fontweight='bold',
+                              color=col, labelpad=10)
             if r_i == 0:
                 pct = (t / max(T-1, 1)) * 100
                 ax.set_title(f't = {pct:.0f}%', fontsize=11, pad=6, color='#333333')
@@ -223,9 +227,9 @@ def fig_trajectory_3d(gt_arr, gens):
                           left=0.06, right=0.98, top=0.96, bottom=0.13)
 
     series = [
-        ('GT',           gt[:, RH_WRIST],   C_GT,   '-',  2.4),
-        ('Baseline',     base[:, RH_WRIST], C_BASE, '--', 1.8),
-        ('Ours (M1+M2)', msr[:, RH_WRIST],  C_MSR,  '-',  2.0),
+        ('真实序列',         gt[:, RH_WRIST],   C_GT,   '-',  2.4),
+        ('基线',             base[:, RH_WRIST], C_BASE, '--', 1.8),
+        ('本文方法 (M1+M2)', msr[:, RH_WRIST],  C_MSR,  '-',  2.0),
     ]
 
     def _start_end(ax, p, c, is3d=False, zproj=None):
@@ -311,29 +315,29 @@ def fig_velocity_profile(gt_arr, gens):
 
         # 全身平均
         ax_top = axes[0, col_i]
-        for lbl, seq, c, ls in [('GT', gt, C_GT, '-'),
-                                ('Baseline', base, C_BASE, '--'),
-                                ('Ours (M1+M2)', msr, C_MSR, '-')]:
+        for lbl, seq, c, ls in [('真实序列', gt, C_GT, '-'),
+                                ('基线', base, C_BASE, '--'),
+                                ('本文方法 (M1+M2)', msr, C_MSR, '-')]:
             v = vel(seq, IDX_BODY + IDX_LH_WORLD + IDX_RH_WORLD)
             ax_top.plot(np.arange(len(v)), v, color=c, ls=ls, linewidth=1.6, label=lbl, alpha=0.9)
         ax_top.set_xlabel('帧索引 t', fontsize=10); ax_top.set_ylabel('平均关节速度 |Δp| / 帧', fontsize=10)
-        ax_top.set_title(f'(a{col_i+1}) 样本 {col_i+1} · 全身', fontsize=11)
+        ax_top.set_title(f'({chr(97+col_i)}) 样本 {col_i+1} · 全身', fontsize=11)
         ax_top.grid(alpha=0.25)
-        if col_i == 0:
-            ax_top.legend(fontsize=10, loc='upper left', frameon=True)
+        ax_top.legend(fontsize=9, loc='upper left', frameon=True)
 
         # 仅双手
         ax_bot = axes[1, col_i]
-        for lbl, seq, c, ls in [('GT', gt, C_GT, '-'),
-                                ('Baseline', base, C_BASE, '--'),
-                                ('Ours (M1+M2)', msr, C_MSR, '-')]:
+        for lbl, seq, c, ls in [('真实序列', gt, C_GT, '-'),
+                                ('基线', base, C_BASE, '--'),
+                                ('本文方法 (M1+M2)', msr, C_MSR, '-')]:
             v = vel(seq, IDX_LH_WORLD + IDX_RH_WORLD)
             ax_bot.plot(np.arange(len(v)), v, color=c, ls=ls, linewidth=1.6, label=lbl, alpha=0.9)
             # 平均速度横线
             ax_bot.axhline(v.mean(), color=c, ls=':', linewidth=0.7, alpha=0.5)
         ax_bot.set_xlabel('帧索引 t'); ax_bot.set_ylabel('双手平均关节速度')
-        ax_bot.set_title(f'(b{col_i+1}) 样本 {col_i+1} · 仅双手 42 kpt', fontsize=11)
+        ax_bot.set_title(f'({chr(99+col_i)}) 样本 {col_i+1} · 仅双手 42 kpt', fontsize=11)
         ax_bot.grid(alpha=0.25)
+        ax_bot.legend(fontsize=9, loc='upper left', frameon=True)
 
     fig.tight_layout()
     out = OUT / 'fig2_csl.png'
@@ -354,7 +358,7 @@ def fig_token_bands(toks_base, toks_msr):
     T_tok = len(msr_flat) // 6
     msr = msr_flat[:T_tok*6].reshape(T_tok, 6)
 
-    sub_labels = ['body_base', 'body_res', 'hand_base', 'hand_res', 'face_base', 'face_res']
+    sub_labels = ['身体-基础', '身体-残差', '手部-基础', '手部-残差', '面部-基础', '面部-残差']
     # CSL: 对称 6×512
     sub_K = [512, 512, 512, 512, 512, 512]
     sub_off = [0, 512, 1024, 1536, 2048, 2560]
@@ -385,11 +389,11 @@ def fig_token_bands(toks_base, toks_msr):
     max_T = max(len(base), T_tok)
     stripe(ax_b, base, K_base, max_T)
     uniq_b = len(np.unique(base))
-    ax_b.set_ylabel(f'Baseline\n(单码本)\n|U|={uniq_b}/{K_base}',
+    ax_b.set_ylabel(f'基线\n(单码本)\n|U|={uniq_b}/{K_base}',
                     fontsize=11, rotation=0, ha='right', va='center', labelpad=12,
                     fontweight='bold', color=C_BASE)
     # 小节标识（精简）
-    ax_b.set_title('(a) Baseline 单码本 (K=4096)', fontsize=11, color='#444',
+    ax_b.set_title('(a) 基线 单码本 (K=4096)', fontsize=11, color='#444',
                     loc='left', pad=8)
     ax_msr[0].set_title('(b) M1+M2 六子流', fontsize=11, color='#444',
                          loc='left', pad=8)
@@ -419,7 +423,7 @@ def fig_token_bands(toks_base, toks_msr):
 # ============================================================
 
 def fig_codebook_heat(toks_base, toks_msr):
-    sub_labels = ['body_base', 'body_res', 'hand_base', 'hand_res', 'face_base', 'face_res']
+    sub_labels = ['身体-基础', '身体-残差', '手部-基础', '手部-残差', '面部-基础', '面部-残差']
     # CSL: 对称 6×512
     sub_K = [512, 512, 512, 512, 512, 512]
     sub_off = [0, 512, 1024, 1536, 2048, 2560]
@@ -485,7 +489,7 @@ def fig_codebook_heat(toks_base, toks_msr):
     ax2.set_yscale('log')
     ax2.set_xlim(0, K_base)
     ax2.set_xlabel('code rank'); ax2.set_ylabel('使用频次 (log)')
-    ax2.set_title(f'(b) Baseline 单码本（K={K_base}, 实际使用 {nonzero}）',
+    ax2.set_title(f'(b) 基线 单码本（K={K_base}, 实际使用 {nonzero}）',
                   fontsize=11)
     ax2.grid(alpha=0.3)
 
@@ -521,14 +525,13 @@ def fig_error_chain():
        中文 char-level BLEU 数值范围比德语 word-level 低许多。"""
 
     # CSL Trans 数据: 来自 ABLATION_SUMMARY.md CSL DEV (M2 也补上)
-    # CSL VQ ceiling 暂未实测，按 PHIX 经验 VQ/Trans ≈ 1.2× 估算（在图注里标星号说明）
+    # CSL VQ ceiling: 实测 (GT→VQ encode→decode→BT, SLRTP-canonical, backTranslation_CSL_model)
+    #   见 results/csl_vqceil_{baseline,M1,M2,M1M2}/csl_vqceil_*_dev.json
     TRANS   = {'baseline': 0.91, 'M1': 1.88, 'M2': 0.94, 'M1+M2': 3.35}
-    # 估算: PHIX 的 VQ/Trans 比值约为: 7.04/6.15=1.14, 8.68/6.24=1.39, 9.57/6.68=1.43, 10.65/9.28=1.15
-    # 取均值 1.28，按此估算 CSL VQ ceiling（标记 "*estimated"）
-    VQ_CEIL = {'baseline': 1.17, 'M1': 2.61, 'M2': 1.34, 'M1+M2': 3.85}
+    VQ_CEIL = {'baseline': 4.21, 'M1': 8.62, 'M2': 3.58, 'M1+M2': 12.03}
 
-    stages = ['VQ ceiling*\n(GT→VQ→decode→BT, *估算)',
-              'Trans 自由生成\n(text→tokens→pose→BT)']
+    stages = ['VQ 上界\n(真实→VQ→解码→回译)',
+              '自由翻译生成\n(文本→token→姿态→回译)']
     x_pos = [0, 1]
 
     fig = plt.figure(figsize=(18, 7), facecolor='white')
@@ -538,10 +541,10 @@ def fig_error_chain():
     ax_tbl = fig.add_subplot(gs[1])
 
     series = [
-        ('Baseline (单码本 4096)', C_BASE, '--', VQ_CEIL['baseline'], TRANS['baseline']),
-        ('M1 (multi-stream)',      C_M1,   '-.', VQ_CEIL['M1'],       TRANS['M1']),
-        ('M2 (residual VQ)',       '#9467bd', ':', VQ_CEIL['M2'],     TRANS['M2']),
-        ('Ours: M1+M2 (MSR)',      C_MSR,  '-',  VQ_CEIL['M1+M2'],    TRANS['M1+M2']),
+        ('基线 (单码本 4096)',     C_BASE, '--', VQ_CEIL['baseline'], TRANS['baseline']),
+        ('M1 (多流)',              C_M1,   '-.', VQ_CEIL['M1'],       TRANS['M1']),
+        ('M2 (残差量化)',          '#9467bd', ':', VQ_CEIL['M2'],     TRANS['M2']),
+        ('本文方法: M1+M2 (MSR)',  C_MSR,  '-',  VQ_CEIL['M1+M2'],    TRANS['M1+M2']),
     ]
 
     for lbl, c, ls, vq, tr in series:
@@ -554,26 +557,28 @@ def fig_error_chain():
 
     ax.set_xticks(x_pos)
     ax.set_xticklabels(stages, fontsize=11)
-    ax.set_ylabel('BLEU-4 (SLRTP char-tokenized, CSL DEV)', fontsize=12)
-    ax.set_ylim(0, 5)
+    ax.set_ylabel('BLEU-4 (SLRTP 字符级, CSL DEV)', fontsize=12)
+    ax.set_ylim(0, 13)
     ax.set_xlim(-0.25, 1.25)
     ax.grid(alpha=0.3, axis='y')
     ax.legend(loc='upper right', fontsize=10, frameon=True)
+    ax.set_title('(a) 误差链路: VQ 上界 → 自由生成', fontsize=12, color='#444',
+                 loc='left', pad=8)
 
     ax_tbl.axis('off')
     ax_tbl.set_xlim(0, 1); ax_tbl.set_ylim(0, 1)
-    ax_tbl.set_title('Trans-gap = VQ ceiling − 自由生成 (BLEU-4)', fontsize=11, pad=12, color='#444')
+    ax_tbl.set_title('(b) 翻译损失 = VQ 上界 − 自由生成 (BLEU-4)', fontsize=11, pad=12, color='#444')
 
     rows = []
     for lbl, c, ls, vq, tr in series:
-        short = {'Baseline (单码本 4096)': 'Baseline',
-                 'M1 (multi-stream)':      'M1',
-                 'M2 (residual VQ)':       'M2',
-                 'Ours: M1+M2 (MSR)':      'M1+M2 (Ours)'}.get(lbl, lbl[:12])
+        short = {'基线 (单码本 4096)':    '基线',
+                 'M1 (多流)':             'M1',
+                 'M2 (残差量化)':         'M2',
+                 '本文方法: M1+M2 (MSR)': 'M1+M2 (本文)'}.get(lbl, lbl[:12])
         rows.append((short, c, vq, tr, vq - tr))
 
     col_x = [0.04, 0.36, 0.58, 0.80]
-    headers = ['模型', 'VQ ceiling*', 'Trans 自由', 'Trans-gap']
+    headers = ['模型', 'VQ 上界', '自由生成', '翻译损失']
     row_h = 0.12
     top_y = 0.84
     for cx, h in zip(col_x, headers):
@@ -582,7 +587,7 @@ def fig_error_chain():
     ax_tbl.plot([0.02, 0.98], [top_y - row_h*0.45]*2, color='#666', linewidth=1.0)
     for i, (short, c, vq, tr, gap) in enumerate(rows):
         y = top_y - (i + 1) * row_h
-        bg_color = '#d9efd5' if 'Ours' in short else ('#f9f9f9' if i % 2 == 0 else 'white')
+        bg_color = '#d9efd5' if '本文' in short else ('#f9f9f9' if i % 2 == 0 else 'white')
         ax_tbl.add_patch(plt.Rectangle((0.02, y - row_h*0.45), 0.96, row_h*0.85,
                                         facecolor=bg_color, edgecolor='none', zorder=0))
         ax_tbl.text(col_x[0], y, short, fontsize=11, ha='left', va='center',
@@ -593,8 +598,8 @@ def fig_error_chain():
                      fontweight='bold')
 
     ax_tbl.text(0.5, 0.08,
-                'Trans 列：SLRTP-canonical DEV 实测值。\n'
-                'VQ ceiling 列：CSL VQ ceiling 未实测，按 PHIX 经验 VQ/Trans ≈ 1.28× 估算。',
+                '两列均为 CSL-Daily 数据集通过 SLRTP 评估模型评价的验证集实测结果 (字符级 BLEU-4)。\n'
+                'VQ 上界 = 真实姿态经量化器编解码后回译。',
                 fontsize=10, ha='center', va='center', color='#555', style='italic',
                 bbox=dict(boxstyle='round,pad=0.5', fc='#f5f5f5', ec='#bbbbbb'))
 

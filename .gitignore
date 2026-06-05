@@ -29,6 +29,9 @@ checkpoints/
 # DFM training outputs (exploration, not in paper main results)
 output_sign/
 
+# Generated figures (scripts write here by default; thesis copies live outside the repo)
+figures/
+
 # Results: all generated pickles + intermediate preds (.pickle / .pt / slp_pickles/),
 # but keep the final ablation summary markdown.
 results/*
