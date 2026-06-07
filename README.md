@@ -166,19 +166,19 @@ CPU-only 或 Python 3.11–3.13 用户：删掉 `--extra-index-url` 直接装即
 
 ## 数据 / Checkpoints 下载
 
-GitHub 仓库只含代码 + README + 训练日志 + ablation 表（~31 MB）。数据、checkpoints、BT 评测模型分 4 个 zip 打包到 Google Drive，按需下载：
+GitHub 仓库只含代码 + README + 训练日志 + ablation 表（~31 MB）。其中 PHIX 数据、checkpoints、BT 评测模型公开打包到 Google Drive 按需下载；CSL-Daily 数据（`data_csl.zip`）受其原数据集使用协议约束，**不公开转发，需联系作者获取**：
 
 | 包 | 大小 | 内容 | 链接 |
 |---|---|---|---|
 | `data_phix.zip` | 1.9 GB | `data/phix/` — PHIX-14T lift3d 数据 (train/dev/test) + 德语 char vocab | [下载](https://drive.google.com/file/d/1jV6O5I9ogh69jeB3mJFJf1ObzHV7GPI3/view?usp=sharing) |
-| `data_csl.zip` | 4.9 GB | `data/csl/` — CSL-Daily lift3d 数据 (train/dev/test) + 中文 char vocab | [下载](https://drive.google.com/file/d/1eu5f1BtYv6aj-i3cUdzCN2r9G0zMXVIn/view?usp=sharing) |
+| `data_csl.zip` | 4.9 GB | `data/csl/` — CSL-Daily lift3d 数据 (train/dev/test) + 中文 char vocab | 🔒 受 CSL-Daily 原数据集使用协议约束，不公开转发；请联系作者（chengyaozhu91@gmail.com）获取 |
 | `checkpoints.zip` | 7.8 GB | `checkpoints/` — 全部 VQ (4×2) + Trans (4×2) ablation 权重 + token 缓存 | [下载](https://drive.google.com/file/d/1THicz0DE_88TVOEdVOHe-g5zX_0t5Rbd/view?usp=sharing) |
 | `bt_eval_official.zip` | 2.5 GB | `bt_eval_kit/slrtp_official/data_official/` (SLRTP 官方 PHIX 数据 + oracle GT + PT baseline preds) + 两个 `backTranslation_*_model/best.ckpt` (PHIX + CSL BT 模型权重) | [下载](https://drive.google.com/file/d/1DjQPYFe_z5p7mkNEVpDUzkHickSaAtfw/view?usp=sharing) |
 
 按数据集组合：
 
 - **只跑 PHIX 复现** = `data_phix.zip` + `checkpoints.zip` + `bt_eval_official.zip` ≈ 12.2 GB
-- **只跑 CSL 复现** = `data_csl.zip` + `checkpoints.zip` + `bt_eval_official.zip` ≈ 15.2 GB（BT 模型在 bt_eval_official.zip 里）
+- **只跑 CSL 复现** = `data_csl.zip`（需联系作者获取）+ `checkpoints.zip` + `bt_eval_official.zip` ≈ 15.2 GB（BT 模型在 bt_eval_official.zip 里）
 - **完整复现** = 全部 4 个 ≈ 17.2 GB
 
 ### 解压步骤
@@ -223,7 +223,7 @@ zip 内部保留了完整的相对路径，解压后会自动叠加到 `data/`�
 数据来源：
 
 - **PHIX-14T (SLRTP-178)**: 公开 SLRTP CVPR 2025 challenge data ([下载](https://drive.google.com/file/d/1fjKHigsEWHwsMHnwwWdFYZ8dECXslTKi/view))，硬链接到 `data/phix/`。
-- **CSL-Daily (lift3d)**: 我们用 [Ivashechkin et al.] 的 3D-lift 模型预处理 CSL-Daily MediaPipe Holistic 序列，硬链接到 `data/csl/`。
+- **CSL-Daily (lift3d)**: 我们用 [Ivashechkin et al.] 的 3D-lift 模型预处理 CSL-Daily MediaPipe Holistic 序列，硬链接到 `data/csl/`。**CSL-Daily 受其原数据集使用协议约束，本仓库不公开转发该数据及其 lift3d 衍生版本，请联系作者（chengyaozhu91@gmail.com）获取。**
 
 ---
 

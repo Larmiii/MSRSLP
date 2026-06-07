@@ -14,13 +14,23 @@
 #     # then `pip install torch torchvision` from default PyPI
 #
 # If the cu128 wheel download is slow, fetch the .whl manually and `pip install <path>`.
+#
+# Blackwell GPUs (RTX 50-series, sm_120) REQUIRE the cu128 wheel even on Py 3.11-3.13.
+# `--extra-index-url` is only a *fallback* source, so pip may still resolve the CPU wheel
+# from default PyPI (torch.cuda.is_available() -> False). Force the GPU wheel explicitly:
+#     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+# Validated on Windows 11 + RTX 5090 + Python 3.12 -> torch 2.11.0+cu128.
 
 torch>=2.9
 torchvision
 
 numpy
 tqdm
-transformers      # mBART text encoder (PHIX pipeline)
+transformers<5    # mBART text encoder (PHIX pipeline). PIN <5: transformers 5.x
+                  # misroutes mbart-large-50's sentencepiece.bpe.model through the
+                  # tiktoken loader and crashes (that repo ships no tokenizer.json).
+sentencepiece     # build MBart50TokenizerFast from the sentencepiece model
+protobuf          # required by the slow->fast tokenizer conversion on transformers 4.x
 einops
 
 # SLRTP back_translation/ + metrics.py
