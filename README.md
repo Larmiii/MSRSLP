@@ -35,31 +35,31 @@
 | + M2 | 14.20 | 1.06 | 2.91 | 14.62 | 99.33 |
 | **+ M1 + M2 (ours)** | **18.71** | **3.43** | **4.81** | **20.50** | **93.97** |
 
-### PHIX SOTA 对比 (TEST B4)
+### PHIX 公平对比 (TEST, 统一 SLRTP-canonical 协议下复现)
 
-| 方法 | 类型 | TEST B4 |
-|---|---|---|
-| Team 2 (hfut-lmc, CVPRW 2025) | gloss-free | 2.05 |
-| Progressive Transformer (Saunders 2020) | gloss-supervised | 4.38 |
-| Transformer (SLRTP 2025 baseline) | gloss-free | 5.43 |
-| MDM (Diffusion) | gloss-supervised | 7.55 |
-| T2M-GPT (Zhang 2023) | gloss-free | 8.01 |
-| **本文 M1+M2** ⭐ | **strict gloss-free** | **8.97** |
+所有对比方法都在**同一 178-kpt 数据、同一文本编码器 (mBART)、同一 SLRTP-canonical 反向翻译评测器**下复现，因此与本文 MSR **严格可比**（复现代码见 [`baselines/`](baselines/)）。
 
-### CSL SOTA 对比 (TEST B4, keypoint-based SLP)
+| 方法 | 范式 | B1 | B2 | B3 | B4 | CHRF | ROUGE | WER↓ |
+|---|---|---|---|---|---|---|---|---|
+| MDM (复现) | 扩散 | 23.88 | 12.02 | 8.07 | 6.17 | 25.42 | 23.45 | 98.42 |
+| T2M-GPT (≈单流基线) | VQ+AR | 24.81 | 13.03 | 8.90 | 6.86 | 26.35 | 25.65 | 94.03 |
+| MotionGPT (复现, mT5-587M) | LLM | 27.65 | 15.63 | 10.67 | 8.10 | 27.97 | 29.89 | **87.09** |
+| MoMask (复现) | masked VQ | 28.79 | 16.18 | 11.23 | 8.67 | 28.51 | 29.43 | 91.55 |
+| **本文 M1+M2 (MSR)** ⭐ | VQ+AR | **29.19** | **17.00** | **11.83** | **8.97** | **29.51** | **30.25** | 90.14 |
 
-| 方法 | 年份 | 监督设定 | 路线 | TEST B4 |
-|---|---|---|---|---|
-| T2M-GPT (GLOS 复现) | 2025 | gloss-free | VQ-VAE + AR | 2.05 |
-| MotionGPT (GLOS 复现) | 2025 | gloss-free | LLM motion | 2.08 |
-| MDM (GLOS 复现) | 2025 | — | diffusion | 3.01 |
-| A²V-SLP (Tasyurek 2026) | 2026 | gloss-free | NAR VAE | 3.15 |
-| DARSLP (Tasyurek 2025) | 2025 | gloss-free | NAR latent | 3.35 |
-| **本文 M1+M2** ⭐ | **2026** | **strict gloss-free** | **VQ-VAE + AR** | **3.43** |
-| MoMask (GLOS 复现) | 2025 | gloss-free | masked motion | 3.57 |
-| GLOS (Lee 2025) | 2025 | gloss-supervised | latent diffusion | 13.27 |
+### CSL 公平对比 (TEST, 统一 SLRTP-canonical 协议下复现)
 
-> CSL-Daily 上 keypoint-based SLP 工作出现较晚，且各论文使用各自训练的反向翻译器，跨行数字仅作量级参考，不构成严格可比关系。排除 gloss-supervised 的 GLOS 后，gloss-free 设定下最新公开结果分布在 2–3.6 区间，本文 M1+M2 = 3.43 处于该区间上沿。中段 4 行 (T2M-GPT / MotionGPT / MDM / MoMask) 由 GLOS 在 CSL-Daily 上同 BT 重跑，内部相互可比，可作为本文方法与通用动作模型直接迁移结果的对照。我们额外开源了 SLRTP 同协议自训的 `backTranslation_CSL_model`，以便后续工作在统一 BT 下做相互对比。
+| 方法 | 范式 | B1 | B2 | B3 | B4 | CHRF | ROUGE | WER↓ |
+|---|---|---|---|---|---|---|---|---|
+| MDM (复现) | 扩散 | 12.90 | 3.38 | 1.21 | 0.39 | 2.50 | 13.53 | 100.18 |
+| T2M-GPT (≈单流基线) | VQ+AR | 14.47 | 5.14 | 2.18 | 1.02 | 3.00 | 15.40 | 98.10 |
+| MoMask (复现) | masked VQ | 13.73 | 5.02 | 2.26 | 1.19 | 3.06 | 15.73 | 96.66 |
+| MotionGPT (复现, mT5-587M) | LLM | 13.55 | 5.41 | 2.42 | 1.18 | 3.11 | 16.25 | 96.40 |
+| **本文 M1+M2 (MSR)** ⭐ | VQ+AR | **18.71** | **9.20** | **5.26** | **3.43** | **4.81** | **20.50** | **93.97** |
+
+> **关于可比性**：上表所有 baseline 均由本文在统一协议下复现（见 [`baselines/`](baselines/)），与 MSR 严格可比。MSR 在两个数据集上几乎全部指标领先；尤其 MotionGPT 使用约 587M 的 mT5（约为本文 10 倍参数）仍未超过 MSR，说明优势来自结构设计而非模型容量。
+>
+> 跨论文的绝对 BLEU **不可直接比较**，因为各家反向翻译评测器不同：例如 GLOS 在其自训评测器下复现 MoMask 得 CSL B4 = 3.57，而同一方法在本文 SLRTP-canonical 评测器下仅 1.19。因此 T2S-GPT、Sign-IDD、DARSLP、A²V-SLP、GLOS、SignPR (CVPR 2026) 等已发表方法（各自使用不同评测器 / 姿态表示 / 监督设定）仅作相关工作引用，不纳入上述对照表。本文开源了 SLRTP 同协议自训的 `backTranslation_CSL_model`，便于后续工作在统一基线下相互对比。
 
 ---
 

@@ -1,0 +1,66 @@
+diff --git a/models/mask_transformer/transformer.py b/models/mask_transformer/transformer.py
+index d63ba41..9981a29 100644
+--- a/models/mask_transformer/transformer.py
++++ b/models/mask_transformer/transformer.py
+@@ -3,7 +3,10 @@ import torch.nn as nn
+ import numpy as np
+ # from networks.layers import *
+ import torch.nn.functional as F
+-import clip
++try:
++    import clip  # optional: only needed for the original English CLIP text encoder
++except ModuleNotFoundError:
++    clip = None
+ from einops import rearrange, repeat
+ import math
+ from random import random
+@@ -176,6 +179,15 @@ class MaskTransformer(nn.Module):
+         return [p for name, p in self.named_parameters() if not name.startswith('clip_model.')]
+ 
+     def load_and_freeze_clip(self, clip_version):
++        if clip_version.startswith('mbart') or clip_version.startswith('char'):
++            import sys, os
++            sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
++            from sign_text_encoder import build_sign_text_encoder
++            kind = clip_version.split(':')[0]
++            src_lang = clip_version.split(':')[1] if ':' in clip_version else 'de_DE'
++            dev = str(self.opt.device) if getattr(self, 'opt', None) is not None else 'cpu'
++            enc, _ = build_sign_text_encoder(kind, dev, src_lang=src_lang)
++            return enc
+         clip_model, clip_preprocess = clip.load(clip_version, device='cpu',
+                                                 jit=False)  # Must set jit=False for training
+         # Added support for cpu
+@@ -192,6 +204,8 @@ class MaskTransformer(nn.Module):
+         return clip_model
+ 
+     def encode_text(self, raw_text):
++        if self.clip_version.startswith('mbart') or self.clip_version.startswith('char'):
++            return self.clip_model(raw_text)
+         device = next(self.parameters()).device
+         text = clip.tokenize(raw_text, truncate=True).to(device)
+         feat_clip_text = self.clip_model.encode_text(text).float()
+@@ -729,6 +743,15 @@ class ResidualTransformer(nn.Module):
+         return [p for name, p in self.named_parameters() if not name.startswith('clip_model.')]
+ 
+     def load_and_freeze_clip(self, clip_version):
++        if clip_version.startswith('mbart') or clip_version.startswith('char'):
++            import sys, os
++            sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
++            from sign_text_encoder import build_sign_text_encoder
++            kind = clip_version.split(':')[0]
++            src_lang = clip_version.split(':')[1] if ':' in clip_version else 'de_DE'
++            dev = str(self.opt.device) if getattr(self, 'opt', None) is not None else 'cpu'
++            enc, _ = build_sign_text_encoder(kind, dev, src_lang=src_lang)
++            return enc
+         clip_model, clip_preprocess = clip.load(clip_version, device='cpu',
+                                                 jit=False)  # Must set jit=False for training
+         # Added support for cpu
+@@ -745,6 +768,8 @@ class ResidualTransformer(nn.Module):
+         return clip_model
+ 
+     def encode_text(self, raw_text):
++        if self.clip_version.startswith('mbart') or self.clip_version.startswith('char'):
++            return self.clip_model(raw_text)
+         device = next(self.parameters()).device
+         text = clip.tokenize(raw_text, truncate=True).to(device)
+         feat_clip_text = self.clip_model.encode_text(text).float()
