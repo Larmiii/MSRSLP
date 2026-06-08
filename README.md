@@ -35,7 +35,7 @@
 | + M2 | 14.20 | 1.06 | 2.91 | 14.62 | 99.33 |
 | **+ M1 + M2 (ours)** | **18.71** | **3.43** | **4.81** | **20.50** | **93.97** |
 
-### PHIX 公平对比 (TEST, 统一 SLRTP-canonical 协议下复现)
+### PHIX 对比 (TEST, 统一 SLRTP-canonical 协议下复现)
 
 所有对比方法都在**同一 178-kpt 数据、同一文本编码器 (mBART)、同一 SLRTP-canonical 反向翻译评测器**下复现，因此与本文 MSR **严格可比**（复现代码见 [`baselines/`](baselines/)）。
 
@@ -45,9 +45,9 @@
 | T2M-GPT (≈单流基线) | VQ+AR | 24.81 | 13.03 | 8.90 | 6.86 | 26.35 | 25.65 | 94.03 |
 | MotionGPT (复现, mT5-587M) | LLM | 27.65 | 15.63 | 10.67 | 8.10 | 27.97 | 29.89 | **87.09** |
 | MoMask (复现) | masked VQ | 28.79 | 16.18 | 11.23 | 8.67 | 28.51 | 29.43 | 91.55 |
-| **本文 M1+M2 (MSR)** ⭐ | VQ+AR | **29.19** | **17.00** | **11.83** | **8.97** | **29.51** | **30.25** | 90.14 |
+| **本文 M1+M2 (MSR)** ★ | VQ+AR | **29.19** | **17.00** | **11.83** | **8.97** | **29.51** | **30.25** | 90.14 |
 
-### CSL 公平对比 (TEST, 统一 SLRTP-canonical 协议下复现)
+### CSL 对比 (TEST, 统一 SLRTP-canonical 协议下复现)
 
 | 方法 | 范式 | B1 | B2 | B3 | B4 | CHRF | ROUGE | WER↓ |
 |---|---|---|---|---|---|---|---|---|
@@ -55,7 +55,7 @@
 | T2M-GPT (≈单流基线) | VQ+AR | 14.47 | 5.14 | 2.18 | 1.02 | 3.00 | 15.40 | 98.10 |
 | MoMask (复现) | masked VQ | 13.73 | 5.02 | 2.26 | 1.19 | 3.06 | 15.73 | 96.66 |
 | MotionGPT (复现, mT5-587M) | LLM | 13.55 | 5.41 | 2.42 | 1.18 | 3.11 | 16.25 | 96.40 |
-| **本文 M1+M2 (MSR)** ⭐ | VQ+AR | **18.71** | **9.20** | **5.26** | **3.43** | **4.81** | **20.50** | **93.97** |
+| **本文 M1+M2 (MSR)** ★ | VQ+AR | **18.71** | **9.20** | **5.26** | **3.43** | **4.81** | **20.50** | **93.97** |
 
 > **关于可比性**：上表所有 baseline 均由本文在统一协议下复现（见 [`baselines/`](baselines/)），与 MSR 严格可比。MSR 在两个数据集上几乎全部指标领先；尤其 MotionGPT 使用约 587M 的 mT5（约为本文 10 倍参数）仍未超过 MSR，说明优势来自结构设计而非模型容量。
 >
@@ -171,7 +171,7 @@ GitHub 仓库只含代码 + README + 训练日志 + ablation 表（~31 MB）。�
 | 包 | 大小 | 内容 | 链接 |
 |---|---|---|---|
 | `data_phix.zip` | 1.9 GB | `data/phix/` — PHIX-14T lift3d 数据 (train/dev/test) + 德语 char vocab | [下载](https://drive.google.com/file/d/1jV6O5I9ogh69jeB3mJFJf1ObzHV7GPI3/view?usp=sharing) |
-| `data_csl.zip` | 4.9 GB | `data/csl/` — CSL-Daily lift3d 数据 (train/dev/test) + 中文 char vocab | 🔒 受 CSL-Daily 原数据集使用协议约束，不公开转发；请联系作者（chengyaozhu91@gmail.com）获取 |
+| `data_csl.zip` | 4.9 GB | `data/csl/` — CSL-Daily lift3d 数据 (train/dev/test) + 中文 char vocab | (!) 受 CSL-Daily 原数据集使用协议约束，不公开转发；请联系作者（chengyaozhu91@gmail.com）获取 |
 | `checkpoints.zip` | 7.8 GB | `checkpoints/` — 全部 VQ (4×2) + Trans (4×2) ablation 权重 + token 缓存 | [下载](https://drive.google.com/file/d/1THicz0DE_88TVOEdVOHe-g5zX_0t5Rbd/view?usp=sharing) |
 | `bt_eval_official.zip` | 2.5 GB | `bt_eval_kit/slrtp_official/data_official/` (SLRTP 官方 PHIX 数据 + oracle GT + PT baseline preds) + 两个 `backTranslation_*_model/best.ckpt` (PHIX + CSL BT 模型权重) | [下载](https://drive.google.com/file/d/1DjQPYFe_z5p7mkNEVpDUzkHickSaAtfw/view?usp=sharing) |
 
