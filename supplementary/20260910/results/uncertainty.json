@@ -1,0 +1,414 @@
+{
+  "e1": {
+    "dataset": "phix",
+    "split": "test",
+    "training_seeds": [
+      42,
+      43,
+      44
+    ],
+    "n_samples": 641,
+    "per_seed": [
+      {
+        "training_seed": 42,
+        "point": {
+          "A": 8.009026300524752,
+          "B": 8.457091583168873,
+          "B_minus_A": 0.44806528264412115
+        },
+        "sample_bootstrap": {
+          "resamples": 2000,
+          "seed": 20260910,
+          "rng": "NumPy PCG64",
+          "unit": "whole sample",
+          "paired": true,
+          "draws_per_replicate": 641,
+          "sampled_indices_sha256": "c1ec250f783064aa857e04cfd84d6857411f9b90a079abd5a5a6ed43de6f1584",
+          "confidence": 0.95,
+          "interval_method": "percentile, NumPy quantile method=linear",
+          "difference_direction": "B_minus_A",
+          "ci": {
+            "lower": -0.3034536913067482,
+            "upper": 1.1587527386652985,
+            "contains_zero": true
+          },
+          "replicate_scores_sha256": "9cf9a3ed540aa61d095aba2b97dba034a656a101a0e91579ea3edbc2d67a9b46"
+        },
+        "official_BLEU_details": {
+          "A": {
+            "bleu1_to_4": [
+              27.738549160330113,
+              15.59841904746468,
+              10.543775139823227,
+              8.009026300524752
+            ],
+            "counts": [
+              2350,
+              682,
+              341,
+              224
+            ],
+            "totals": [
+              7793,
+              7152,
+              6511,
+              5870
+            ],
+            "hypothesis_length": 7793,
+            "reference_length": 8444
+          },
+          "B": {
+            "bleu1_to_4": [
+              28.094706830090374,
+              15.921638023794717,
+              10.968728227471182,
+              8.457091583168873
+            ],
+            "counts": [
+              2391,
+              702,
+              367,
+              245
+            ],
+            "totals": [
+              7469,
+              6828,
+              6187,
+              5547
+            ],
+            "hypothesis_length": 7469,
+            "reference_length": 8444
+          }
+        }
+      },
+      {
+        "training_seed": 43,
+        "point": {
+          "A": 8.025154515012524,
+          "B": 8.459109742765913,
+          "B_minus_A": 0.4339552277533887
+        },
+        "sample_bootstrap": {
+          "resamples": 2000,
+          "seed": 20260910,
+          "rng": "NumPy PCG64",
+          "unit": "whole sample",
+          "paired": true,
+          "draws_per_replicate": 641,
+          "sampled_indices_sha256": "c1ec250f783064aa857e04cfd84d6857411f9b90a079abd5a5a6ed43de6f1584",
+          "confidence": 0.95,
+          "interval_method": "percentile, NumPy quantile method=linear",
+          "difference_direction": "B_minus_A",
+          "ci": {
+            "lower": -0.3875010448016688,
+            "upper": 1.2565584711711537,
+            "contains_zero": true
+          },
+          "replicate_scores_sha256": "87925e719fe787cfc9f7916b6d901a4231e22d9ffcdb077a66237ad4d0cdf267"
+        },
+        "official_BLEU_details": {
+          "A": {
+            "bleu1_to_4": [
+              26.77367965661161,
+              15.205676509280133,
+              10.441754339750174,
+              8.025154515012524
+            ],
+            "counts": [
+              2280,
+              672,
+              347,
+              230
+            ],
+            "totals": [
+              7434,
+              6793,
+              6152,
+              5511
+            ],
+            "hypothesis_length": 7434,
+            "reference_length": 8444
+          },
+          "B": {
+            "bleu1_to_4": [
+              27.646622824149297,
+              15.704679517868735,
+              11.011670260674341,
+              8.459109742765913
+            ],
+            "counts": [
+              2362,
+              695,
+              381,
+              241
+            ],
+            "totals": [
+              7273,
+              6632,
+              5991,
+              5350
+            ],
+            "hypothesis_length": 7273,
+            "reference_length": 8444
+          }
+        }
+      },
+      {
+        "training_seed": 44,
+        "point": {
+          "A": 9.003617039468104,
+          "B": 9.455811160575484,
+          "B_minus_A": 0.45219412110738055
+        },
+        "sample_bootstrap": {
+          "resamples": 2000,
+          "seed": 20260910,
+          "rng": "NumPy PCG64",
+          "unit": "whole sample",
+          "paired": true,
+          "draws_per_replicate": 641,
+          "sampled_indices_sha256": "c1ec250f783064aa857e04cfd84d6857411f9b90a079abd5a5a6ed43de6f1584",
+          "confidence": 0.95,
+          "interval_method": "percentile, NumPy quantile method=linear",
+          "difference_direction": "B_minus_A",
+          "ci": {
+            "lower": -0.4742028935999784,
+            "upper": 1.317043883193261,
+            "contains_zero": true
+          },
+          "replicate_scores_sha256": "f7fab24346f032a4e14931a311e90a1d2f7ae79455e7ee5f2907c3e31da5f130"
+        },
+        "official_BLEU_details": {
+          "A": {
+            "bleu1_to_4": [
+              28.888383572490024,
+              16.68206311486299,
+              11.701454753129358,
+              9.003617039468104
+            ],
+            "counts": [
+              2450,
+              749,
+              407,
+              261
+            ],
+            "totals": [
+              7702,
+              7061,
+              6420,
+              5779
+            ],
+            "hypothesis_length": 7702,
+            "reference_length": 8444
+          },
+          "B": {
+            "bleu1_to_4": [
+              29.424533700960186,
+              17.260394059194354,
+              12.195980951155827,
+              9.455811160575484
+            ],
+            "counts": [
+              2507,
+              788,
+              429,
+              278
+            ],
+            "totals": [
+              7407,
+              6766,
+              6125,
+              5484
+            ],
+            "hypothesis_length": 7407,
+            "reference_length": 8444
+          }
+        }
+      }
+    ],
+    "fixed_three_model_mean": {
+      "point": {
+        "A": 8.345932618335127,
+        "B": 8.790670828836756,
+        "B_minus_A": 0.44473821050163015
+      },
+      "sample_bootstrap": {
+        "resamples": 2000,
+        "seed": 20260910,
+        "rng": "NumPy PCG64",
+        "unit": "whole sample",
+        "paired": true,
+        "draws_per_replicate": 641,
+        "sampled_indices_sha256": "c1ec250f783064aa857e04cfd84d6857411f9b90a079abd5a5a6ed43de6f1584",
+        "confidence": 0.95,
+        "interval_method": "percentile, NumPy quantile method=linear",
+        "difference_direction": "B_minus_A",
+        "ci": {
+          "lower": -0.027314315955185967,
+          "upper": 0.905373110828944,
+          "contains_zero": true
+        },
+        "replicate_scores_sha256": "e3225c29cbd3c36708e8e807ae3a69cc69f87f1aa3b41725c81a30d8bffa39b7"
+      },
+      "estimand": "Arithmetic mean of seed-specific corpus BLEU4 differences for these three fixed trained pairs"
+    },
+    "training_run_descriptives": {
+      "A": {
+        "values": [
+          8.009026300524752,
+          8.025154515012524,
+          9.003617039468104
+        ],
+        "mean": 8.345932618335127,
+        "sample_SD_ddof1": 0.5696285001440897,
+        "n_training_runs": 3
+      },
+      "B": {
+        "values": [
+          8.457091583168873,
+          8.459109742765913,
+          9.455811160575484
+        ],
+        "mean": 8.790670828836756,
+        "sample_SD_ddof1": 0.5760293082137125,
+        "n_training_runs": 3
+      },
+      "B_minus_A": {
+        "values": [
+          0.44806528264412115,
+          0.4339552277533887,
+          0.45219412110738055
+        ],
+        "mean": 0.44473821050163015,
+        "sample_SD_ddof1": 0.009563804916223304,
+        "n_training_runs": 3
+      }
+    },
+    "posthoc": true,
+    "training_seeds_resampled": false,
+    "corpora_concatenated": false,
+    "multiple_comparison_correction": false
+  },
+  "main_seed42": [
+    {
+      "dataset": "phix",
+      "model": "pamvq",
+      "training_seed": 42,
+      "point": {
+        "A": 6.794844662096202,
+        "B": 7.4667521367510545,
+        "B_minus_A": 0.6719074746548523
+      },
+      "ci": {
+        "lower": -0.051744633725326936,
+        "upper": 1.3548864469457,
+        "contains_zero": true
+      },
+      "resamples": 2000,
+      "resampling_seed": 20260910,
+      "paired": true,
+      "interval_method": "percentile",
+      "multiple_comparison_correction": false
+    },
+    {
+      "dataset": "phix",
+      "model": "tlrvq",
+      "training_seed": 42,
+      "point": {
+        "A": 6.794844662096202,
+        "B": 6.922416788099266,
+        "B_minus_A": 0.12757212600306378
+      },
+      "ci": {
+        "lower": -0.5381736205342637,
+        "upper": 0.7882811852647934,
+        "contains_zero": true
+      },
+      "resamples": 2000,
+      "resampling_seed": 20260910,
+      "paired": true,
+      "interval_method": "percentile",
+      "multiple_comparison_correction": false
+    },
+    {
+      "dataset": "phix",
+      "model": "pamrvq",
+      "training_seed": 42,
+      "point": {
+        "A": 6.794844662096202,
+        "B": 8.457091583168873,
+        "B_minus_A": 1.6622469210726711
+      },
+      "ci": {
+        "lower": 0.7430139341691807,
+        "upper": 2.5782448146059966,
+        "contains_zero": false
+      },
+      "resamples": 2000,
+      "resampling_seed": 20260910,
+      "paired": true,
+      "interval_method": "percentile",
+      "multiple_comparison_correction": false
+    },
+    {
+      "dataset": "csl",
+      "model": "pamvq",
+      "training_seed": 42,
+      "point": {
+        "A": 0.9329193614803059,
+        "B": 2.4407388712484193,
+        "B_minus_A": 1.5078195097681135
+      },
+      "ci": {
+        "lower": 1.0147363771953388,
+        "upper": 2.016790110347014,
+        "contains_zero": false
+      },
+      "resamples": 2000,
+      "resampling_seed": 20260910,
+      "paired": true,
+      "interval_method": "percentile",
+      "multiple_comparison_correction": false
+    },
+    {
+      "dataset": "csl",
+      "model": "tlrvq",
+      "training_seed": 42,
+      "point": {
+        "A": 0.9329193614803059,
+        "B": 1.4011162410441496,
+        "B_minus_A": 0.4681968795638437
+      },
+      "ci": {
+        "lower": 0.13102327266511007,
+        "upper": 0.8290471941515676,
+        "contains_zero": false
+      },
+      "resamples": 2000,
+      "resampling_seed": 20260910,
+      "paired": true,
+      "interval_method": "percentile",
+      "multiple_comparison_correction": false
+    },
+    {
+      "dataset": "csl",
+      "model": "pamrvq",
+      "training_seed": 42,
+      "point": {
+        "A": 0.9329193614803059,
+        "B": 3.809450007773044,
+        "B_minus_A": 2.8765306462927382
+      },
+      "ci": {
+        "lower": 2.313550343992033,
+        "upper": 3.4559623978281033,
+        "contains_zero": false
+      },
+      "resamples": 2000,
+      "resampling_seed": 20260910,
+      "paired": true,
+      "interval_method": "percentile",
+      "multiple_comparison_correction": false
+    }
+  ]
+}

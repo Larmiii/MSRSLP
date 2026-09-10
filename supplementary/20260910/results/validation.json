@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "counts": {
+    "runs": 22,
+    "reconstruction_split_records": 44,
+    "generation_split_records": 26,
+    "repeat_comparisons": 3,
+    "skeleton_conditions": 10,
+    "postprocess_conditions": 24,
+    "dfm_conditions": 2,
+    "adapted_reference_conditions": 12
+  },
+  "raw_metric_equality_checks": 1030,
+  "recomputed_training_summary_checks": 258,
+  "original_records_hashed": 239,
+  "private_path_and_internal_text_scan": "passed",
+  "independent_exported_repeat_to_run_checks": 86,
+  "E4_E6_raw_crosschecks": 4,
+  "raw_text_or_pose_payloads_exported": false,
+  "weights_exported": false,
+  "model_execution": false,
+  "numeric_precision": "Original JSON numbers, no rounding.",
+  "exporter_sha256": "bde85abf5e2f1adb8b6c0f234b54b15edbc7fe2ef9a0d20c83b2df3e05190f92"
+}

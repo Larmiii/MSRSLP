@@ -1,0 +1,2862 @@
+[
+  {
+    "run_id": "phix_baseline_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.021395815366516108,
+          "velocity_error": 0.007657850420438722,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0030102400376544568,
+          "velocity_error_sample_std": 0.001375694412742594
+        },
+        "body": {
+          "position_error": 0.029432840858821325,
+          "velocity_error": 0.008359473126457996,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005555987310433148,
+          "velocity_error_sample_std": 0.0017526188031642984
+        },
+        "face": {
+          "position_error": 0.003999819453228281,
+          "velocity_error": 0.0014805578766690815,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0005106627818169329,
+          "velocity_error_sample_std": 0.0002596625291347969
+        },
+        "hands": {
+          "position_error": 0.07288132186562088,
+          "velocity_error": 0.02635024241935205,
+          "n_samples": 515,
+          "position_error_sample_std": 0.011061831588514294,
+          "velocity_error_sample_std": 0.005058811620480127
+        },
+        "left_hand": {
+          "position_error": 0.07430128286064512,
+          "velocity_error": 0.024693729051408052,
+          "n_samples": 515,
+          "position_error_sample_std": 0.015519579633575338,
+          "velocity_error_sample_std": 0.005736044259137027
+        },
+        "right_hand": {
+          "position_error": 0.07146136087059662,
+          "velocity_error": 0.028006755787296053,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0115373984030115,
+          "velocity_error_sample_std": 0.00563534279238487
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_baseline_s42.dev"
+  },
+  {
+    "run_id": "phix_baseline_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.021507805110070263,
+          "velocity_error": 0.0077456025704903605,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0031909541254514654,
+          "velocity_error_sample_std": 0.001414479849859009
+        },
+        "body": {
+          "position_error": 0.02970309060810179,
+          "velocity_error": 0.008561801311123954,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005563751351775846,
+          "velocity_error_sample_std": 0.0017803109124751536
+        },
+        "face": {
+          "position_error": 0.00402928126498576,
+          "velocity_error": 0.0015130176137860497,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0005551518286719748,
+          "velocity_error_sample_std": 0.00029811211612527103
+        },
+        "hands": {
+          "position_error": 0.0732146805430837,
+          "velocity_error": 0.026584680773658997,
+          "n_samples": 641,
+          "position_error_sample_std": 0.011707726266111159,
+          "velocity_error_sample_std": 0.005093914178447827
+        },
+        "left_hand": {
+          "position_error": 0.07512157477186608,
+          "velocity_error": 0.0250694238891543,
+          "n_samples": 641,
+          "position_error_sample_std": 0.016047099032638654,
+          "velocity_error_sample_std": 0.00618073463243568
+        },
+        "right_hand": {
+          "position_error": 0.0713077863143013,
+          "velocity_error": 0.028099937658163703,
+          "n_samples": 641,
+          "position_error_sample_std": 0.011551900306603146,
+          "velocity_error_sample_std": 0.005400924535332782
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_baseline_s42.test"
+  },
+  {
+    "run_id": "phix_pamvq_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.013516770506950632,
+          "velocity_error": 0.006010834052877331,
+          "n_samples": 515,
+          "position_error_sample_std": 0.001730152064371058,
+          "velocity_error_sample_std": 0.001098527775460118
+        },
+        "body": {
+          "position_error": 0.020037158849765476,
+          "velocity_error": 0.006604036424802135,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0038000781371012433,
+          "velocity_error_sample_std": 0.0014327474401824502
+        },
+        "face": {
+          "position_error": 0.0027566784822927815,
+          "velocity_error": 0.001208714023128341,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00037703413262414425,
+          "velocity_error_sample_std": 0.00022412886667527908
+        },
+        "hands": {
+          "position_error": 0.045067453183466964,
+          "velocity_error": 0.020532875596507617,
+          "n_samples": 515,
+          "position_error_sample_std": 0.006240537858693546,
+          "velocity_error_sample_std": 0.00402941717684187
+        },
+        "left_hand": {
+          "position_error": 0.04629506890731021,
+          "velocity_error": 0.01976375895142099,
+          "n_samples": 515,
+          "position_error_sample_std": 0.007943150673583447,
+          "velocity_error_sample_std": 0.0046035441843030305
+        },
+        "right_hand": {
+          "position_error": 0.043839837459623714,
+          "velocity_error": 0.02130199224159425,
+          "n_samples": 515,
+          "position_error_sample_std": 0.006138253859198117,
+          "velocity_error_sample_std": 0.004244188952923797
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamvq_s42.dev"
+  },
+  {
+    "run_id": "phix_pamvq_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.01357708767499904,
+          "velocity_error": 0.006078318555661219,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0017472281054205724,
+          "velocity_error_sample_std": 0.0010928422085786618
+        },
+        "body": {
+          "position_error": 0.02002511782826601,
+          "velocity_error": 0.006759286869399024,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0036311637830964113,
+          "velocity_error_sample_std": 0.0014343990355384878
+        },
+        "face": {
+          "position_error": 0.002788809684319456,
+          "velocity_error": 0.001233797354679754,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0004127960091216062,
+          "velocity_error_sample_std": 0.0002451641288688471
+        },
+        "hands": {
+          "position_error": 0.04522745295073359,
+          "velocity_error": 0.020712865394130864,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0062921205410704706,
+          "velocity_error_sample_std": 0.0039405202780665284
+        },
+        "left_hand": {
+          "position_error": 0.04648220880876861,
+          "velocity_error": 0.020062340882116732,
+          "n_samples": 641,
+          "position_error_sample_std": 0.008283614523444957,
+          "velocity_error_sample_std": 0.004772844017004102
+        },
+        "right_hand": {
+          "position_error": 0.043972697092698576,
+          "velocity_error": 0.021363389906145,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005941680849439514,
+          "velocity_error_sample_std": 0.004030470314057993
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamvq_s42.test"
+  },
+  {
+    "run_id": "phix_tlrvq_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.021698102952375144,
+          "velocity_error": 0.0074119855869853235,
+          "n_samples": 515,
+          "position_error_sample_std": 0.003398136720353175,
+          "velocity_error_sample_std": 0.0013135668955157054
+        },
+        "body": {
+          "position_error": 0.030157226476376302,
+          "velocity_error": 0.008014085981861966,
+          "n_samples": 515,
+          "position_error_sample_std": 0.006614324427078532,
+          "velocity_error_sample_std": 0.0016756187096677773
+        },
+        "face": {
+          "position_error": 0.004038961364904168,
+          "velocity_error": 0.0014252929487694628,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0005487938578679598,
+          "velocity_error_sample_std": 0.000246717394933299
+        },
+        "hands": {
+          "position_error": 0.07390517759533409,
+          "velocity_error": 0.025542458313952396,
+          "n_samples": 515,
+          "position_error_sample_std": 0.01259536459811041,
+          "velocity_error_sample_std": 0.004841111641622229
+        },
+        "left_hand": {
+          "position_error": 0.07778024229740609,
+          "velocity_error": 0.024107498336355865,
+          "n_samples": 515,
+          "position_error_sample_std": 0.018130472872096955,
+          "velocity_error_sample_std": 0.005540125293199115
+        },
+        "right_hand": {
+          "position_error": 0.0700301128932621,
+          "velocity_error": 0.026977418291548927,
+          "n_samples": 515,
+          "position_error_sample_std": 0.011782900850392493,
+          "velocity_error_sample_std": 0.005285857461108687
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.016081877744297406,
+          "velocity_error": 0.006592026410267736,
+          "n_samples": 515,
+          "position_error_sample_std": 0.002096922750320806,
+          "velocity_error_sample_std": 0.001192979915108023
+        },
+        "body": {
+          "position_error": 0.02329921855727693,
+          "velocity_error": 0.00721827861256347,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004308800917319426,
+          "velocity_error_sample_std": 0.0015048486744483544
+        },
+        "face": {
+          "position_error": 0.0030245103446451113,
+          "velocity_error": 0.0012731931682388262,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00038691453767671443,
+          "velocity_error_sample_std": 0.00022271310256272075
+        },
+        "hands": {
+          "position_error": 0.05450102775981305,
+          "velocity_error": 0.022682517776013798,
+          "n_samples": 515,
+          "position_error_sample_std": 0.007527846969726866,
+          "velocity_error_sample_std": 0.0043769225310938235
+        },
+        "left_hand": {
+          "position_error": 0.05585170872275799,
+          "velocity_error": 0.02163353080411542,
+          "n_samples": 515,
+          "position_error_sample_std": 0.009949408850308681,
+          "velocity_error_sample_std": 0.004974792817381335
+        },
+        "right_hand": {
+          "position_error": 0.05315034679686812,
+          "velocity_error": 0.023731504747912177,
+          "n_samples": 515,
+          "position_error_sample_std": 0.007349605130677052,
+          "velocity_error_sample_std": 0.004733299385078807
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_tlrvq_s42.dev"
+  },
+  {
+    "run_id": "phix_tlrvq_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.021728321171659796,
+          "velocity_error": 0.007508250509459386,
+          "n_samples": 641,
+          "position_error_sample_std": 0.003584191265272156,
+          "velocity_error_sample_std": 0.0013565688516998557
+        },
+        "body": {
+          "position_error": 0.030282684623312,
+          "velocity_error": 0.008205347949124123,
+          "n_samples": 641,
+          "position_error_sample_std": 0.006530754987303857,
+          "velocity_error_sample_std": 0.001717293298401564
+        },
+        "face": {
+          "position_error": 0.00404437968677146,
+          "velocity_error": 0.0014507321905756468,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0005962916501275407,
+          "velocity_error_sample_std": 0.00027910897270302086
+        },
+        "hands": {
+          "position_error": 0.07399283551576669,
+          "velocity_error": 0.025836478254692735,
+          "n_samples": 641,
+          "position_error_sample_std": 0.013179080459307463,
+          "velocity_error_sample_std": 0.004897794545630037
+        },
+        "left_hand": {
+          "position_error": 0.07814794080361463,
+          "velocity_error": 0.024580246326771957,
+          "n_samples": 641,
+          "position_error_sample_std": 0.01906286365460379,
+          "velocity_error_sample_std": 0.006062055680716216
+        },
+        "right_hand": {
+          "position_error": 0.06983773022791874,
+          "velocity_error": 0.027092710182613517,
+          "n_samples": 641,
+          "position_error_sample_std": 0.01105787123383348,
+          "velocity_error_sample_std": 0.005058467303499842
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.016181109696632102,
+          "velocity_error": 0.006674718278436119,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0023133825611218613,
+          "velocity_error_sample_std": 0.001216694336946484
+        },
+        "body": {
+          "position_error": 0.023530399349159643,
+          "velocity_error": 0.007410863968084497,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004517133810476174,
+          "velocity_error_sample_std": 0.0015415379276254805
+        },
+        "face": {
+          "position_error": 0.00304543640581551,
+          "velocity_error": 0.0012951855250543968,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0004171046341326217,
+          "velocity_error_sample_std": 0.00024494528273803827
+        },
+        "hands": {
+          "position_error": 0.05481377312530597,
+          "velocity_error": 0.0229292665383331,
+          "n_samples": 641,
+          "position_error_sample_std": 0.00833443607527079,
+          "velocity_error_sample_std": 0.004386262818872033
+        },
+        "left_hand": {
+          "position_error": 0.056230815816023946,
+          "velocity_error": 0.022001410172392846,
+          "n_samples": 641,
+          "position_error_sample_std": 0.011411815829402839,
+          "velocity_error_sample_std": 0.005433566326071546
+        },
+        "right_hand": {
+          "position_error": 0.05339673043458801,
+          "velocity_error": 0.023857122904273356,
+          "n_samples": 641,
+          "position_error_sample_std": 0.007810044939115076,
+          "velocity_error_sample_std": 0.0044863091873460935
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_tlrvq_s42.test"
+  },
+  {
+    "run_id": "phix_pamrvq_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.009962846553193686,
+          "velocity_error": 0.004874003912802013,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0011752067841613342,
+          "velocity_error_sample_std": 0.0008267102780093808
+        },
+        "body": {
+          "position_error": 0.015359239586023131,
+          "velocity_error": 0.005536933788135444,
+          "n_samples": 515,
+          "position_error_sample_std": 0.002526392163885239,
+          "velocity_error_sample_std": 0.0011378102756564564
+        },
+        "face": {
+          "position_error": 0.0022212617505148807,
+          "velocity_error": 0.0010086307456591238,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00029557129538764615,
+          "velocity_error_sample_std": 0.00017160578842633097
+        },
+        "hands": {
+          "position_error": 0.03252836346939015,
+          "velocity_error": 0.016527916445935875,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004168165170873928,
+          "velocity_error_sample_std": 0.0030370861739300644
+        },
+        "left_hand": {
+          "position_error": 0.03318338078308401,
+          "velocity_error": 0.016084850425927492,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005208466903573666,
+          "velocity_error_sample_std": 0.003528914252780702
+        },
+        "right_hand": {
+          "position_error": 0.03187334615569629,
+          "velocity_error": 0.01697098246594426,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004184629030750332,
+          "velocity_error_sample_std": 0.0031984516990500376
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_s42.dev"
+  },
+  {
+    "run_id": "phix_pamrvq_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.009968374256302443,
+          "velocity_error": 0.004916439102013615,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0011698754252111635,
+          "velocity_error_sample_std": 0.0008235621704146539
+        },
+        "body": {
+          "position_error": 0.015395647543925396,
+          "velocity_error": 0.005650910279660619,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0026028636376713814,
+          "velocity_error_sample_std": 0.001136382714926976
+        },
+        "face": {
+          "position_error": 0.0022368197028218087,
+          "velocity_error": 0.001028419946934753,
+          "n_samples": 641,
+          "position_error_sample_std": 0.00032943447806910983,
+          "velocity_error_sample_std": 0.00019165466513536948
+        },
+        "hands": {
+          "position_error": 0.032497440840696196,
+          "velocity_error": 0.016625741064606906,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004026382582918153,
+          "velocity_error_sample_std": 0.0029702526721248662
+        },
+        "left_hand": {
+          "position_error": 0.0332107606759492,
+          "velocity_error": 0.0162607379850638,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005178567781919765,
+          "velocity_error_sample_std": 0.0036932894986501045
+        },
+        "right_hand": {
+          "position_error": 0.0317841210054432,
+          "velocity_error": 0.01699074414415002,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0038505209093166893,
+          "velocity_error_sample_std": 0.002941548615848004
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_s42.test"
+  },
+  {
+    "run_id": "csl_baseline_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.017932235675288666,
+          "velocity_error": 0.008519519922909585,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.003035233010997276,
+          "velocity_error_sample_std": 0.0018388890429591334
+        },
+        "body": {
+          "position_error": 0.023987612586815647,
+          "velocity_error": 0.008597372804857216,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.004105362917717561,
+          "velocity_error_sample_std": 0.0017129463287501889
+        },
+        "face": {
+          "position_error": 0.007707355510954281,
+          "velocity_error": 0.002274139995705652,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0019519029278422413,
+          "velocity_error_sample_std": 0.0006856832796817985
+        },
+        "hands": {
+          "position_error": 0.04794037009773118,
+          "velocity_error": 0.02753822962830298,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.00824044788795328,
+          "velocity_error_sample_std": 0.006653509334441001
+        },
+        "left_hand": {
+          "position_error": 0.04853927858075627,
+          "velocity_error": 0.028873557934483585,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.007551708422693575,
+          "velocity_error_sample_std": 0.007292951818271272
+        },
+        "right_hand": {
+          "position_error": 0.04734146161470608,
+          "velocity_error": 0.026202901322122375,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.011415547299276145,
+          "velocity_error_sample_std": 0.008203429665072285
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_baseline_s42.dev"
+  },
+  {
+    "run_id": "csl_baseline_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.01791284765532054,
+          "velocity_error": 0.008486184463694011,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.003018752311148978,
+          "velocity_error_sample_std": 0.0019160371199638405
+        },
+        "body": {
+          "position_error": 0.02391498771295241,
+          "velocity_error": 0.008512694155292159,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0038549732890322775,
+          "velocity_error_sample_std": 0.0017646322052726812
+        },
+        "face": {
+          "position_error": 0.007783162806714846,
+          "velocity_error": 0.0022773962960283447,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0021562061075373813,
+          "velocity_error_sample_std": 0.000707493529198346
+        },
+        "hands": {
+          "position_error": 0.047641003373427054,
+          "velocity_error": 0.02740315608103735,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.007726565964759434,
+          "velocity_error_sample_std": 0.006915311787153402
+        },
+        "left_hand": {
+          "position_error": 0.048516888050687115,
+          "velocity_error": 0.029085745227645038,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.007142885604188986,
+          "velocity_error_sample_std": 0.007632695949647134
+        },
+        "right_hand": {
+          "position_error": 0.046765118696167,
+          "velocity_error": 0.02572056693442966,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.010719168893586676,
+          "velocity_error_sample_std": 0.008412669906183202
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_baseline_s42.test"
+  },
+  {
+    "run_id": "csl_pamvq_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.011597197020842307,
+          "velocity_error": 0.006271244475547246,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0017875669955164924,
+          "velocity_error_sample_std": 0.0012689233517693957
+        },
+        "body": {
+          "position_error": 0.01516684153136534,
+          "velocity_error": 0.006790890891915254,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.002304895772809111,
+          "velocity_error_sample_std": 0.0013690064850090601
+        },
+        "face": {
+          "position_error": 0.005448607624422254,
+          "velocity_error": 0.0019161431448708518,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0015618627728387498,
+          "velocity_error_sample_std": 0.0006154671620798621
+        },
+        "hands": {
+          "position_error": 0.02965582289364189,
+          "velocity_error": 0.0194449539754433,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.004462087416605902,
+          "velocity_error_sample_std": 0.0044384008822443595
+        },
+        "left_hand": {
+          "position_error": 0.029590686097416437,
+          "velocity_error": 0.020181635911518517,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0037496388428968296,
+          "velocity_error_sample_std": 0.004560548418715029
+        },
+        "right_hand": {
+          "position_error": 0.029720959689867345,
+          "velocity_error": 0.018708272039368087,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.006385236715544132,
+          "velocity_error_sample_std": 0.00544088802392395
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_pamvq_s42.dev"
+  },
+  {
+    "run_id": "csl_pamvq_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.011588065547321613,
+          "velocity_error": 0.006231719121334155,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0018592969894148114,
+          "velocity_error_sample_std": 0.0013161086307369207
+        },
+        "body": {
+          "position_error": 0.015119070978378918,
+          "velocity_error": 0.006722207184558705,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0021996327929225115,
+          "velocity_error_sample_std": 0.0013994310675807086
+        },
+        "face": {
+          "position_error": 0.005509595754923422,
+          "velocity_error": 0.0019159789569718351,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.001732174432720238,
+          "velocity_error_sample_std": 0.0006220769157908068
+        },
+        "hands": {
+          "position_error": 0.029440353403952808,
+          "velocity_error": 0.019291024753062266,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.004444550957172337,
+          "velocity_error_sample_std": 0.0046135949127159735
+        },
+        "left_hand": {
+          "position_error": 0.02966262440443702,
+          "velocity_error": 0.020257750687954545,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.003792866437616045,
+          "velocity_error_sample_std": 0.005023014626699304
+        },
+        "right_hand": {
+          "position_error": 0.029218082403468595,
+          "velocity_error": 0.018324298818169982,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.006304602781292007,
+          "velocity_error_sample_std": 0.005408765667829702
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_pamvq_s42.test"
+  },
+  {
+    "run_id": "csl_tlrvq_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.022927510162267992,
+          "velocity_error": 0.008624756546715809,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.004630488197953907,
+          "velocity_error_sample_std": 0.0018085625820261405
+        },
+        "body": {
+          "position_error": 0.02971136441669013,
+          "velocity_error": 0.008599771702582967,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005447276335178574,
+          "velocity_error_sample_std": 0.0016937363420890762
+        },
+        "face": {
+          "position_error": 0.011159587555634138,
+          "velocity_error": 0.0022386544894091804,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0039151159680842745,
+          "velocity_error_sample_std": 0.0007657733110547741
+        },
+        "hands": {
+          "position_error": 0.0574994925340241,
+          "velocity_error": 0.028091921834532733,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.010066761656595815,
+          "velocity_error_sample_std": 0.006425200099999141
+        },
+        "left_hand": {
+          "position_error": 0.058784955993190925,
+          "velocity_error": 0.029645738942450466,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.009908055689759708,
+          "velocity_error_sample_std": 0.006963120632588894
+        },
+        "right_hand": {
+          "position_error": 0.056214029074857286,
+          "velocity_error": 0.026538104726615004,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.013699313858050004,
+          "velocity_error_sample_std": 0.007915121585800513
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.0139202064427197,
+          "velocity_error": 0.00698118578516216,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.002251370851414387,
+          "velocity_error_sample_std": 0.0014669965893569844
+        },
+        "body": {
+          "position_error": 0.01986505241307978,
+          "velocity_error": 0.00770196225339062,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.003205802241443554,
+          "velocity_error_sample_std": 0.0015563851590799527
+        },
+        "face": {
+          "position_error": 0.006080142148087172,
+          "velocity_error": 0.0020046127983584456,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0014388227104289591,
+          "velocity_error_sample_std": 0.0006098447274322039
+        },
+        "hands": {
+          "position_error": 0.03668138410819786,
+          "velocity_error": 0.022010593655758536,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005884898009927456,
+          "velocity_error_sample_std": 0.005084554425749677
+        },
+        "left_hand": {
+          "position_error": 0.03671391049199827,
+          "velocity_error": 0.02242334578686421,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005239328341240262,
+          "velocity_error_sample_std": 0.005132868846036531
+        },
+        "right_hand": {
+          "position_error": 0.03664885772439745,
+          "velocity_error": 0.021597841524652862,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.008251517417388464,
+          "velocity_error_sample_std": 0.006529752158049927
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_tlrvq_s42.dev"
+  },
+  {
+    "run_id": "csl_tlrvq_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.022929339658218476,
+          "velocity_error": 0.008595714244576133,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.004504299414330778,
+          "velocity_error_sample_std": 0.0018483988433115777
+        },
+        "body": {
+          "position_error": 0.02961929132952675,
+          "velocity_error": 0.008528187868525862,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.005040359509036568,
+          "velocity_error_sample_std": 0.0017191565941950357
+        },
+        "face": {
+          "position_error": 0.011138635604543198,
+          "velocity_error": 0.0022405885103515314,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.004008196946149226,
+          "velocity_error_sample_std": 0.0007777645620163362
+        },
+        "hands": {
+          "position_error": 0.057588637408217756,
+          "velocity_error": 0.027976578649079722,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.009536457086950851,
+          "velocity_error_sample_std": 0.006566853328712928
+        },
+        "left_hand": {
+          "position_error": 0.058786939889596414,
+          "velocity_error": 0.02978091590904904,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.009446196418268254,
+          "velocity_error_sample_std": 0.007331299672463352
+        },
+        "right_hand": {
+          "position_error": 0.056390334926839106,
+          "velocity_error": 0.02617224138911042,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.01306948403457566,
+          "velocity_error_sample_std": 0.007902808617371034
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.013950346243122736,
+          "velocity_error": 0.0069545196237678145,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0023277197397873176,
+          "velocity_error_sample_std": 0.0015056218074702575
+        },
+        "body": {
+          "position_error": 0.019871044508559758,
+          "velocity_error": 0.007650135739158641,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.003133249852941315,
+          "velocity_error_sample_std": 0.0015926997528731834
+        },
+        "face": {
+          "position_error": 0.006097014408114755,
+          "velocity_error": 0.00200436812433524,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.001538687080519198,
+          "velocity_error_sample_std": 0.0006209688206417107
+        },
+        "hands": {
+          "position_error": 0.036756557880206674,
+          "velocity_error": 0.021908197314345026,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.005920337250704999,
+          "velocity_error_sample_std": 0.005214379363089674
+        },
+        "left_hand": {
+          "position_error": 0.03698452791814381,
+          "velocity_error": 0.022626593693427184,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.005131925902017931,
+          "velocity_error_sample_std": 0.005418539494323463
+        },
+        "right_hand": {
+          "position_error": 0.03652858784226955,
+          "velocity_error": 0.02118980093526287,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.008390336314364274,
+          "velocity_error_sample_std": 0.00655142549063388
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_tlrvq_s42.test"
+  },
+  {
+    "run_id": "csl_pamrvq_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.0085288043938281,
+          "velocity_error": 0.005451934369996615,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0011559810023119004,
+          "velocity_error_sample_std": 0.0010897067097683853
+        },
+        "body": {
+          "position_error": 0.01083601159803339,
+          "velocity_error": 0.005884314018706611,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0014959069392635627,
+          "velocity_error_sample_std": 0.0012114458436235129
+        },
+        "face": {
+          "position_error": 0.0038287673402345184,
+          "velocity_error": 0.001644924574018665,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0009309730561593616,
+          "velocity_error_sample_std": 0.0005203075205879361
+        },
+        "hands": {
+          "position_error": 0.022413258803978958,
+          "velocity_error": 0.016971891910365605,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0033650656505971395,
+          "velocity_error_sample_std": 0.003797618006833613
+        },
+        "left_hand": {
+          "position_error": 0.0220155732091701,
+          "velocity_error": 0.017264907602337762,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.002871756005344935,
+          "velocity_error_sample_std": 0.003822164082692872
+        },
+        "right_hand": {
+          "position_error": 0.022810944398787815,
+          "velocity_error": 0.016678876218393448,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.004638547948997857,
+          "velocity_error_sample_std": 0.004789688314147953
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_pamrvq_s42.dev"
+  },
+  {
+    "run_id": "csl_pamrvq_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.008535425600351155,
+          "velocity_error": 0.005423575156087204,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0012405307260627233,
+          "velocity_error_sample_std": 0.0011454477231318439
+        },
+        "body": {
+          "position_error": 0.010850323431034235,
+          "velocity_error": 0.00582505919979702,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0014878651306591047,
+          "velocity_error_sample_std": 0.0012338638752969176
+        },
+        "face": {
+          "position_error": 0.003856504516165942,
+          "velocity_error": 0.001652430091678266,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0010985413208436088,
+          "velocity_error_sample_std": 0.0005948344006644744
+        },
+        "hands": {
+          "position_error": 0.022354061698690267,
+          "velocity_error": 0.01684011553453162,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.003355814553665672,
+          "velocity_error_sample_std": 0.0039238762526144725
+        },
+        "left_hand": {
+          "position_error": 0.022065057350389706,
+          "velocity_error": 0.017292841541067843,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.002800373346854563,
+          "velocity_error_sample_std": 0.00403052070793208
+        },
+        "right_hand": {
+          "position_error": 0.022643066046990828,
+          "velocity_error": 0.016387389527995393,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.00465883679840022,
+          "velocity_error_sample_std": 0.00485268087222392
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_pamrvq_s42.test"
+  },
+  {
+    "run_id": "phix_single_large_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.020702591479893253,
+          "velocity_error": 0.007532984987110514,
+          "n_samples": 515,
+          "position_error_sample_std": 0.002955677381458294,
+          "velocity_error_sample_std": 0.0013782754718247596
+        },
+        "body": {
+          "position_error": 0.02860872823833297,
+          "velocity_error": 0.008160846247150593,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005654584795898917,
+          "velocity_error_sample_std": 0.0017305770129479273
+        },
+        "face": {
+          "position_error": 0.003891713954906875,
+          "velocity_error": 0.0014506102076920094,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0004974966444836209,
+          "velocity_error_sample_std": 0.0002575402886053464
+        },
+        "hands": {
+          "position_error": 0.07042981122110131,
+          "velocity_error": 0.025950153598664042,
+          "n_samples": 515,
+          "position_error_sample_std": 0.010905062734038566,
+          "velocity_error_sample_std": 0.005074825000770597
+        },
+        "left_hand": {
+          "position_error": 0.07179911871563699,
+          "velocity_error": 0.02437367852901035,
+          "n_samples": 515,
+          "position_error_sample_std": 0.014795976231870976,
+          "velocity_error_sample_std": 0.005734012460259067
+        },
+        "right_hand": {
+          "position_error": 0.06906050372656564,
+          "velocity_error": 0.027526628668317732,
+          "n_samples": 515,
+          "position_error_sample_std": 0.01110460528779815,
+          "velocity_error_sample_std": 0.00566060363878732
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_single_large_s42.dev"
+  },
+  {
+    "run_id": "phix_single_large_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.02071398050501413,
+          "velocity_error": 0.007623421413852015,
+          "n_samples": 641,
+          "position_error_sample_std": 0.002950212400245596,
+          "velocity_error_sample_std": 0.001434025823380922
+        },
+        "body": {
+          "position_error": 0.028776815525930068,
+          "velocity_error": 0.0083602981471473,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005354150108062373,
+          "velocity_error_sample_std": 0.0018004094065570521
+        },
+        "face": {
+          "position_error": 0.003911109955557901,
+          "velocity_error": 0.001484874061059545,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0005213158867527419,
+          "velocity_error_sample_std": 0.0002877320997480668
+        },
+        "hands": {
+          "position_error": 0.07038695074699197,
+          "velocity_error": 0.026191017777925204,
+          "n_samples": 641,
+          "position_error_sample_std": 0.010810777672678157,
+          "velocity_error_sample_std": 0.005187762381142841
+        },
+        "left_hand": {
+          "position_error": 0.0717276709503795,
+          "velocity_error": 0.024752383404393664,
+          "n_samples": 641,
+          "position_error_sample_std": 0.014487331818967993,
+          "velocity_error_sample_std": 0.006259578160093188
+        },
+        "right_hand": {
+          "position_error": 0.06904623054360445,
+          "velocity_error": 0.02762965215145674,
+          "n_samples": 641,
+          "position_error_sample_std": 0.011010608692544211,
+          "velocity_error_sample_std": 0.005430699289204925
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_single_large_s42.test"
+  },
+  {
+    "run_id": "phix_pamrvq_random_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.010804067791350578,
+          "velocity_error": 0.005051916470371254,
+          "n_samples": 515,
+          "position_error_sample_std": 0.001281823549504542,
+          "velocity_error_sample_std": 0.0008899057336579664
+        },
+        "body": {
+          "position_error": 0.017126085507786448,
+          "velocity_error": 0.005816253226973375,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0030106169104694627,
+          "velocity_error_sample_std": 0.0012028720908561312
+        },
+        "face": {
+          "position_error": 0.002020497437337787,
+          "velocity_error": 0.0009615562897302971,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00024518220420825375,
+          "velocity_error_sample_std": 0.00015531878277978684
+        },
+        "hands": {
+          "position_error": 0.036368850257592254,
+          "velocity_error": 0.01737218811487662,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004560854391799254,
+          "velocity_error_sample_std": 0.0032717485980067232
+        },
+        "left_hand": {
+          "position_error": 0.03736135115501049,
+          "velocity_error": 0.016987184081450307,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005692289886357379,
+          "velocity_error_sample_std": 0.003844896644837219
+        },
+        "right_hand": {
+          "position_error": 0.03537634936017401,
+          "velocity_error": 0.017757192148302934,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004757881505886455,
+          "velocity_error_sample_std": 0.0033625936561126066
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_random_s42.dev"
+  },
+  {
+    "run_id": "phix_pamrvq_random_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.010786194273262996,
+          "velocity_error": 0.00510879922838354,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0012726696767042351,
+          "velocity_error_sample_std": 0.0008701808348900851
+        },
+        "body": {
+          "position_error": 0.017181061686436367,
+          "velocity_error": 0.005912926333759661,
+          "n_samples": 641,
+          "position_error_sample_std": 0.003054253772922532,
+          "velocity_error_sample_std": 0.0011748004341704333
+        },
+        "face": {
+          "position_error": 0.002040705752477021,
+          "velocity_error": 0.000978685459532547,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0002668117455904018,
+          "velocity_error_sample_std": 0.0001731973674046381
+        },
+        "hands": {
+          "position_error": 0.036221041686482464,
+          "velocity_error": 0.017542645551476832,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004385996655770906,
+          "velocity_error_sample_std": 0.0031523420736243174
+        },
+        "left_hand": {
+          "position_error": 0.03717073689132319,
+          "velocity_error": 0.01722568227795194,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005794020658294713,
+          "velocity_error_sample_std": 0.004010034263641097
+        },
+        "right_hand": {
+          "position_error": 0.03527134648164173,
+          "velocity_error": 0.01785960882500173,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004330042246747703,
+          "velocity_error_sample_std": 0.0031054290339594193
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_random_s42.test"
+  },
+  {
+    "run_id": "phix_pamrvq_s43",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.00988407569177325,
+          "velocity_error": 0.0048626065112457794,
+          "n_samples": 515,
+          "position_error_sample_std": 0.001130974552079557,
+          "velocity_error_sample_std": 0.0008425359250498753
+        },
+        "body": {
+          "position_error": 0.0151312353331248,
+          "velocity_error": 0.00552194032476827,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0024830920778425715,
+          "velocity_error_sample_std": 0.0011296579764386771
+        },
+        "face": {
+          "position_error": 0.002202948153257161,
+          "velocity_error": 0.0010060253688390427,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0002996420705979755,
+          "velocity_error_sample_std": 0.000174149285389817
+        },
+        "hands": {
+          "position_error": 0.03229376730604104,
+          "velocity_error": 0.016490409266481074,
+          "n_samples": 515,
+          "position_error_sample_std": 0.003997362139585117,
+          "velocity_error_sample_std": 0.003105303493854764
+        },
+        "left_hand": {
+          "position_error": 0.03325381392288914,
+          "velocity_error": 0.01615797211085789,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005082762621057972,
+          "velocity_error_sample_std": 0.003631515115368702
+        },
+        "right_hand": {
+          "position_error": 0.03133372068919294,
+          "velocity_error": 0.016822846422104257,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0038219299492908434,
+          "velocity_error_sample_std": 0.0032036243565741226
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_s43.dev"
+  },
+  {
+    "run_id": "phix_pamrvq_s43",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.009895150374161159,
+          "velocity_error": 0.004906608027793642,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0011518789261358816,
+          "velocity_error_sample_std": 0.0008246308877118472
+        },
+        "body": {
+          "position_error": 0.015263841807550568,
+          "velocity_error": 0.0056393677032642925,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0026198374529147667,
+          "velocity_error_sample_std": 0.001120827019079256
+        },
+        "face": {
+          "position_error": 0.0022255708945159935,
+          "velocity_error": 0.0010264302694432627,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0003237699396975179,
+          "velocity_error_sample_std": 0.00019105067122798496
+        },
+        "hands": {
+          "position_error": 0.03224649899148178,
+          "velocity_error": 0.016592338400771817,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004009626632529022,
+          "velocity_error_sample_std": 0.0029770977926916694
+        },
+        "left_hand": {
+          "position_error": 0.03318273249164705,
+          "velocity_error": 0.01636251990583981,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005203455388733801,
+          "velocity_error_sample_std": 0.003798684298268926
+        },
+        "right_hand": {
+          "position_error": 0.03131026549131651,
+          "velocity_error": 0.016822156895703825,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0037317737334250436,
+          "velocity_error_sample_std": 0.002919841407522204
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_s43.test"
+  },
+  {
+    "run_id": "phix_pamrvq_s44",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.009983155971150298,
+          "velocity_error": 0.004845624067188949,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0011731637218631917,
+          "velocity_error_sample_std": 0.0008129799263087678
+        },
+        "body": {
+          "position_error": 0.015240752535987018,
+          "velocity_error": 0.005504178012961361,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0025438918393836884,
+          "velocity_error_sample_std": 0.0011358376982530745
+        },
+        "face": {
+          "position_error": 0.002197945909198159,
+          "velocity_error": 0.0010025668875296755,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00029898686198759637,
+          "velocity_error_sample_std": 0.00016861861209636127
+        },
+        "hands": {
+          "position_error": 0.032708063480940304,
+          "velocity_error": 0.016432359482193893,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004149474853554285,
+          "velocity_error_sample_std": 0.002975351380664654
+        },
+        "left_hand": {
+          "position_error": 0.03362861597172133,
+          "velocity_error": 0.016047496210786525,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005090126551884421,
+          "velocity_error_sample_std": 0.0034879107166178357
+        },
+        "right_hand": {
+          "position_error": 0.03178751099015927,
+          "velocity_error": 0.016817222753601254,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004272154142777589,
+          "velocity_error_sample_std": 0.003112416008285224
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_s44.dev"
+  },
+  {
+    "run_id": "phix_pamrvq_s44",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.010030026299406962,
+          "velocity_error": 0.004901377552157374,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0011788148860599815,
+          "velocity_error_sample_std": 0.0008141802884763528
+        },
+        "body": {
+          "position_error": 0.015289910813335928,
+          "velocity_error": 0.005600261620509468,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0025509382819289645,
+          "velocity_error_sample_std": 0.001107258398331414
+        },
+        "face": {
+          "position_error": 0.002213774616019988,
+          "velocity_error": 0.0010211110987284188,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0003175533191006723,
+          "velocity_error_sample_std": 0.00018883167717315106
+        },
+        "hands": {
+          "position_error": 0.032849101046123645,
+          "velocity_error": 0.01659383073054046,
+          "n_samples": 641,
+          "position_error_sample_std": 0.00412057843502151,
+          "velocity_error_sample_std": 0.0029393950249130335
+        },
+        "left_hand": {
+          "position_error": 0.033938651051800106,
+          "velocity_error": 0.016321308605437065,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005385216307389267,
+          "velocity_error_sample_std": 0.003738794357621213
+        },
+        "right_hand": {
+          "position_error": 0.03175955104044719,
+          "velocity_error": 0.016866352855643856,
+          "n_samples": 641,
+          "position_error_sample_std": 0.003927371508306861,
+          "velocity_error_sample_std": 0.002907729117366421
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_s44.test"
+  },
+  {
+    "run_id": "phix_pamrvq_random_s43",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.010576802296664058,
+          "velocity_error": 0.005025919039756948,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0012823230353370782,
+          "velocity_error_sample_std": 0.0008539204109702189
+        },
+        "body": {
+          "position_error": 0.017100488361640576,
+          "velocity_error": 0.005845670165549228,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0030798600932358464,
+          "velocity_error_sample_std": 0.0011722547721728746
+        },
+        "face": {
+          "position_error": 0.0020155096680982737,
+          "velocity_error": 0.0009624482267923178,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0002585415293716389,
+          "velocity_error_sample_std": 0.00015855035977488572
+        },
+        "hands": {
+          "position_error": 0.03542575391420235,
+          "velocity_error": 0.01725368701721253,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004468265265049638,
+          "velocity_error_sample_std": 0.0031195248487041094
+        },
+        "left_hand": {
+          "position_error": 0.03659292359250837,
+          "velocity_error": 0.016958758836784032,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005782264756163253,
+          "velocity_error_sample_std": 0.0037889680654643212
+        },
+        "right_hand": {
+          "position_error": 0.03425858423589634,
+          "velocity_error": 0.017548615197641032,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004328431614555438,
+          "velocity_error_sample_std": 0.003165652824729841
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_random_s43.dev"
+  },
+  {
+    "run_id": "phix_pamrvq_random_s43",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.010688111737159087,
+          "velocity_error": 0.005086330349043195,
+          "n_samples": 641,
+          "position_error_sample_std": 0.00131285677627378,
+          "velocity_error_sample_std": 0.0008652534485314674
+        },
+        "body": {
+          "position_error": 0.017319428763393076,
+          "velocity_error": 0.005968940294569514,
+          "n_samples": 641,
+          "position_error_sample_std": 0.003104346150730997,
+          "velocity_error_sample_std": 0.001195501458282872
+        },
+        "face": {
+          "position_error": 0.002039004739323454,
+          "velocity_error": 0.0009814368663292425,
+          "n_samples": 641,
+          "position_error_sample_std": 0.00027554145945551874,
+          "velocity_error_sample_std": 0.00017590541111727316
+        },
+        "hands": {
+          "position_error": 0.0357841869636612,
+          "velocity_error": 0.01742836573530928,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004536333447716668,
+          "velocity_error_sample_std": 0.003110736339170462
+        },
+        "left_hand": {
+          "position_error": 0.03708943623650242,
+          "velocity_error": 0.01725965787441616,
+          "n_samples": 641,
+          "position_error_sample_std": 0.006110878879303224,
+          "velocity_error_sample_std": 0.003962529393056882
+        },
+        "right_hand": {
+          "position_error": 0.03447893769081999,
+          "velocity_error": 0.0175970735962024,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004342839592473195,
+          "velocity_error_sample_std": 0.003065986514021437
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_random_s43.test"
+  },
+  {
+    "run_id": "phix_pamrvq_random_s44",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.010690636601505652,
+          "velocity_error": 0.005061626065959191,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0012685912134722053,
+          "velocity_error_sample_std": 0.0008764868227138416
+        },
+        "body": {
+          "position_error": 0.017232576690309268,
+          "velocity_error": 0.005848379133886542,
+          "n_samples": 515,
+          "position_error_sample_std": 0.003166139942035366,
+          "velocity_error_sample_std": 0.0011906451002927552
+        },
+        "face": {
+          "position_error": 0.0020374277186935154,
+          "velocity_error": 0.0009688888743244844,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0002493339951680878,
+          "velocity_error_sample_std": 0.00015720516784505014
+        },
+        "hands": {
+          "position_error": 0.03581623698935147,
+          "velocity_error": 0.01738487216085976,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004433054915798767,
+          "velocity_error_sample_std": 0.0032121049326817664
+        },
+        "left_hand": {
+          "position_error": 0.03697891161044523,
+          "velocity_error": 0.01708219207281576,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0058132820890578404,
+          "velocity_error_sample_std": 0.0037939646202958385
+        },
+        "right_hand": {
+          "position_error": 0.034653562368257715,
+          "velocity_error": 0.017687552248903747,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0044591112262541525,
+          "velocity_error_sample_std": 0.003331822565390831
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_random_s44.dev"
+  },
+  {
+    "run_id": "phix_pamrvq_random_s44",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.010723843819331606,
+          "velocity_error": 0.005133469665142959,
+          "n_samples": 641,
+          "position_error_sample_std": 0.001329088892081461,
+          "velocity_error_sample_std": 0.0008835520030815675
+        },
+        "body": {
+          "position_error": 0.017257079298827544,
+          "velocity_error": 0.005961515560528639,
+          "n_samples": 641,
+          "position_error_sample_std": 0.003130093154963967,
+          "velocity_error_sample_std": 0.001169394722824429
+        },
+        "face": {
+          "position_error": 0.0020615770404425037,
+          "velocity_error": 0.000988446243944432,
+          "n_samples": 641,
+          "position_error_sample_std": 0.00027541220553784927,
+          "velocity_error_sample_std": 0.00017455670468920578
+        },
+        "hands": {
+          "position_error": 0.03587870724461345,
+          "velocity_error": 0.017608198968722153,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004602978776354465,
+          "velocity_error_sample_std": 0.003205528012663839
+        },
+        "left_hand": {
+          "position_error": 0.03699602753626966,
+          "velocity_error": 0.01732177839261927,
+          "n_samples": 641,
+          "position_error_sample_std": 0.006165025216685358,
+          "velocity_error_sample_std": 0.004089210838945585
+        },
+        "right_hand": {
+          "position_error": 0.03476138695295724,
+          "velocity_error": 0.017894619544825036,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004665152696964701,
+          "velocity_error_sample_std": 0.003166485994587127
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_pamrvq_random_s44.test"
+  },
+  {
+    "run_id": "phix_single_large_s43",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.020660309980115567,
+          "velocity_error": 0.0075681332497553044,
+          "n_samples": 515,
+          "position_error_sample_std": 0.002935114946378915,
+          "velocity_error_sample_std": 0.001379486024859171
+        },
+        "body": {
+          "position_error": 0.02855243279589987,
+          "velocity_error": 0.008249144569092799,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005302030016571984,
+          "velocity_error_sample_std": 0.001740227636007714
+        },
+        "face": {
+          "position_error": 0.003909527876325661,
+          "velocity_error": 0.0014571317506800378,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0005003978357506125,
+          "velocity_error_sample_std": 0.0002598893054917269
+        },
+        "hands": {
+          "position_error": 0.07020705109342114,
+          "velocity_error": 0.026062421376587066,
+          "n_samples": 515,
+          "position_error_sample_std": 0.010740988717384426,
+          "velocity_error_sample_std": 0.00506509732285424
+        },
+        "left_hand": {
+          "position_error": 0.07182335466796763,
+          "velocity_error": 0.024584581332577644,
+          "n_samples": 515,
+          "position_error_sample_std": 0.015250844171818854,
+          "velocity_error_sample_std": 0.005752691799062078
+        },
+        "right_hand": {
+          "position_error": 0.06859074751887465,
+          "velocity_error": 0.027540261420596485,
+          "n_samples": 515,
+          "position_error_sample_std": 0.010558244000168481,
+          "velocity_error_sample_std": 0.00557218694906419
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_single_large_s43.dev"
+  },
+  {
+    "run_id": "phix_single_large_s43",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.020772121092721956,
+          "velocity_error": 0.007642056729747527,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0030804114130302614,
+          "velocity_error_sample_std": 0.0014080676456447315
+        },
+        "body": {
+          "position_error": 0.02872366021250021,
+          "velocity_error": 0.008454217130710444,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005451073268876353,
+          "velocity_error_sample_std": 0.0018052823400152543
+        },
+        "face": {
+          "position_error": 0.0039233874729963395,
+          "velocity_error": 0.0014902548819417782,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0005524240412981715,
+          "velocity_error_sample_std": 0.00029460343187473216
+        },
+        "hands": {
+          "position_error": 0.07060606372049939,
+          "velocity_error": 0.026235707999067354,
+          "n_samples": 641,
+          "position_error_sample_std": 0.011101429823567575,
+          "velocity_error_sample_std": 0.005050883198863439
+        },
+        "left_hand": {
+          "position_error": 0.07262247246265871,
+          "velocity_error": 0.02487943185610316,
+          "n_samples": 641,
+          "position_error_sample_std": 0.014936173441789134,
+          "velocity_error_sample_std": 0.006148258643743917
+        },
+        "right_hand": {
+          "position_error": 0.0685896549783401,
+          "velocity_error": 0.02759198414203154,
+          "n_samples": 641,
+          "position_error_sample_std": 0.010983694973852322,
+          "velocity_error_sample_std": 0.005322607138861802
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_single_large_s43.test"
+  },
+  {
+    "run_id": "phix_single_large_s44",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.021026426098031136,
+          "velocity_error": 0.007566049651612778,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0029725672462784943,
+          "velocity_error_sample_std": 0.0013568903719599894
+        },
+        "body": {
+          "position_error": 0.028930390852979118,
+          "velocity_error": 0.008226005414299308,
+          "n_samples": 515,
+          "position_error_sample_std": 0.005686527572046775,
+          "velocity_error_sample_std": 0.0017093918423163005
+        },
+        "face": {
+          "position_error": 0.0038989969934771274,
+          "velocity_error": 0.0014576998832902077,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0005056114375148719,
+          "velocity_error_sample_std": 0.0002533784652417153
+        },
+        "hands": {
+          "position_error": 0.07171878817763422,
+          "velocity_error": 0.0260562668955127,
+          "n_samples": 515,
+          "position_error_sample_std": 0.01089277788398104,
+          "velocity_error_sample_std": 0.005004540286503721
+        },
+        "left_hand": {
+          "position_error": 0.07384567873960936,
+          "velocity_error": 0.02457817238611955,
+          "n_samples": 515,
+          "position_error_sample_std": 0.015069683383473713,
+          "velocity_error_sample_std": 0.0057039085981145906
+        },
+        "right_hand": {
+          "position_error": 0.06959189761565907,
+          "velocity_error": 0.02753436140490585,
+          "n_samples": 515,
+          "position_error_sample_std": 0.010717455033800685,
+          "velocity_error_sample_std": 0.005558685250298778
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_single_large_s44.dev"
+  },
+  {
+    "run_id": "phix_single_large_s44",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.02096992146293346,
+          "velocity_error": 0.0076555482826100784,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0031250867749497346,
+          "velocity_error_sample_std": 0.0014027371279907983
+        },
+        "body": {
+          "position_error": 0.02903326798186379,
+          "velocity_error": 0.008423346826537642,
+          "n_samples": 641,
+          "position_error_sample_std": 0.005570382929094682,
+          "velocity_error_sample_std": 0.0017676729212383335
+        },
+        "face": {
+          "position_error": 0.0039147294722691,
+          "velocity_error": 0.0014921008648590577,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0005338725631496553,
+          "velocity_error_sample_std": 0.00029102448834337943
+        },
+        "hands": {
+          "position_error": 0.07141177390706668,
+          "velocity_error": 0.026293140690246037,
+          "n_samples": 641,
+          "position_error_sample_std": 0.01151078248923866,
+          "velocity_error_sample_std": 0.005059859817999575
+        },
+        "left_hand": {
+          "position_error": 0.07330885021558477,
+          "velocity_error": 0.024905249591556586,
+          "n_samples": 641,
+          "position_error_sample_std": 0.01555500867482443,
+          "velocity_error_sample_std": 0.0061028094303996324
+        },
+        "right_hand": {
+          "position_error": 0.0695146975985486,
+          "velocity_error": 0.02768103178893548,
+          "n_samples": 641,
+          "position_error_sample_std": 0.011025781300564147,
+          "velocity_error_sample_std": 0.00536061427483096
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_single_large_s44.test"
+  },
+  {
+    "run_id": "phix_tlrvq_s43",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 43,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.021628174685062,
+          "velocity_error": 0.007424138432612536,
+          "n_samples": 515,
+          "position_error_sample_std": 0.003353545735842642,
+          "velocity_error_sample_std": 0.0012996919758064308
+        },
+        "body": {
+          "position_error": 0.030132657620456704,
+          "velocity_error": 0.008014785648029819,
+          "n_samples": 515,
+          "position_error_sample_std": 0.006284133369578203,
+          "velocity_error_sample_std": 0.0016681605456654541
+        },
+        "face": {
+          "position_error": 0.004027911023864839,
+          "velocity_error": 0.0014250169885543912,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0005594813111883193,
+          "velocity_error_sample_std": 0.0002467194647382591
+        },
+        "hands": {
+          "position_error": 0.07364717195054007,
+          "velocity_error": 0.025594670982995976,
+          "n_samples": 515,
+          "position_error_sample_std": 0.012420709565890907,
+          "velocity_error_sample_std": 0.004778605793958752
+        },
+        "left_hand": {
+          "position_error": 0.07769157410904637,
+          "velocity_error": 0.0240964892208941,
+          "n_samples": 515,
+          "position_error_sample_std": 0.018705037766361576,
+          "velocity_error_sample_std": 0.005456508751364534
+        },
+        "right_hand": {
+          "position_error": 0.06960276979203377,
+          "velocity_error": 0.027092852745097845,
+          "n_samples": 515,
+          "position_error_sample_std": 0.011048951261142706,
+          "velocity_error_sample_std": 0.005260436946716104
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.01605354421380929,
+          "velocity_error": 0.00660539788383738,
+          "n_samples": 515,
+          "position_error_sample_std": 0.002048387408259809,
+          "velocity_error_sample_std": 0.001194144985993328
+        },
+        "body": {
+          "position_error": 0.023532189832717123,
+          "velocity_error": 0.007248487912945524,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004232147274680833,
+          "velocity_error_sample_std": 0.001508574878694157
+        },
+        "face": {
+          "position_error": 0.0030297667760325903,
+          "velocity_error": 0.001270877380467185,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00039802890346889657,
+          "velocity_error_sample_std": 0.00021993749486294578
+        },
+        "hands": {
+          "position_error": 0.05432055247771774,
+          "velocity_error": 0.022740490840944996,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0073332411214817785,
+          "velocity_error_sample_std": 0.00439822093417825
+        },
+        "left_hand": {
+          "position_error": 0.0556865177062421,
+          "velocity_error": 0.021675273027126556,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00952760041859699,
+          "velocity_error_sample_std": 0.0049605480849309845
+        },
+        "right_hand": {
+          "position_error": 0.052954587249193406,
+          "velocity_error": 0.023805708654763436,
+          "n_samples": 515,
+          "position_error_sample_std": 0.007665204147653311,
+          "velocity_error_sample_std": 0.004787693559683042
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_tlrvq_s43.dev"
+  },
+  {
+    "run_id": "phix_tlrvq_s43",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 43,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.02175202231349564,
+          "velocity_error": 0.00751597986085549,
+          "n_samples": 641,
+          "position_error_sample_std": 0.003493829160843605,
+          "velocity_error_sample_std": 0.0013327017066689913
+        },
+        "body": {
+          "position_error": 0.030346535313075112,
+          "velocity_error": 0.00820116440751354,
+          "n_samples": 641,
+          "position_error_sample_std": 0.006230168076203502,
+          "velocity_error_sample_std": 0.001706174860804476
+        },
+        "face": {
+          "position_error": 0.004051331387453247,
+          "velocity_error": 0.0014554438826199227,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0006040834039580428,
+          "velocity_error_sample_std": 0.0002830078050268286
+        },
+        "hands": {
+          "position_error": 0.07405993504056207,
+          "velocity_error": 0.025855673404686162,
+          "n_samples": 641,
+          "position_error_sample_std": 0.012890453534333393,
+          "velocity_error_sample_std": 0.004800162802574804
+        },
+        "left_hand": {
+          "position_error": 0.07910980016588327,
+          "velocity_error": 0.024639409657971907,
+          "n_samples": 641,
+          "position_error_sample_std": 0.019288108568165853,
+          "velocity_error_sample_std": 0.005965088691765595
+        },
+        "right_hand": {
+          "position_error": 0.06901006991524089,
+          "velocity_error": 0.02707193715140041,
+          "n_samples": 641,
+          "position_error_sample_std": 0.010845328948786065,
+          "velocity_error_sample_std": 0.004954255163038728
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.016240091426032537,
+          "velocity_error": 0.0067016934225749576,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0021916471717109746,
+          "velocity_error_sample_std": 0.0012081516449263434
+        },
+        "body": {
+          "position_error": 0.023711239155028836,
+          "velocity_error": 0.007431544791548088,
+          "n_samples": 641,
+          "position_error_sample_std": 0.004268596687282498,
+          "velocity_error_sample_std": 0.0015530247398330983
+        },
+        "face": {
+          "position_error": 0.0030677813093780482,
+          "velocity_error": 0.0012985572573817612,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0004290905656357285,
+          "velocity_error_sample_std": 0.0002499633747115307
+        },
+        "hands": {
+          "position_error": 0.05496119888078978,
+          "velocity_error": 0.023029374808121242,
+          "n_samples": 641,
+          "position_error_sample_std": 0.007780986904618067,
+          "velocity_error_sample_std": 0.0043367936356859945
+        },
+        "left_hand": {
+          "position_error": 0.056755016708980026,
+          "velocity_error": 0.02208895502174185,
+          "n_samples": 641,
+          "position_error_sample_std": 0.010499906073112327,
+          "velocity_error_sample_std": 0.005336365230184313
+        },
+        "right_hand": {
+          "position_error": 0.05316738105259952,
+          "velocity_error": 0.023969794594500632,
+          "n_samples": 641,
+          "position_error_sample_std": 0.007613326990965346,
+          "velocity_error_sample_std": 0.004521178335111454
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_tlrvq_s43.test"
+  },
+  {
+    "run_id": "phix_tlrvq_s44",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 44,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.021663044059618913,
+          "velocity_error": 0.00743570975543302,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0032506932131613074,
+          "velocity_error_sample_std": 0.0013114999597929236
+        },
+        "body": {
+          "position_error": 0.029994988730024714,
+          "velocity_error": 0.008026586103900299,
+          "n_samples": 515,
+          "position_error_sample_std": 0.006141325621665864,
+          "velocity_error_sample_std": 0.0016735086885887331
+        },
+        "face": {
+          "position_error": 0.004015210636218274,
+          "velocity_error": 0.0014309747071702388,
+          "n_samples": 515,
+          "position_error_sample_std": 0.0005273016949963121,
+          "velocity_error_sample_std": 0.0002460176052720607
+        },
+        "hands": {
+          "position_error": 0.07385988026990546,
+          "velocity_error": 0.025623306788525823,
+          "n_samples": 515,
+          "position_error_sample_std": 0.01208729630417343,
+          "velocity_error_sample_std": 0.004836532865846722
+        },
+        "left_hand": {
+          "position_error": 0.07701150570975622,
+          "velocity_error": 0.02417620084118719,
+          "n_samples": 515,
+          "position_error_sample_std": 0.017513364325891435,
+          "velocity_error_sample_std": 0.005559044121551093
+        },
+        "right_hand": {
+          "position_error": 0.0707082548300547,
+          "velocity_error": 0.027070412735864455,
+          "n_samples": 515,
+          "position_error_sample_std": 0.011661084867412845,
+          "velocity_error_sample_std": 0.005350383454406647
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.016136088884012995,
+          "velocity_error": 0.006637359454207697,
+          "n_samples": 515,
+          "position_error_sample_std": 0.001971156299925083,
+          "velocity_error_sample_std": 0.0011775847825423434
+        },
+        "body": {
+          "position_error": 0.023446199804247135,
+          "velocity_error": 0.007282607834657323,
+          "n_samples": 515,
+          "position_error_sample_std": 0.004134049405084343,
+          "velocity_error_sample_std": 0.0014955036143629772
+        },
+        "face": {
+          "position_error": 0.0030399010284236695,
+          "velocity_error": 0.0012790225922380083,
+          "n_samples": 515,
+          "position_error_sample_std": 0.00038733065570423556,
+          "velocity_error_sample_std": 0.00021950851320844505
+        },
+        "hands": {
+          "position_error": 0.05465587836385968,
+          "velocity_error": 0.022844624484886823,
+          "n_samples": 515,
+          "position_error_sample_std": 0.007019019708022886,
+          "velocity_error_sample_std": 0.004334664140651815
+        },
+        "left_hand": {
+          "position_error": 0.055628969540463334,
+          "velocity_error": 0.021749940091887958,
+          "n_samples": 515,
+          "position_error_sample_std": 0.009268659544674977,
+          "velocity_error_sample_std": 0.004943246427345582
+        },
+        "right_hand": {
+          "position_error": 0.053682787187256026,
+          "velocity_error": 0.023939308877885687,
+          "n_samples": 515,
+          "position_error_sample_std": 0.007743284148557321,
+          "velocity_error_sample_std": 0.0047313078786454035
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_tlrvq_s44.dev"
+  },
+  {
+    "run_id": "phix_tlrvq_s44",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 44,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.02167534277864504,
+          "velocity_error": 0.007522950304603389,
+          "n_samples": 641,
+          "position_error_sample_std": 0.003329927253003068,
+          "velocity_error_sample_std": 0.0013422824134024208
+        },
+        "body": {
+          "position_error": 0.030335373433791786,
+          "velocity_error": 0.008214956860689165,
+          "n_samples": 641,
+          "position_error_sample_std": 0.006321634687072989,
+          "velocity_error_sample_std": 0.0017093439509189693
+        },
+        "face": {
+          "position_error": 0.00403996968873976,
+          "velocity_error": 0.0014617674559552238,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0005724691210589957,
+          "velocity_error_sample_std": 0.0002825016865872634
+        },
+        "hands": {
+          "position_error": 0.07377171207070939,
+          "velocity_error": 0.025863315832657642,
+          "n_samples": 641,
+          "position_error_sample_std": 0.01214836451975572,
+          "velocity_error_sample_std": 0.004845424683286541
+        },
+        "left_hand": {
+          "position_error": 0.07723790746498722,
+          "velocity_error": 0.02461577655016672,
+          "n_samples": 641,
+          "position_error_sample_std": 0.017372365363009477,
+          "velocity_error_sample_std": 0.00606127834381271
+        },
+        "right_hand": {
+          "position_error": 0.07030551667643155,
+          "velocity_error": 0.027110855115148567,
+          "n_samples": 641,
+          "position_error_sample_std": 0.011027349949712493,
+          "velocity_error_sample_std": 0.004962636039869871
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.016279940904138188,
+          "velocity_error": 0.006703698718609515,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0021934605252142336,
+          "velocity_error_sample_std": 0.0011985744118399365
+        },
+        "body": {
+          "position_error": 0.02374063599974505,
+          "velocity_error": 0.007436597661980311,
+          "n_samples": 641,
+          "position_error_sample_std": 0.00441287068276373,
+          "velocity_error_sample_std": 0.0015364010842990204
+        },
+        "face": {
+          "position_error": 0.0030641639243399227,
+          "velocity_error": 0.001302530388844384,
+          "n_samples": 641,
+          "position_error_sample_std": 0.0004223925928818264,
+          "velocity_error_sample_std": 0.00024513644828623975
+        },
+        "hands": {
+          "position_error": 0.05513550977674112,
+          "velocity_error": 0.02302480240106119,
+          "n_samples": 641,
+          "position_error_sample_std": 0.007753935809276066,
+          "velocity_error_sample_std": 0.004315156205832633
+        },
+        "left_hand": {
+          "position_error": 0.05610986726170247,
+          "velocity_error": 0.02213936589088371,
+          "n_samples": 641,
+          "position_error_sample_std": 0.010204881286157428,
+          "velocity_error_sample_std": 0.00536602690787606
+        },
+        "right_hand": {
+          "position_error": 0.054161152291779764,
+          "velocity_error": 0.02391023891123867,
+          "n_samples": 641,
+          "position_error_sample_std": 0.007835139633238643,
+          "velocity_error_sample_std": 0.00443275385365422
+        }
+      }
+    },
+    "source_record": "reconstruction.phix_tlrvq_s44.test"
+  },
+  {
+    "run_id": "csl_baseline_s43",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.017730199530351255,
+          "velocity_error": 0.008579224154477934,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.002781811836386015,
+          "velocity_error_sample_std": 0.0018469417439184515
+        },
+        "body": {
+          "position_error": 0.024065020246775443,
+          "velocity_error": 0.008637555187614516,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.003917988022116416,
+          "velocity_error_sample_std": 0.001707671117700759
+        },
+        "face": {
+          "position_error": 0.00751414273205697,
+          "velocity_error": 0.002286252024407517,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0017971701397218134,
+          "velocity_error_sample_std": 0.0007429273182074382
+        },
+        "hands": {
+          "position_error": 0.047658216302976834,
+          "velocity_error": 0.027746695211237946,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.007625418515897415,
+          "velocity_error_sample_std": 0.006653739016776595
+        },
+        "left_hand": {
+          "position_error": 0.0479765696558038,
+          "velocity_error": 0.02914793635246104,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.006948487249936851,
+          "velocity_error_sample_std": 0.007352198375547238
+        },
+        "right_hand": {
+          "position_error": 0.047339862950149886,
+          "velocity_error": 0.026345454070014852,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.010986057486657473,
+          "velocity_error_sample_std": 0.008198776640247813
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_baseline_s43.dev"
+  },
+  {
+    "run_id": "csl_baseline_s43",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 43,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.017700280685598292,
+          "velocity_error": 0.00854342302917595,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.002909662998206078,
+          "velocity_error_sample_std": 0.0018900993741259012
+        },
+        "body": {
+          "position_error": 0.02400265561296967,
+          "velocity_error": 0.008573365691319952,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.003796202369819407,
+          "velocity_error_sample_std": 0.001768514992123688
+        },
+        "face": {
+          "position_error": 0.007526711020340296,
+          "velocity_error": 0.0022869743245042483,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.001933148784106774,
+          "velocity_error_sample_std": 0.0006977858595936085
+        },
+        "hands": {
+          "position_error": 0.04750499301259955,
+          "velocity_error": 0.02760499190776704,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.007722483824524785,
+          "velocity_error_sample_std": 0.006864572614925506
+        },
+        "left_hand": {
+          "position_error": 0.04799874946375883,
+          "velocity_error": 0.029236339997586545,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0067840208932363885,
+          "velocity_error_sample_std": 0.007540762750885897
+        },
+        "right_hand": {
+          "position_error": 0.047011236561440274,
+          "velocity_error": 0.025973643817947534,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.011037992462190987,
+          "velocity_error_sample_std": 0.008459995865584633
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_baseline_s43.test"
+  },
+  {
+    "run_id": "csl_baseline_s44",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.017008072104383563,
+          "velocity_error": 0.008441051778658946,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.002738701147266916,
+          "velocity_error_sample_std": 0.0018285610381353092
+        },
+        "body": {
+          "position_error": 0.02286294087044167,
+          "velocity_error": 0.008543826399966016,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0038321370278399615,
+          "velocity_error_sample_std": 0.001709353680252294
+        },
+        "face": {
+          "position_error": 0.007214558701669801,
+          "velocity_error": 0.002250435017019226,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0017720864858352932,
+          "velocity_error_sample_std": 0.0007188424992942346
+        },
+        "hands": {
+          "position_error": 0.04573975699530968,
+          "velocity_error": 0.027288117219597705,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.007526839198727841,
+          "velocity_error_sample_std": 0.006588683191577563
+        },
+        "left_hand": {
+          "position_error": 0.04627963794505148,
+          "velocity_error": 0.028595682092859093,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.006760295711721058,
+          "velocity_error_sample_std": 0.007218796776458324
+        },
+        "right_hand": {
+          "position_error": 0.04519987604556788,
+          "velocity_error": 0.025980552346336318,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.010790598495297246,
+          "velocity_error_sample_std": 0.008194251443108863
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_baseline_s44.dev"
+  },
+  {
+    "run_id": "csl_baseline_s44",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 44,
+    "metrics": {
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.016986951710097786,
+          "velocity_error": 0.00840260549827281,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0027452056223251265,
+          "velocity_error_sample_std": 0.0019038484686690082
+        },
+        "body": {
+          "position_error": 0.023007651614570145,
+          "velocity_error": 0.008489093372157083,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.003854477776612762,
+          "velocity_error_sample_std": 0.0017707996974001211
+        },
+        "face": {
+          "position_error": 0.007174891383521062,
+          "velocity_error": 0.0022515645141289336,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0017434887608978337,
+          "velocity_error_sample_std": 0.0006878755936533817
+        },
+        "hands": {
+          "position_error": 0.04574357367595593,
+          "velocity_error": 0.027132161283495233,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.007668237941117577,
+          "velocity_error_sample_std": 0.0069025513652548505
+        },
+        "left_hand": {
+          "position_error": 0.04636803827122839,
+          "velocity_error": 0.028709830294324605,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.006790945853550168,
+          "velocity_error_sample_std": 0.0075136068399790324
+        },
+        "right_hand": {
+          "position_error": 0.045119109080683485,
+          "velocity_error": 0.025554492272665857,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.010888008706758785,
+          "velocity_error_sample_std": 0.008507017151826597
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_baseline_s44.test"
+  },
+  {
+    "run_id": "csl_tlrvq_s43",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 43,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.02285186313763932,
+          "velocity_error": 0.008643501636103057,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.004691658472463648,
+          "velocity_error_sample_std": 0.0017814935133081916
+        },
+        "body": {
+          "position_error": 0.029417311754956956,
+          "velocity_error": 0.008597361076704954,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005373157879998177,
+          "velocity_error_sample_std": 0.001690739368918499
+        },
+        "face": {
+          "position_error": 0.011101745569956896,
+          "velocity_error": 0.002219302932384439,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.004001653353069179,
+          "velocity_error_sample_std": 0.0006386381963719387
+        },
+        "hands": {
+          "position_error": 0.057411183607277635,
+          "velocity_error": 0.028230800649226093,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.009866893007597488,
+          "velocity_error_sample_std": 0.006437151708382676
+        },
+        "left_hand": {
+          "position_error": 0.05866892694954848,
+          "velocity_error": 0.030028606266114526,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.009823359937875033,
+          "velocity_error_sample_std": 0.007070895590939818
+        },
+        "right_hand": {
+          "position_error": 0.05615344026500679,
+          "velocity_error": 0.026432995032337665,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.013490151057448321,
+          "velocity_error_sample_std": 0.007770772307543505
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.013949781073636933,
+          "velocity_error": 0.007019674408993703,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0022512878461981565,
+          "velocity_error_sample_std": 0.0014771258987218204
+        },
+        "body": {
+          "position_error": 0.019782371136947415,
+          "velocity_error": 0.0076995705165679084,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0032668695802025483,
+          "velocity_error_sample_std": 0.001559779468339908
+        },
+        "face": {
+          "position_error": 0.006032983685097654,
+          "velocity_error": 0.0019986628468962914,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0014537490598612542,
+          "velocity_error_sample_std": 0.0005970199148876939
+        },
+        "hands": {
+          "position_error": 0.036966194055221294,
+          "velocity_error": 0.022192300863466914,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005997339316749198,
+          "velocity_error_sample_std": 0.005161544709799563
+        },
+        "left_hand": {
+          "position_error": 0.03672692990187782,
+          "velocity_error": 0.02264727530714542,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005161438918415523,
+          "velocity_error_sample_std": 0.00522903406520854
+        },
+        "right_hand": {
+          "position_error": 0.03720545820856479,
+          "velocity_error": 0.021737326419788414,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.008542138018357556,
+          "velocity_error_sample_std": 0.006562060037260195
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_tlrvq_s43.dev"
+  },
+  {
+    "run_id": "csl_tlrvq_s43",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 43,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.022904435388399622,
+          "velocity_error": 0.008606340756808403,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0044493985155869215,
+          "velocity_error_sample_std": 0.0018471623186954217
+        },
+        "body": {
+          "position_error": 0.02941239942554391,
+          "velocity_error": 0.008529578215683405,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.005060534886763804,
+          "velocity_error_sample_std": 0.0017257174077492585
+        },
+        "face": {
+          "position_error": 0.0111652980981116,
+          "velocity_error": 0.00222999501468228,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0038842707956649025,
+          "velocity_error_sample_std": 0.0007398761532240605
+        },
+        "hands": {
+          "position_error": 0.05744124159934516,
+          "velocity_error": 0.02805363493112135,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.00955827165242798,
+          "velocity_error_sample_std": 0.00656842085156689
+        },
+        "left_hand": {
+          "position_error": 0.0588122616751714,
+          "velocity_error": 0.030076910992964213,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.009435619556495255,
+          "velocity_error_sample_std": 0.0073363401637918674
+        },
+        "right_hand": {
+          "position_error": 0.05607022152351894,
+          "velocity_error": 0.026030358869278493,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.01335706472597758,
+          "velocity_error_sample_std": 0.007897211730618706
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.014000498628339192,
+          "velocity_error": 0.006970774996603695,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.002325094219609221,
+          "velocity_error_sample_std": 0.0015385231066082255
+        },
+        "body": {
+          "position_error": 0.019801345723642155,
+          "velocity_error": 0.007627380698300486,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0032531822619784874,
+          "velocity_error_sample_std": 0.0016107030446605266
+        },
+        "face": {
+          "position_error": 0.006115278229113804,
+          "velocity_error": 0.002007837317858895,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.001548741790942039,
+          "velocity_error_sample_std": 0.0007054456889628515
+        },
+        "hands": {
+          "position_error": 0.03692672325544457,
+          "velocity_error": 0.02197085064578846,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.006012245174603244,
+          "velocity_error_sample_std": 0.005257642365898891
+        },
+        "left_hand": {
+          "position_error": 0.03683171156016836,
+          "velocity_error": 0.02262893833025359,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0050590938237164654,
+          "velocity_error_sample_std": 0.005418467052615377
+        },
+        "right_hand": {
+          "position_error": 0.037021734950720774,
+          "velocity_error": 0.021312762961323322,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.00863506732507343,
+          "velocity_error_sample_std": 0.006684160431904825
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_tlrvq_s43.test"
+  },
+  {
+    "run_id": "csl_tlrvq_s44",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 44,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.02221974810392728,
+          "velocity_error": 0.00845089682840076,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.004315034114926469,
+          "velocity_error_sample_std": 0.0017679416027502133
+        },
+        "body": {
+          "position_error": 0.02909957467427105,
+          "velocity_error": 0.008543186588438532,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0055836749547275594,
+          "velocity_error_sample_std": 0.0017019676954314015
+        },
+        "face": {
+          "position_error": 0.010544291589526996,
+          "velocity_error": 0.0021814767808429505,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0035294978299344505,
+          "velocity_error_sample_std": 0.0006307806065945006
+        },
+        "hands": {
+          "position_error": 0.056491648610605516,
+          "velocity_error": 0.027540121780950704,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.009732586140216359,
+          "velocity_error_sample_std": 0.006371866952079921
+        },
+        "left_hand": {
+          "position_error": 0.05782114957322967,
+          "velocity_error": 0.029067302826079118,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.009702897005821616,
+          "velocity_error_sample_std": 0.006888838606046306
+        },
+        "right_hand": {
+          "position_error": 0.055162147647981365,
+          "velocity_error": 0.02601294073582229,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.013192994450641564,
+          "velocity_error_sample_std": 0.007845668929344556
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.013468426137795685,
+          "velocity_error": 0.006808087228680554,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0021964597576018406,
+          "velocity_error_sample_std": 0.0014283113195269646
+        },
+        "body": {
+          "position_error": 0.019212659070939143,
+          "velocity_error": 0.007655737740747375,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.003236604608930416,
+          "velocity_error_sample_std": 0.001564860607806854
+        },
+        "face": {
+          "position_error": 0.005902846787953272,
+          "velocity_error": 0.001957333637787275,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.0014204421390947937,
+          "velocity_error_sample_std": 0.0005651403160650287
+        },
+        "hands": {
+          "position_error": 0.03543129026433571,
+          "velocity_error": 0.02142987902719972,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005809250025068732,
+          "velocity_error_sample_std": 0.004948061694393018
+        },
+        "left_hand": {
+          "position_error": 0.035546171757800046,
+          "velocity_error": 0.022042195939588272,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.005006974002040427,
+          "velocity_error_sample_std": 0.005035632134962667
+        },
+        "right_hand": {
+          "position_error": 0.03531640877087137,
+          "velocity_error": 0.020817562114811165,
+          "n_samples": 1077,
+          "position_error_sample_std": 0.008131662097488565,
+          "velocity_error_sample_std": 0.00629436626733965
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_tlrvq_s44.dev"
+  },
+  {
+    "run_id": "csl_tlrvq_s44",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 44,
+    "metrics": {
+      "base_only": {
+        "all_keypoints": {
+          "position_error": 0.022413746668523766,
+          "velocity_error": 0.008450145875988685,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.004409761300161686,
+          "velocity_error_sample_std": 0.0018436796762561285
+        },
+        "body": {
+          "position_error": 0.029241586738706433,
+          "velocity_error": 0.008489344503002332,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.005201046475731418,
+          "velocity_error_sample_std": 0.0017276955801114012
+        },
+        "face": {
+          "position_error": 0.010700370834731377,
+          "velocity_error": 0.0021950570620758317,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.003780339248122681,
+          "velocity_error_sample_std": 0.0007339773496222427
+        },
+        "hands": {
+          "position_error": 0.05681111300576101,
+          "velocity_error": 0.027505807284672872,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.009484298822358388,
+          "velocity_error_sample_std": 0.0065836156738637314
+        },
+        "left_hand": {
+          "position_error": 0.05821960297810508,
+          "velocity_error": 0.02924022249367223,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.009344396378475745,
+          "velocity_error_sample_std": 0.007179383336217397
+        },
+        "right_hand": {
+          "position_error": 0.05540262303341696,
+          "velocity_error": 0.02577139207567351,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0130576699986468,
+          "velocity_error_sample_std": 0.0079725172561714
+        }
+      },
+      "full": {
+        "all_keypoints": {
+          "position_error": 0.013530450836288871,
+          "velocity_error": 0.006769791849547451,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.002208996729327151,
+          "velocity_error_sample_std": 0.001458202769776357
+        },
+        "body": {
+          "position_error": 0.01919901084678289,
+          "velocity_error": 0.007600660993496291,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.0031643756226871745,
+          "velocity_error_sample_std": 0.0015910031466750717
+        },
+        "face": {
+          "position_error": 0.005982489524827313,
+          "velocity_error": 0.001966081911777561,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.001487885570107742,
+          "velocity_error_sample_std": 0.0006182660423932439
+        },
+        "hands": {
+          "position_error": 0.03545403578350618,
+          "velocity_error": 0.021251408965808294,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.005618104815436884,
+          "velocity_error_sample_std": 0.005003146157681728
+        },
+        "left_hand": {
+          "position_error": 0.03570900772771423,
+          "velocity_error": 0.022002160655405372,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.005031586558339524,
+          "velocity_error_sample_std": 0.005237921965374876
+        },
+        "right_hand": {
+          "position_error": 0.035199063839298134,
+          "velocity_error": 0.020500657276211216,
+          "n_samples": 1176,
+          "position_error_sample_std": 0.007774923667297124,
+          "velocity_error_sample_std": 0.0062483207548903715
+        }
+      }
+    },
+    "source_record": "reconstruction.csl_tlrvq_s44.test"
+  }
+]

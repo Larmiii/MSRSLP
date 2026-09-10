@@ -1,0 +1,15 @@
+# Recorded supplementary-experiment environment: Python 3.12.10 on Windows.
+# Install the appropriate PyTorch CUDA wheel separately for GPU training.
+# The original runs used torch 2.11.0+cu128; no model weights are included.
+torch==2.11.0
+numpy==2.4.6
+transformers==4.46.3
+tqdm==4.68.1
+sentencepiece==0.2.1
+protobuf==7.35.0
+einops==0.8.2
+PyYAML==6.0.3
+jiwer==4.0.0
+sacrebleu==2.6.0
+fastdtw==0.3.4
+portalocker==3.2.0

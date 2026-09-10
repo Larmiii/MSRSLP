@@ -1,0 +1,56 @@
+[
+  {
+    "dataset": "phix",
+    "split": "dev",
+    "model": "pamrvq_dfm",
+    "training_seed": 42,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 24.536103278616427,
+      "bleu2": 12.691113142465612,
+      "bleu3": 8.414239280252183,
+      "bleu4": 6.314920634003612,
+      "chrf": 26.13385659414228,
+      "rouge": 25.05290522397891,
+      "wer": 94.27981719003391,
+      "missing_metrics": []
+    },
+    "generated_frames": {
+      "min": 28,
+      "max": 224,
+      "mean": 102.19805825242719
+    },
+    "stop_counts": {
+      "text_length_head": 515
+    },
+    "comparator_run_id": "phix_pamrvq_s42",
+    "source_record": "dfm.dev.metrics"
+  },
+  {
+    "dataset": "phix",
+    "split": "test",
+    "model": "pamrvq_dfm",
+    "training_seed": 42,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 25.292893955151595,
+      "bleu2": 13.338670811327292,
+      "bleu3": 8.838088162822187,
+      "bleu4": 6.619920353353994,
+      "chrf": 26.182112204368156,
+      "rouge": 25.462882725557538,
+      "wer": 95.27104959630911,
+      "missing_metrics": []
+    },
+    "generated_frames": {
+      "min": 24,
+      "max": 236,
+      "mean": 95.38845553822154
+    },
+    "stop_counts": {
+      "text_length_head": 641
+    },
+    "comparator_run_id": "phix_pamrvq_s42",
+    "source_record": "dfm.test.metrics"
+  }
+]

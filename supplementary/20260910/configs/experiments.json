@@ -1,0 +1,49 @@
+{
+  "layout_version": "reviewer55_verified_v1",
+  "training_seeds": [42, 43, 44],
+  "generation_seed": 20260910,
+  "experiments": {
+    "E1_phix": {
+      "dataset": "phix",
+      "variants": ["pamrvq_random", "pamrvq"],
+      "grouping_seed": 20260910,
+      "codebook_sizes": [32, 32, 512, 512, 128, 128],
+      "token_groups": 6,
+      "codebook_entries": 1344,
+      "nominal_bits_per_latent_position": 42,
+      "stages": ["vq", "tokenize", "ar", "generation", "reconstruction", "backtranslation"],
+      "comparison": "One fixed non-anatomical grouping versus anatomical grouping at the same configured token and codeword budgets."
+    },
+    "E2_phix": {
+      "dataset": "phix",
+      "variants": ["single_large", "tlrvq"],
+      "codebook_sizes": [[1024], [512, 512]],
+      "nominal_bits_per_latent_position": [10, 18],
+      "stages": ["vq", "reconstruction"],
+      "comparison": "Equal stored codewords and code dimension, not equal token count or nominal bit budget."
+    },
+    "E2_csl": {
+      "dataset": "csl",
+      "variants": ["baseline", "tlrvq"],
+      "codebook_sizes": [[4096], [2048, 2048]],
+      "nominal_bits_per_latent_position": [12, 22],
+      "stages": ["vq", "reconstruction"],
+      "comparison": "Equal stored codewords and code dimension, not equal token count or nominal bit budget."
+    }
+  },
+  "data": {
+    "directory_environment_variable": "SLP_SIGN_DATA_DIR",
+    "phix_files": "phix/phix_lift3d.{train,dev,test}.pt",
+    "csl_files": "csl/csl_daily_lift3d.{train,dev,test}.pt",
+    "character_vocabulary": "csl/char_vocab/txt.vocab",
+    "sample_schema": "Dictionary keyed by sample ID, each value contains text and poses_3d[T,178,3]. Existing gloss fields are not used by these training objectives.",
+    "expected_counts": {"phix": [7060, 515, 641], "csl": [18400, 1077, 1176]},
+    "included_in_repository": false
+  },
+  "execution_notes": [
+    "Each command selects one dataset, variant, seed and stage. Run seeds42/43/44 separately.",
+    "tokenize includes interleaving and source-length/truncation annotation. Do not train AR on the raw unannotated cache.",
+    "VQ training uses CUDA. Reconstruction evaluation has a separate CPU constructor compatibility path.",
+    "Generation and backtranslation are separate tools, not implicitly executed by the ar stage."
+  ]
+}

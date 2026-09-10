@@ -1,14 +1,14 @@
-# Baselines — fair reproduction under SLRTP-canonical
+# Baseline adaptation scripts
 
-This folder reproduces three representative general motion-generation methods —
-**MoMask** (masked VQ), **MDM** (diffusion) and **MotionGPT** (pretrained LLM) — on the
-sign-language datasets (PHOENIX14T, CSL-Daily) under **the exact same protocol as MSR**:
-same 178-keypoint lift3d data, same text encoder (mBART-50 for PHIX, char for CSL), and the
-same **SLRTP-canonical** back-translation evaluator. This makes every baseline **strictly
-comparable** to MSR — unlike cross-paper numbers measured with each paper's own evaluator.
+This folder contains the original adaptation scripts for MoMask, MDM and a
+MotionGPT-style model on PHOENIX14T and CSL-Daily. The methods share a keypoint
+task and back-translation evaluation setup, but retain different text encoders,
+pretraining conditions, architectures and training budgets. These comparisons
+do not isolate model capacity or structural effects.
 
-Results: see [`RESULTS.md`](RESULTS.md). MSR wins on both datasets across nearly all metrics;
-MotionGPT (mT5, ~587M, ~10× MSR) still does not beat MSR → the edge is structural, not capacity.
+The original reported results remain in [`RESULTS.md`](RESULTS.md). The independent
+2026-09-10 supplementary configurations, inference adapters and complete metrics
+are linked from [the supplement](../supplementary/20260910/README.md).
 
 ## Attribution / upstream
 
@@ -77,7 +77,7 @@ python code/eval/slrtp_eval_phix.py --pred-pickle sign_results/phix_mdm_e2e/test
 
 ## Notes
 
-- Capacity is kept comparable to MSR (RVQ/MDM ~20–46M trainable, frozen mBART not counted).
-  MotionGPT is the exception: mT5-base is ~587M (~10× MSR), reported as a caveat.
+- Report parameter counts with their scope (for example, whether a frozen text encoder is included).
+  Different parameter counts or text encoders are experimental conditions, not a control for capacity.
 - All trainings use validation-loss early stopping (`--patience 3`).
 - `--num_workers` datasets load lazily (paths only) to avoid per-worker RAM blow-up on Windows.

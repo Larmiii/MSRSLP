@@ -1,0 +1,96 @@
+{
+  "schema": "reviewer55.dfm_compatibility.v1",
+  "purpose": "PHX frozen PAMRVQ interface with a local masked parallel generator; heterogeneous AR/mask architectures.",
+  "dataset": "phix",
+  "vq_variant": "pamrvq",
+  "training_seed": 42,
+  "layout_version": "reviewer55_verified_v1",
+  "grouping": "anatomical",
+  "max_pose_frames": 320,
+  "token_group_size": 6,
+  "max_motion_tokens": 480,
+  "position_capacity": 512,
+  "token_order": [
+    "body_base",
+    "body_res",
+    "hand_base",
+    "hand_res",
+    "face_base",
+    "face_res"
+  ],
+  "codebook_sizes": [
+    32,
+    32,
+    512,
+    512,
+    128,
+    128
+  ],
+  "vocabulary_size": 1344,
+  "architecture": {
+    "num_layers": 6,
+    "embed_dim": 512,
+    "n_head": 8,
+    "text_dim": 1024,
+    "fc_rate": 4,
+    "drop_out_rate": 0.1,
+    "predict_length": true
+  },
+  "text_encoder": {
+    "name": "facebook/mbart-large-50",
+    "revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+    "language": "de_DE",
+    "frozen": true,
+    "local_files_only": true,
+    "max_text_len": 80
+  },
+  "training": {
+    "batch_size": 16,
+    "total_iter": 30000,
+    "warm_up_iter": 500,
+    "lr": 0.0001,
+    "lr_scheduler": [
+      15000,
+      25000
+    ],
+    "gamma": 0.2,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.99
+    ],
+    "gradient_clip_norm": 1.0,
+    "cfg_drop_prob": 0.1,
+    "logitnormal_mu": 0.0,
+    "logitnormal_sigma": 1.0,
+    "lambda_length": 0.1,
+    "num_workers": 0,
+    "drop_last": true,
+    "print_iter": 100,
+    "eval_iter": 500,
+    "save_iter": 2000
+  },
+  "scheduler_semantics": "Preserve original warmup function and scheduler stepping only after warmup. Scheduler milestones count post-warmup optimizer steps.",
+  "motion_loss": "Global1344-class CE only at corrupted action-token positions. No EOS/BOS/PAD target is introduced. Batch CE is normalized by corrupted action-token count.",
+  "length_loss": "SmoothL1(log predicted token length, log complete token length) on original conditioned text. Mask source_truncated rows for this loss only, retain their prefix action denoising loss. No inferred full-length token target.",
+  "validation": {
+    "selection": "minimum fixed-corruption dev masked-token CE",
+    "rng_seed": 1042,
+    "ce_aggregation": "preserve original batch CE weighted by batch sample count",
+    "all_dev_samples": true,
+    "cfg_drop": false
+  },
+  "sampling": {
+    "generation_seed": 20260910,
+    "n_steps": 50,
+    "cfg_scale": 1.0,
+    "length_scale": 1.0,
+    "temperature": 1.0,
+    "per_sample_rng": "same SHA256 dataset/split/sample_id derivation as revised AR",
+    "length_source": "text-only length head, exp(log length), round to nearest complete6-token group, clamp to[6,480]",
+    "group_legality": "mask logits outside each position's declared group before sampling, never modulo-remap wrong-group codes",
+    "actual_update": "inherit frozen model.sample: already revealed tokens remain unchanged, MASK positions reveal with probability t_next. No remasking of already revealed tokens despite old comments.",
+    "end_condition": "fixed text-predicted complete-group length, no EOS"
+  },
+  "reporting": "Report quantizer and generator hashes and the actual text/length/sampling conditions; this is an interface experiment, not equal-model-budget comparison."
+}

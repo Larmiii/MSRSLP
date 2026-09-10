@@ -1,0 +1,1732 @@
+[
+  {
+    "run_id": "phix_baseline_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 24.27235252331474,
+      "bleu2": 12.466108610035365,
+      "bleu3": 8.273425404986448,
+      "bleu4": 6.16413213530101,
+      "chrf": 26.35641354462483,
+      "rouge": 25.651175898691324,
+      "wer": 93.36576735957541,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 1,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 511,
+      "latent_steps": 80,
+      "max_motion_tokens": 80,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 515
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 8,
+      "mean": 101.85631067961165,
+      "max": 260
+    },
+    "seconds": 73.422,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_baseline_s42.dev.manifest",
+      "generation.phix_baseline_s42.dev.metrics",
+      "generation.phix_baseline_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_baseline_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 24.90661248323472,
+      "bleu2": 12.97855486824955,
+      "bleu3": 8.846546615941634,
+      "bleu4": 6.794844662096202,
+      "chrf": 26.28102310760677,
+      "rouge": 25.880174608077223,
+      "wer": 94.1048314750737,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 1,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 511,
+      "latent_steps": 80,
+      "max_motion_tokens": 80,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 4,
+      "mean": 97.09204368174727,
+      "max": 248
+    },
+    "seconds": 85.265,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_baseline_s42.test.manifest",
+      "generation.phix_baseline_s42.test.metrics",
+      "generation.phix_baseline_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamvq_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 27.26579497208829,
+      "bleu2": 15.029461018075313,
+      "bleu3": 10.312621848940212,
+      "bleu4": 7.866163630289002,
+      "chrf": 27.863341214717646,
+      "rouge": 28.24759679121389,
+      "wer": 90.56464691139614,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 3,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 170,
+      "latent_steps": 80,
+      "max_motion_tokens": 240,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 514,
+      "pose_frame_cap": 1
+    },
+    "stop_proportions": {
+      "eos": 0.9980582524271845,
+      "pose_frame_cap": 0.001941747572815534
+    },
+    "generated_frames": {
+      "min": 24,
+      "mean": 110.59417475728155,
+      "max": 320
+    },
+    "seconds": 228.719,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamvq_s42.dev.manifest",
+      "generation.phix_pamvq_s42.dev.metrics",
+      "generation.phix_pamvq_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamvq_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 26.98728604582455,
+      "bleu2": 14.705150997214497,
+      "bleu3": 9.9293392133322,
+      "bleu4": 7.4667521367510545,
+      "chrf": 27.870142262235692,
+      "rouge": 27.59472897975077,
+      "wer": 92.57977700884275,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 3,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 170,
+      "latent_steps": 80,
+      "max_motion_tokens": 240,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 16,
+      "mean": 103.20748829953199,
+      "max": 304
+    },
+    "seconds": 255.828,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamvq_s42.test.manifest",
+      "generation.phix_pamvq_s42.test.metrics",
+      "generation.phix_pamvq_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_tlrvq_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 23.97299444511051,
+      "bleu2": 12.384009023977319,
+      "bleu3": 8.566409963395966,
+      "bleu4": 6.6787980856993,
+      "chrf": 25.81435652222635,
+      "rouge": 25.957460129518623,
+      "wer": 93.0266843579537,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 2,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 255,
+      "latent_steps": 80,
+      "max_motion_tokens": 160,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 514,
+      "pose_frame_cap": 1
+    },
+    "stop_proportions": {
+      "eos": 0.9980582524271845,
+      "pose_frame_cap": 0.001941747572815534
+    },
+    "generated_frames": {
+      "min": 24,
+      "mean": 102.65631067961165,
+      "max": 320
+    },
+    "seconds": 164.125,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_tlrvq_s42.dev.manifest",
+      "generation.phix_tlrvq_s42.dev.metrics",
+      "generation.phix_tlrvq_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_tlrvq_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 24.636269498913315,
+      "bleu2": 12.91948716026315,
+      "bleu3": 8.93077838197128,
+      "bleu4": 6.922416788099266,
+      "chrf": 26.154036146411165,
+      "rouge": 26.001488592044964,
+      "wer": 94.16890939382289,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 2,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 255,
+      "latent_steps": 80,
+      "max_motion_tokens": 160,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 640,
+      "pose_frame_cap": 1
+    },
+    "stop_proportions": {
+      "eos": 0.9984399375975039,
+      "pose_frame_cap": 0.0015600624024961
+    },
+    "generated_frames": {
+      "min": 24,
+      "mean": 95.53822152886116,
+      "max": 320
+    },
+    "seconds": 156.657,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_tlrvq_s42.test.manifest",
+      "generation.phix_tlrvq_s42.test.metrics",
+      "generation.phix_tlrvq_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 28.12193774326021,
+      "bleu2": 15.882330622713901,
+      "bleu3": 10.99101653630531,
+      "bleu4": 8.421188822236862,
+      "chrf": 28.69218001176426,
+      "rouge": 29.739313141610186,
+      "wer": 89.35574229691878,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 515
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 28,
+      "mean": 100.03106796116505,
+      "max": 260
+    },
+    "seconds": 419.218,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_s42.dev.manifest",
+      "generation.phix_pamrvq_s42.dev.metrics",
+      "generation.phix_pamrvq_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 28.094706830090374,
+      "bleu2": 15.921638023794717,
+      "bleu3": 10.968728227471182,
+      "bleu4": 8.457091583168873,
+      "chrf": 28.24539359043913,
+      "rouge": 29.102855504099544,
+      "wer": 90.79841086761502,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 16,
+      "mean": 92.41809672386896,
+      "max": 232
+    },
+    "seconds": 458.531,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_s42.test.manifest",
+      "generation.phix_pamrvq_s42.test.metrics",
+      "generation.phix_pamrvq_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_baseline_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1077,
+    "metrics": {
+      "bleu1": 14.637121921047553,
+      "bleu2": 4.768177081890577,
+      "bleu3": 2.014458948293094,
+      "bleu4": 0.9563030863165273,
+      "chrf": 2.949153339110398,
+      "rouge": 15.1401003586134,
+      "wer": 99.44854119910228,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 1,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 1023,
+      "latent_steps": 160,
+      "max_motion_tokens": 160,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1066,
+      "pose_frame_cap": 11
+    },
+    "stop_proportions": {
+      "eos": 0.989786443825441,
+      "pose_frame_cap": 0.01021355617455896
+    },
+    "generated_frames": {
+      "min": 34,
+      "mean": 130.58124419684307,
+      "max": 320
+    },
+    "seconds": 317.594,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_baseline_s42.dev.manifest",
+      "generation.csl_baseline_s42.dev.metrics",
+      "generation.csl_baseline_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_baseline_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1176,
+    "metrics": {
+      "bleu1": 15.012493310752562,
+      "bleu2": 4.947798133091661,
+      "bleu3": 2.0248590799688873,
+      "bleu4": 0.9329193614803059,
+      "chrf": 3.023543734581537,
+      "rouge": 15.500086139233336,
+      "wer": 99.29188255613126,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 1,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 1023,
+      "latent_steps": 160,
+      "max_motion_tokens": 160,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1161,
+      "pose_frame_cap": 15
+    },
+    "stop_proportions": {
+      "eos": 0.9872448979591837,
+      "pose_frame_cap": 0.012755102040816327
+    },
+    "generated_frames": {
+      "min": 38,
+      "mean": 133.52380952380952,
+      "max": 320
+    },
+    "seconds": 350.906,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_baseline_s42.test.manifest",
+      "generation.csl_baseline_s42.test.metrics",
+      "generation.csl_baseline_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_pamvq_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1077,
+    "metrics": {
+      "bleu1": 17.3760478860786,
+      "bleu2": 7.413759100049126,
+      "bleu3": 3.8993202313000923,
+      "bleu4": 2.3293618591822076,
+      "chrf": 3.9294218303656065,
+      "rouge": 18.15896648815068,
+      "wer": 97.27476755370311,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 3,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 341,
+      "latent_steps": 160,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1070,
+      "pose_frame_cap": 7
+    },
+    "stop_proportions": {
+      "eos": 0.9935004642525533,
+      "pose_frame_cap": 0.0064995357474466105
+    },
+    "generated_frames": {
+      "min": 34,
+      "mean": 131.01021355617456,
+      "max": 320
+    },
+    "seconds": 954.688,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_pamvq_s42.dev.manifest",
+      "generation.csl_pamvq_s42.dev.metrics",
+      "generation.csl_pamvq_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_pamvq_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1176,
+    "metrics": {
+      "bleu1": 17.573170393064025,
+      "bleu2": 7.759090459419923,
+      "bleu3": 4.0669107396822115,
+      "bleu4": 2.4407388712484193,
+      "chrf": 4.084002990705246,
+      "rouge": 18.633896427238277,
+      "wer": 96.1370178468624,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 3,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 341,
+      "latent_steps": 160,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1170,
+      "pose_frame_cap": 6
+    },
+    "stop_proportions": {
+      "eos": 0.9948979591836735,
+      "pose_frame_cap": 0.00510204081632653
+    },
+    "generated_frames": {
+      "min": 30,
+      "mean": 133.62414965986395,
+      "max": 320
+    },
+    "seconds": 1056.547,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_pamvq_s42.test.manifest",
+      "generation.csl_pamvq_s42.test.metrics",
+      "generation.csl_pamvq_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_tlrvq_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1077,
+    "metrics": {
+      "bleu1": 15.176310908324595,
+      "bleu2": 5.373896351441372,
+      "bleu3": 2.3908643606592848,
+      "bleu4": 1.2423918022539215,
+      "chrf": 3.06803384049644,
+      "rouge": 15.149619067852854,
+      "wer": 101.12856684834884,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 2,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 511,
+      "latent_steps": 160,
+      "max_motion_tokens": 320,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1069,
+      "pose_frame_cap": 8
+    },
+    "stop_proportions": {
+      "eos": 0.9925719591457753,
+      "pose_frame_cap": 0.007428040854224698
+    },
+    "generated_frames": {
+      "min": 34,
+      "mean": 139.21077065923862,
+      "max": 320
+    },
+    "seconds": 739.343,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_tlrvq_s42.dev.manifest",
+      "generation.csl_tlrvq_s42.dev.metrics",
+      "generation.csl_tlrvq_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_tlrvq_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1176,
+    "metrics": {
+      "bleu1": 15.784345475071415,
+      "bleu2": 5.939818963933616,
+      "bleu3": 2.6747603098066413,
+      "bleu4": 1.4011162410441496,
+      "chrf": 3.2687711516199354,
+      "rouge": 16.088230720589145,
+      "wer": 99.81577432354635,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 2,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 511,
+      "latent_steps": 160,
+      "max_motion_tokens": 320,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1156,
+      "pose_frame_cap": 20
+    },
+    "stop_proportions": {
+      "eos": 0.9829931972789115,
+      "pose_frame_cap": 0.017006802721088437
+    },
+    "generated_frames": {
+      "min": 28,
+      "mean": 142.47619047619048,
+      "max": 320
+    },
+    "seconds": 757.281,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_tlrvq_s42.test.manifest",
+      "generation.csl_tlrvq_s42.test.metrics",
+      "generation.csl_tlrvq_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_pamrvq_s42",
+    "dataset": "csl",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1077,
+    "metrics": {
+      "bleu1": 21.416912735905676,
+      "bleu2": 10.962282901311335,
+      "bleu3": 6.4054528727009155,
+      "bleu4": 4.092839332970071,
+      "chrf": 5.547811991566766,
+      "rouge": 23.163922685635242,
+      "wer": 92.523244629689,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 6,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 170,
+      "latent_steps": 160,
+      "max_motion_tokens": 960,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1077
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 28,
+      "mean": 122.14113277623026,
+      "max": 292
+    },
+    "seconds": 1766.922,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_pamrvq_s42.dev.manifest",
+      "generation.csl_pamrvq_s42.dev.metrics",
+      "generation.csl_pamrvq_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "csl_pamrvq_s42",
+    "dataset": "csl",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 1176,
+    "metrics": {
+      "bleu1": 20.790717153287734,
+      "bleu2": 10.542913478140056,
+      "bleu3": 6.073036339677639,
+      "bleu4": 3.809450007773044,
+      "chrf": 5.301735060734619,
+      "rouge": 22.18214465896617,
+      "wer": 92.63672999424296,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 2,
+      "group_size": 6,
+      "position_capacity": 1024,
+      "requested_latent_steps": 160,
+      "capacity_latent_steps": 170,
+      "latent_steps": 160,
+      "max_motion_tokens": 960,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 1176
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 40,
+      "mean": 125.45918367346938,
+      "max": 296
+    },
+    "seconds": 1974.0,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "char",
+      "lang": "zh_CN"
+    },
+    "source_records": [
+      "generation.csl_pamrvq_s42.test.manifest",
+      "generation.csl_pamrvq_s42.test.metrics",
+      "generation.csl_pamrvq_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_random_s42",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 27.700943543900358,
+      "bleu2": 15.502391413227054,
+      "bleu3": 10.570417147530376,
+      "bleu4": 8.106879634544894,
+      "chrf": 28.43449416063218,
+      "rouge": 28.545576956815953,
+      "wer": 91.08064278342917,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 515
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 16,
+      "mean": 102.59417475728155,
+      "max": 284
+    },
+    "seconds": 418.266,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_random_s42.dev.manifest",
+      "generation.phix_pamrvq_random_s42.dev.metrics",
+      "generation.phix_pamrvq_random_s42.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_random_s42",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 42,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 27.738549160330113,
+      "bleu2": 15.59841904746468,
+      "bleu3": 10.543775139823227,
+      "bleu4": 8.009026300524752,
+      "chrf": 28.62734422440608,
+      "rouge": 28.16902805214314,
+      "wer": 92.83608868383955,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 4,
+      "mean": 97.51014040561623,
+      "max": 240
+    },
+    "seconds": 490.343,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_random_s42.test.manifest",
+      "generation.phix_pamrvq_random_s42.test.metrics",
+      "generation.phix_pamrvq_random_s42.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_s43",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 43,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 26.8065295716832,
+      "bleu2": 15.101072164982916,
+      "bleu3": 10.384546332284643,
+      "bleu4": 7.925693404590627,
+      "chrf": 27.735614683577143,
+      "rouge": 28.81733212151146,
+      "wer": 89.13460120890461,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 515
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 16,
+      "mean": 95.59611650485436,
+      "max": 236
+    },
+    "seconds": 370.125,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_s43.dev.manifest",
+      "generation.phix_pamrvq_s43.dev.metrics",
+      "generation.phix_pamrvq_s43.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_s43",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 43,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 27.646622824149297,
+      "bleu2": 15.704679517868735,
+      "bleu3": 11.011670260674341,
+      "bleu4": 8.459109742765913,
+      "chrf": 28.19125526760095,
+      "rouge": 29.268073964097596,
+      "wer": 89.38869665513263,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 12,
+      "mean": 89.2792511700468,
+      "max": 216
+    },
+    "seconds": 427.343,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_s43.test.manifest",
+      "generation.phix_pamrvq_s43.test.metrics",
+      "generation.phix_pamrvq_s43.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_s44",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 44,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 28.291789830952226,
+      "bleu2": 16.28300011387165,
+      "bleu3": 11.368363091694214,
+      "bleu4": 8.75299028444932,
+      "chrf": 28.780936030127435,
+      "rouge": 29.735977086407,
+      "wer": 88.33849329205367,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 515
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 20,
+      "mean": 98.50873786407767,
+      "max": 220
+    },
+    "seconds": 393.11,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_s44.dev.manifest",
+      "generation.phix_pamrvq_s44.dev.metrics",
+      "generation.phix_pamrvq_s44.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_s44",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 44,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 29.424533700960186,
+      "bleu2": 17.260394059194354,
+      "bleu3": 12.195980951155827,
+      "bleu4": 9.455811160575484,
+      "chrf": 29.367704245841324,
+      "rouge": 30.746711475096618,
+      "wer": 88.36344995514546,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 16,
+      "mean": 91.9188767550702,
+      "max": 228
+    },
+    "seconds": 452.829,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_s44.test.manifest",
+      "generation.phix_pamrvq_s44.test.metrics",
+      "generation.phix_pamrvq_s44.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_random_s43",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 43,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 26.813183103734083,
+      "bleu2": 15.07391688142662,
+      "bleu3": 10.276008221279657,
+      "bleu4": 7.712646894496986,
+      "chrf": 27.892549538930066,
+      "rouge": 28.252059006441993,
+      "wer": 90.2108211705735,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 515
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 20,
+      "mean": 101.96504854368932,
+      "max": 236
+    },
+    "seconds": 398.156,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_random_s43.dev.manifest",
+      "generation.phix_pamrvq_random_s43.dev.metrics",
+      "generation.phix_pamrvq_random_s43.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_random_s43",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 43,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 26.77367965661161,
+      "bleu2": 15.205676509280133,
+      "bleu3": 10.441754339750174,
+      "bleu4": 8.025154515012524,
+      "chrf": 27.9318210598769,
+      "rouge": 28.150764773180413,
+      "wer": 90.61899269511726,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 12,
+      "mean": 93.46021840873635,
+      "max": 224
+    },
+    "seconds": 450.953,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_random_s43.test.manifest",
+      "generation.phix_pamrvq_random_s43.test.metrics",
+      "generation.phix_pamrvq_random_s43.test.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_random_s44",
+    "dataset": "phix",
+    "split": "dev",
+    "training_seed": 44,
+    "generation_seed": 20260910,
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 28.118325821246508,
+      "bleu2": 15.184416281467694,
+      "bleu3": 10.047885017447857,
+      "bleu4": 7.472566730812014,
+      "chrf": 28.212736952558114,
+      "rouge": 29.481565189513464,
+      "wer": 90.37299130178387,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 514,
+      "pose_frame_cap": 1
+    },
+    "stop_proportions": {
+      "eos": 0.9980582524271845,
+      "pose_frame_cap": 0.001941747572815534
+    },
+    "generated_frames": {
+      "min": 28,
+      "mean": 107.33203883495146,
+      "max": 320
+    },
+    "seconds": 419.375,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_random_s44.dev.manifest",
+      "generation.phix_pamrvq_random_s44.dev.metrics",
+      "generation.phix_pamrvq_random_s44.dev.generation_manifest"
+    ]
+  },
+  {
+    "run_id": "phix_pamrvq_random_s44",
+    "dataset": "phix",
+    "split": "test",
+    "training_seed": 44,
+    "generation_seed": 20260910,
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 28.888383572490024,
+      "bleu2": 16.68206311486299,
+      "bleu3": 11.701454753129358,
+      "bleu4": 9.003617039468104,
+      "chrf": 29.35621273175989,
+      "rouge": 29.24097465225794,
+      "wer": 90.79841086761502,
+      "missing_metrics": []
+    },
+    "motion_budget": {
+      "requested_pose_frames": 320,
+      "downsampling_factor": 4,
+      "group_size": 6,
+      "position_capacity": 512,
+      "requested_latent_steps": 80,
+      "capacity_latent_steps": 85,
+      "latent_steps": 80,
+      "max_motion_tokens": 480,
+      "effective_pose_frames": 320,
+      "limit_reason": "pose_frame_cap"
+    },
+    "stop_counts": {
+      "eos": 641
+    },
+    "stop_proportions": {
+      "eos": 1.0
+    },
+    "generated_frames": {
+      "min": 24,
+      "mean": 101.38533541341654,
+      "max": 244
+    },
+    "seconds": 492.203,
+    "backend": {
+      "name": "serial_ar_cached_text",
+      "requested_work_chunk_size": 16,
+      "effective_ar_batch_size": 1,
+      "effective_text_batch_size": 1
+    },
+    "environment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "cuda_runtime": "12.8",
+      "gpu_name": "NVIDIA GeForce RTX 5090"
+    },
+    "text_encoder": {
+      "kind": "mbart",
+      "lang": "de_DE",
+      "pretrained_identifier": "facebook/mbart-large-50",
+      "requested_revision": null,
+      "resolved_revision": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+      "config_sha256": "c5d81a6aaba07782cde7e544fa805eb1e595ddb3c25f8a99092c028696b90bf2"
+    },
+    "source_records": [
+      "generation.phix_pamrvq_random_s44.test.manifest",
+      "generation.phix_pamrvq_random_s44.test.metrics",
+      "generation.phix_pamrvq_random_s44.test.generation_manifest"
+    ]
+  }
+]

@@ -1,0 +1,1364 @@
+[
+  {
+    "dataset": "phix",
+    "model": "momask",
+    "split": "dev",
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 28.48472027789361,
+      "bleu2": 16.21398487471677,
+      "bleu3": 11.129619657122596,
+      "bleu4": 8.535174658840052,
+      "chrf": 28.673207435229227,
+      "rouge": 29.51042984889942,
+      "wer": 90.12236473536784,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, de_DE",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "10 base iterations, CFG4, 5 residual layers CFG5, temperature1; native residual -1 has zero vector contribution",
+    "stop_counts": {
+      "predicted_length": 515
+    },
+    "timing": {
+      "total_generation_seconds": 81.40981579995423,
+      "mean_sample_seconds": 0.15807731223292085,
+      "p50_sample_seconds": 0.16093840000394266,
+      "p95_sample_seconds": 0.1889944800073863,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": {
+      "samples_with_sentinel": 106,
+      "total_sentinel_count": 690,
+      "residual_slots": 71410,
+      "per_layer": [
+        0,
+        162,
+        141,
+        176,
+        108,
+        103
+      ],
+      "semantics": "Native residual PAD class sampled at valid time positions, represented as -1 and decoded with zero vector contribution. Not codeword0 or temporal tail padding."
+    },
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "phix_sign",
+        "sha256": "69bdfbebc038256a1e7c4ff0f7bcf91a90df64648a208be2d48e12cae0695d29",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "phix_sign",
+        "sha256": "7ac8bad6a860858a742422355a7a896d6bebeef7da64ae0e4c8a449f773e4353",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_phix",
+        "sha256": "80b638ad69fa90bfe7def9e65dbb790bf6cc25ea8e3d48c65406396cc0e47527",
+        "bytes": 87401561
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_mtrans_phix",
+        "sha256": "45aa46d044c9338623c34717939c1fa4d615dc480addcdf5ee89ce49c496d2fc",
+        "bytes": 1689838227
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_rtrans_phix",
+        "sha256": "a1c105583737953c26e0b008f81a1342b7a4b59b57ac741872964fba4b85566b",
+        "bytes": 1699316111
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.phix.momask.dev.generation",
+      "reference.phix.momask.dev.manifest",
+      "reference.phix.momask.dev.metrics"
+    ]
+  },
+  {
+    "dataset": "phix",
+    "model": "momask",
+    "split": "test",
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 29.85376156691912,
+      "bleu2": 16.742007570135407,
+      "bleu3": 11.393511716218237,
+      "bleu4": 8.65142769103554,
+      "chrf": 29.642076552804227,
+      "rouge": 30.1498744348691,
+      "wer": 90.11918492887351,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, de_DE",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "10 base iterations, CFG4, 5 residual layers CFG5, temperature1; native residual -1 has zero vector contribution",
+    "stop_counts": {
+      "predicted_length": 641
+    },
+    "timing": {
+      "total_generation_seconds": 112.38917689990194,
+      "mean_sample_seconds": 0.17533412932902018,
+      "p50_sample_seconds": 0.17255090000981,
+      "p95_sample_seconds": 0.2011118000082206,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": {
+      "samples_with_sentinel": 118,
+      "total_sentinel_count": 960,
+      "residual_slots": 83200,
+      "per_layer": [
+        0,
+        212,
+        187,
+        252,
+        156,
+        153
+      ],
+      "semantics": "Native residual PAD class sampled at valid time positions, represented as -1 and decoded with zero vector contribution. Not codeword0 or temporal tail padding."
+    },
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "phix_sign",
+        "sha256": "69bdfbebc038256a1e7c4ff0f7bcf91a90df64648a208be2d48e12cae0695d29",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "phix_sign",
+        "sha256": "7ac8bad6a860858a742422355a7a896d6bebeef7da64ae0e4c8a449f773e4353",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_phix",
+        "sha256": "80b638ad69fa90bfe7def9e65dbb790bf6cc25ea8e3d48c65406396cc0e47527",
+        "bytes": 87401561
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_mtrans_phix",
+        "sha256": "45aa46d044c9338623c34717939c1fa4d615dc480addcdf5ee89ce49c496d2fc",
+        "bytes": 1689838227
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_rtrans_phix",
+        "sha256": "a1c105583737953c26e0b008f81a1342b7a4b59b57ac741872964fba4b85566b",
+        "bytes": 1699316111
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.phix.momask.test.generation",
+      "reference.phix.momask.test.manifest",
+      "reference.phix.momask.test.metrics"
+    ]
+  },
+  {
+    "dataset": "phix",
+    "model": "mdm",
+    "split": "dev",
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 23.6915012853617,
+      "bleu2": 11.506594120534706,
+      "bleu3": 7.548990852778948,
+      "bleu4": 5.667652922309148,
+      "chrf": 25.38761088298464,
+      "rouge": 22.62776167260397,
+      "wer": 97.90653103346601,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, de_DE",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "1000-step schedule, 50 DDIM steps, CFG2.5",
+    "stop_counts": {
+      "predicted_length": 515
+    },
+    "timing": {
+      "total_generation_seconds": 346.35507620027056,
+      "mean_sample_seconds": 0.6725341285442147,
+      "p50_sample_seconds": 0.6887294000043767,
+      "p95_sample_seconds": 0.8031804899932466,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "phix_sign",
+        "sha256": "69bdfbebc038256a1e7c4ff0f7bcf91a90df64648a208be2d48e12cae0695d29",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "phix_sign",
+        "sha256": "7ac8bad6a860858a742422355a7a896d6bebeef7da64ae0e4c8a449f773e4353",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "mdm_phix",
+        "sha256": "e7a125ca3a5c85707aa33a8fe40d6810b25800a5f9ad228133f394d7aed73a82",
+        "bytes": 74545753
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.phix.mdm.dev.generation",
+      "reference.phix.mdm.dev.manifest",
+      "reference.phix.mdm.dev.metrics"
+    ]
+  },
+  {
+    "dataset": "phix",
+    "model": "mdm",
+    "split": "test",
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 23.896779911103064,
+      "bleu2": 11.331985356494542,
+      "bleu3": 7.507955396990774,
+      "bleu4": 5.689594503129842,
+      "chrf": 24.94856012604148,
+      "rouge": 23.061334636674502,
+      "wer": 97.64193259002948,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, de_DE",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "1000-step schedule, 50 DDIM steps, CFG2.5",
+    "stop_counts": {
+      "predicted_length": 641
+    },
+    "timing": {
+      "total_generation_seconds": 433.8541369000159,
+      "mean_sample_seconds": 0.6768395271451105,
+      "p50_sample_seconds": 0.6707159999932628,
+      "p95_sample_seconds": 0.7674341999954777,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "phix_sign",
+        "sha256": "69bdfbebc038256a1e7c4ff0f7bcf91a90df64648a208be2d48e12cae0695d29",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "phix_sign",
+        "sha256": "7ac8bad6a860858a742422355a7a896d6bebeef7da64ae0e4c8a449f773e4353",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "mdm_phix",
+        "sha256": "e7a125ca3a5c85707aa33a8fe40d6810b25800a5f9ad228133f394d7aed73a82",
+        "bytes": 74545753
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.phix.mdm.test.generation",
+      "reference.phix.mdm.test.manifest",
+      "reference.phix.mdm.test.metrics"
+    ]
+  },
+  {
+    "dataset": "phix",
+    "model": "motiongpt_style",
+    "split": "dev",
+    "n_samples": 515,
+    "metrics": {
+      "bleu1": 26.95938628188591,
+      "bleu2": 14.927988190623424,
+      "bleu3": 10.04720870945932,
+      "bleu4": 7.51104950631112,
+      "chrf": 27.396818538977325,
+      "rouge": 29.313256039626047,
+      "wer": 87.18855963438007,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "mT5-base, trained conditional model",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "greedy mT5, six legal512-word layer blocks, full-group EOS, no repetition penalty",
+    "stop_counts": {
+      "natural_eos": 515
+    },
+    "timing": {
+      "total_generation_seconds": 1016.4078204997641,
+      "mean_sample_seconds": 1.9736074184461438,
+      "p50_sample_seconds": 1.9245607999910135,
+      "p95_sample_seconds": 3.467513149992737,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "phix_sign",
+        "sha256": "69bdfbebc038256a1e7c4ff0f7bcf91a90df64648a208be2d48e12cae0695d29",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "phix_sign",
+        "sha256": "7ac8bad6a860858a742422355a7a896d6bebeef7da64ae0e4c8a449f773e4353",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_phix",
+        "sha256": "80b638ad69fa90bfe7def9e65dbb790bf6cc25ea8e3d48c65406396cc0e47527",
+        "bytes": 87401561
+      },
+      {
+        "name": "config.json",
+        "component": "best",
+        "sha256": "6c3c2bccba39a8ecd8311a8adbe4007fefcc499e22255643890b9ac807dd3ea5",
+        "bytes": 860
+      },
+      {
+        "name": "generation_config.json",
+        "component": "best",
+        "sha256": "196b3297c73e8b686aa1c3bc1fe99b17362ddd682354a710a6f07c697eb6e273",
+        "bytes": 149
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "best",
+        "sha256": "8cdd0151d065cbffc212dc9b6b4fc84c04bed9e7d3ece62ef74a60db5f70f355",
+        "bytes": 578085
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "best",
+        "sha256": "3e032339c3bd9cfc4ee5eeb9b9ec393077a18224cd2c85b852e15927cb9d99ee",
+        "bytes": 439
+      },
+      {
+        "name": "added_tokens.json",
+        "component": "best",
+        "sha256": "6a95abbb4aa1d12ad47525199232ab10ac6d7891f8d9e353f1456351268beedc",
+        "bytes": 66479
+      },
+      {
+        "name": "tokenizer.json",
+        "component": "best",
+        "sha256": "0114cc3397e88a8abf27bcaf68ddc236e93733e92d44aa3a85c46630e9e1340d",
+        "bytes": 16914321
+      },
+      {
+        "name": "spiece.model",
+        "component": "best",
+        "sha256": "ef78f86560d809067d12bac6c09f19a462cb3af3f54d2b8acbba26e1433125d6",
+        "bytes": 4309802
+      },
+      {
+        "name": "model.safetensors",
+        "component": "best",
+        "sha256": "4b4acc0b213a69050aae1b6494c59f26bb9a5be3b3f8b3809a72e710caff49a9",
+        "bytes": 2348439408
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.phix.motiongpt_style.dev.generation",
+      "reference.phix.motiongpt_style.dev.manifest",
+      "reference.phix.motiongpt_style.dev.metrics"
+    ]
+  },
+  {
+    "dataset": "phix",
+    "model": "motiongpt_style",
+    "split": "test",
+    "n_samples": 641,
+    "metrics": {
+      "bleu1": 27.583584499166733,
+      "bleu2": 15.576531162729967,
+      "bleu3": 10.631325499479125,
+      "bleu4": 8.08314083776273,
+      "chrf": 27.929024573022453,
+      "rouge": 29.837492599442715,
+      "wer": 87.03062924516212,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "mT5-base, trained conditional model",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "greedy mT5, six legal512-word layer blocks, full-group EOS, no repetition penalty",
+    "stop_counts": {
+      "natural_eos": 641
+    },
+    "timing": {
+      "total_generation_seconds": 1158.5581000000093,
+      "mean_sample_seconds": 1.8074229329173312,
+      "p50_sample_seconds": 1.7823993000056362,
+      "p95_sample_seconds": 3.250634900003206,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "phix_sign",
+        "sha256": "69bdfbebc038256a1e7c4ff0f7bcf91a90df64648a208be2d48e12cae0695d29",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "phix_sign",
+        "sha256": "7ac8bad6a860858a742422355a7a896d6bebeef7da64ae0e4c8a449f773e4353",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_phix",
+        "sha256": "80b638ad69fa90bfe7def9e65dbb790bf6cc25ea8e3d48c65406396cc0e47527",
+        "bytes": 87401561
+      },
+      {
+        "name": "config.json",
+        "component": "best",
+        "sha256": "6c3c2bccba39a8ecd8311a8adbe4007fefcc499e22255643890b9ac807dd3ea5",
+        "bytes": 860
+      },
+      {
+        "name": "generation_config.json",
+        "component": "best",
+        "sha256": "196b3297c73e8b686aa1c3bc1fe99b17362ddd682354a710a6f07c697eb6e273",
+        "bytes": 149
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "best",
+        "sha256": "8cdd0151d065cbffc212dc9b6b4fc84c04bed9e7d3ece62ef74a60db5f70f355",
+        "bytes": 578085
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "best",
+        "sha256": "3e032339c3bd9cfc4ee5eeb9b9ec393077a18224cd2c85b852e15927cb9d99ee",
+        "bytes": 439
+      },
+      {
+        "name": "added_tokens.json",
+        "component": "best",
+        "sha256": "6a95abbb4aa1d12ad47525199232ab10ac6d7891f8d9e353f1456351268beedc",
+        "bytes": 66479
+      },
+      {
+        "name": "tokenizer.json",
+        "component": "best",
+        "sha256": "0114cc3397e88a8abf27bcaf68ddc236e93733e92d44aa3a85c46630e9e1340d",
+        "bytes": 16914321
+      },
+      {
+        "name": "spiece.model",
+        "component": "best",
+        "sha256": "ef78f86560d809067d12bac6c09f19a462cb3af3f54d2b8acbba26e1433125d6",
+        "bytes": 4309802
+      },
+      {
+        "name": "model.safetensors",
+        "component": "best",
+        "sha256": "4b4acc0b213a69050aae1b6494c59f26bb9a5be3b3f8b3809a72e710caff49a9",
+        "bytes": 2348439408
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.phix.motiongpt_style.test.generation",
+      "reference.phix.motiongpt_style.test.manifest",
+      "reference.phix.motiongpt_style.test.metrics"
+    ]
+  },
+  {
+    "dataset": "csl",
+    "model": "momask",
+    "split": "dev",
+    "n_samples": 1077,
+    "metrics": {
+      "bleu1": 13.93614713895337,
+      "bleu2": 4.782073862422683,
+      "bleu3": 1.9735483973472296,
+      "bleu4": 0.9586811257898676,
+      "chrf": 2.966463869705137,
+      "rouge": 15.807725072043766,
+      "wer": 97.1465213209362,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, zh_CN",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "10 base iterations, CFG4, 5 residual layers CFG5, temperature1; native residual -1 has zero vector contribution",
+    "stop_counts": {
+      "predicted_length": 1077
+    },
+    "timing": {
+      "total_generation_seconds": 190.18363719993795,
+      "mean_sample_seconds": 0.1765864783657734,
+      "p50_sample_seconds": 0.17442000001028646,
+      "p95_sample_seconds": 0.19579368000268005,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": {
+      "samples_with_sentinel": 16,
+      "total_sentinel_count": 33,
+      "residual_slots": 161560,
+      "per_layer": [
+        0,
+        28,
+        3,
+        2,
+        0,
+        0
+      ],
+      "semantics": "Native residual PAD class sampled at valid time positions, represented as -1 and decoded with zero vector contribution. Not codeword0 or temporal tail padding."
+    },
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "csl_sign",
+        "sha256": "f49202a73946620676bfcb28494c3780945866e109d9ad340b9e1be5c0b0b4c3",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "csl_sign",
+        "sha256": "3af26628d2569ffcc5209265f6ff7f92be055fda62869ef8429abff94f54afaa",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_csl",
+        "sha256": "c49d7a03302a1590b032fd046550214f1741aafe1db2b8de1598f905a0627f0c",
+        "bytes": 87401497
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_mtrans_csl",
+        "sha256": "012d891ec140f91b87c5e67535f17566d7d70398134d23624024e5b5f0206154",
+        "bytes": 1689838227
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_rtrans_csl",
+        "sha256": "fb549a5dc8fa93831a82d9f19c8adafce18386aca28ebc33219e8f18d6bcd6a7",
+        "bytes": 1699316111
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.csl.momask.dev.generation",
+      "reference.csl.momask.dev.manifest",
+      "reference.csl.momask.dev.metrics"
+    ]
+  },
+  {
+    "dataset": "csl",
+    "model": "momask",
+    "split": "test",
+    "n_samples": 1176,
+    "metrics": {
+      "bleu1": 13.61012955713655,
+      "bleu2": 4.911346078986506,
+      "bleu3": 2.2082371863488657,
+      "bleu4": 1.1627241403781161,
+      "chrf": 2.990719899643889,
+      "rouge": 15.479635186860966,
+      "wer": 97.23085780080599,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, zh_CN",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "10 base iterations, CFG4, 5 residual layers CFG5, temperature1; native residual -1 has zero vector contribution",
+    "stop_counts": {
+      "predicted_length": 1176
+    },
+    "timing": {
+      "total_generation_seconds": 202.95514410008036,
+      "mean_sample_seconds": 0.1725809048470071,
+      "p50_sample_seconds": 0.1734355999942636,
+      "p95_sample_seconds": 0.19233765000171843,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": {
+      "samples_with_sentinel": 11,
+      "total_sentinel_count": 27,
+      "residual_slots": 179205,
+      "per_layer": [
+        0,
+        25,
+        2,
+        0,
+        0,
+        0
+      ],
+      "semantics": "Native residual PAD class sampled at valid time positions, represented as -1 and decoded with zero vector contribution. Not codeword0 or temporal tail padding."
+    },
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "csl_sign",
+        "sha256": "f49202a73946620676bfcb28494c3780945866e109d9ad340b9e1be5c0b0b4c3",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "csl_sign",
+        "sha256": "3af26628d2569ffcc5209265f6ff7f92be055fda62869ef8429abff94f54afaa",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_csl",
+        "sha256": "c49d7a03302a1590b032fd046550214f1741aafe1db2b8de1598f905a0627f0c",
+        "bytes": 87401497
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_mtrans_csl",
+        "sha256": "012d891ec140f91b87c5e67535f17566d7d70398134d23624024e5b5f0206154",
+        "bytes": 1689838227
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_rtrans_csl",
+        "sha256": "fb549a5dc8fa93831a82d9f19c8adafce18386aca28ebc33219e8f18d6bcd6a7",
+        "bytes": 1699316111
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.csl.momask.test.generation",
+      "reference.csl.momask.test.manifest",
+      "reference.csl.momask.test.metrics"
+    ]
+  },
+  {
+    "dataset": "csl",
+    "model": "mdm",
+    "split": "dev",
+    "n_samples": 1077,
+    "metrics": {
+      "bleu1": 13.208260842426153,
+      "bleu2": 3.3965076562841268,
+      "bleu3": 1.092922777258366,
+      "bleu4": 0.44206243468281786,
+      "chrf": 2.5216454050831514,
+      "rouge": 13.31848933386675,
+      "wer": 100.1538954793203,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, zh_CN",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "1000-step schedule, 50 DDIM steps, CFG2.5",
+    "stop_counts": {
+      "predicted_length": 1077
+    },
+    "timing": {
+      "total_generation_seconds": 692.9079511997115,
+      "mean_sample_seconds": 0.6433685712160738,
+      "p50_sample_seconds": 0.6464113999973051,
+      "p95_sample_seconds": 0.74676450000552,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "csl_sign",
+        "sha256": "f49202a73946620676bfcb28494c3780945866e109d9ad340b9e1be5c0b0b4c3",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "csl_sign",
+        "sha256": "3af26628d2569ffcc5209265f6ff7f92be055fda62869ef8429abff94f54afaa",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "mdm_csl",
+        "sha256": "f0c7faea6e5ccec07e4622ba444bf589b6b9df459b1ead419bc91eea701a0c8a",
+        "bytes": 74545753
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.csl.mdm.dev.generation",
+      "reference.csl.mdm.dev.manifest",
+      "reference.csl.mdm.dev.metrics"
+    ]
+  },
+  {
+    "dataset": "csl",
+    "model": "mdm",
+    "split": "test",
+    "n_samples": 1176,
+    "metrics": {
+      "bleu1": 12.927828505392542,
+      "bleu2": 3.338061874408672,
+      "bleu3": 1.1982957937951728,
+      "bleu4": 0.48660688503793637,
+      "chrf": 2.492190525335705,
+      "rouge": 13.175468717621424,
+      "wer": 100.09211283822683,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "frozen mBART-50 mean pooled, zh_CN",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "1000-step schedule, 50 DDIM steps, CFG2.5",
+    "stop_counts": {
+      "predicted_length": 1176
+    },
+    "timing": {
+      "total_generation_seconds": 884.6338876000518,
+      "mean_sample_seconds": 0.7522397003401802,
+      "p50_sample_seconds": 0.7643019000024651,
+      "p95_sample_seconds": 0.8447515000043495,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "csl_sign",
+        "sha256": "f49202a73946620676bfcb28494c3780945866e109d9ad340b9e1be5c0b0b4c3",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "csl_sign",
+        "sha256": "3af26628d2569ffcc5209265f6ff7f92be055fda62869ef8429abff94f54afaa",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "mdm_csl",
+        "sha256": "f0c7faea6e5ccec07e4622ba444bf589b6b9df459b1ead419bc91eea701a0c8a",
+        "bytes": 74545753
+      },
+      {
+        "name": "config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "bd8c441ecfc81392c58f660b4a78d6087a057c410fc9801c03ab55d77dba69a0",
+        "bytes": 1415
+      },
+      {
+        "name": "pytorch_model.bin",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "ee44fb4c607895f34b49c65091e62ba0b15b2cac5eac0c75f2c6c9dbce3cb10e",
+        "bytes": 2444714899
+      },
+      {
+        "name": "sentencepiece.bpe.model",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "bytes": 5069051
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "252f62012da61fb490a6e0d2fd22fc24f84efcc3af9ef654a4504f6873e4ed56",
+        "bytes": 649
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "4ef55a20b36c6903b832e38f0604ab4bdf22c7d6",
+        "sha256": "e1d9616ead0441ab2c71df41c1b3a44b904dadc03d155db9dd4b7001569438dd",
+        "bytes": 531
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.csl.mdm.test.generation",
+      "reference.csl.mdm.test.manifest",
+      "reference.csl.mdm.test.metrics"
+    ]
+  },
+  {
+    "dataset": "csl",
+    "model": "motiongpt_style",
+    "split": "dev",
+    "n_samples": 1077,
+    "metrics": {
+      "bleu1": 14.325683776758078,
+      "bleu2": 5.5896337724972485,
+      "bleu3": 2.372577787094199,
+      "bleu4": 1.1189007910629094,
+      "chrf": 3.184114869267887,
+      "rouge": 16.6871097583235,
+      "wer": 96.98621352997756,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "mT5-base, trained conditional model",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "greedy mT5, six legal512-word layer blocks, full-group EOS, no repetition penalty",
+    "stop_counts": {
+      "natural_eos": 884,
+      "pose_frame_cap": 193
+    },
+    "timing": {
+      "total_generation_seconds": 3655.0858325001464,
+      "mean_sample_seconds": 3.3937658611886223,
+      "p50_sample_seconds": 3.2835935999901267,
+      "p95_sample_seconds": 6.410127940002712,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "csl_sign",
+        "sha256": "f49202a73946620676bfcb28494c3780945866e109d9ad340b9e1be5c0b0b4c3",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "csl_sign",
+        "sha256": "3af26628d2569ffcc5209265f6ff7f92be055fda62869ef8429abff94f54afaa",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_csl",
+        "sha256": "c49d7a03302a1590b032fd046550214f1741aafe1db2b8de1598f905a0627f0c",
+        "bytes": 87401497
+      },
+      {
+        "name": "config.json",
+        "component": "best",
+        "sha256": "6c3c2bccba39a8ecd8311a8adbe4007fefcc499e22255643890b9ac807dd3ea5",
+        "bytes": 860
+      },
+      {
+        "name": "generation_config.json",
+        "component": "best",
+        "sha256": "196b3297c73e8b686aa1c3bc1fe99b17362ddd682354a710a6f07c697eb6e273",
+        "bytes": 149
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "best",
+        "sha256": "8cdd0151d065cbffc212dc9b6b4fc84c04bed9e7d3ece62ef74a60db5f70f355",
+        "bytes": 578085
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "best",
+        "sha256": "3e032339c3bd9cfc4ee5eeb9b9ec393077a18224cd2c85b852e15927cb9d99ee",
+        "bytes": 439
+      },
+      {
+        "name": "added_tokens.json",
+        "component": "best",
+        "sha256": "6a95abbb4aa1d12ad47525199232ab10ac6d7891f8d9e353f1456351268beedc",
+        "bytes": 66479
+      },
+      {
+        "name": "tokenizer.json",
+        "component": "best",
+        "sha256": "0114cc3397e88a8abf27bcaf68ddc236e93733e92d44aa3a85c46630e9e1340d",
+        "bytes": 16914321
+      },
+      {
+        "name": "spiece.model",
+        "component": "best",
+        "sha256": "ef78f86560d809067d12bac6c09f19a462cb3af3f54d2b8acbba26e1433125d6",
+        "bytes": 4309802
+      },
+      {
+        "name": "model.safetensors",
+        "component": "best",
+        "sha256": "88a07f1810dc5d03f3ae92b332bc758e5e21411e0752cdbe5c9546ddce8d3544",
+        "bytes": 2348439408
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.csl.motiongpt_style.dev.generation",
+      "reference.csl.motiongpt_style.dev.manifest",
+      "reference.csl.motiongpt_style.dev.metrics"
+    ]
+  },
+  {
+    "dataset": "csl",
+    "model": "motiongpt_style",
+    "split": "test",
+    "n_samples": 1176,
+    "metrics": {
+      "bleu1": 14.209636710220057,
+      "bleu2": 5.507358048702319,
+      "bleu3": 2.3720295442800703,
+      "bleu4": 1.1345230639601673,
+      "chrf": 3.1691936130565384,
+      "rouge": 16.596382173754805,
+      "wer": 96.81059297639608,
+      "missing_metrics": []
+    },
+    "training_seed": 3407,
+    "generation_seed": 20260910,
+    "text_encoder": "mT5-base, trained conditional model",
+    "training_pose_cap": 196,
+    "maximum_pose_frames": 320,
+    "decoder": "greedy mT5, six legal512-word layer blocks, full-group EOS, no repetition penalty",
+    "stop_counts": {
+      "natural_eos": 965,
+      "pose_frame_cap": 211
+    },
+    "timing": {
+      "total_generation_seconds": 4077.599948200179,
+      "mean_sample_seconds": 3.4673468947280432,
+      "p50_sample_seconds": 3.341347350004071,
+      "p95_sample_seconds": 6.485299674997805,
+      "timing_includes": "text encoding, sampling, VQ decode if applicable, device synchronization, CPU transfer",
+      "warmup_and_load_excluded": true
+    },
+    "native_zero_residual_summary": null,
+    "native_zero_residual_note": "Applicable only to MoMask residual layers; null for other models.",
+    "resource_digests": [
+      {
+        "name": "Mean.npy",
+        "component": "csl_sign",
+        "sha256": "f49202a73946620676bfcb28494c3780945866e109d9ad340b9e1be5c0b0b4c3",
+        "bytes": 2264
+      },
+      {
+        "name": "Std.npy",
+        "component": "csl_sign",
+        "sha256": "3af26628d2569ffcc5209265f6ff7f92be055fda62869ef8429abff94f54afaa",
+        "bytes": 2264
+      },
+      {
+        "name": "net_best.tar",
+        "component": "momask_vq_csl",
+        "sha256": "c49d7a03302a1590b032fd046550214f1741aafe1db2b8de1598f905a0627f0c",
+        "bytes": 87401497
+      },
+      {
+        "name": "config.json",
+        "component": "best",
+        "sha256": "6c3c2bccba39a8ecd8311a8adbe4007fefcc499e22255643890b9ac807dd3ea5",
+        "bytes": 860
+      },
+      {
+        "name": "generation_config.json",
+        "component": "best",
+        "sha256": "196b3297c73e8b686aa1c3bc1fe99b17362ddd682354a710a6f07c697eb6e273",
+        "bytes": 149
+      },
+      {
+        "name": "tokenizer_config.json",
+        "component": "best",
+        "sha256": "8cdd0151d065cbffc212dc9b6b4fc84c04bed9e7d3ece62ef74a60db5f70f355",
+        "bytes": 578085
+      },
+      {
+        "name": "special_tokens_map.json",
+        "component": "best",
+        "sha256": "3e032339c3bd9cfc4ee5eeb9b9ec393077a18224cd2c85b852e15927cb9d99ee",
+        "bytes": 439
+      },
+      {
+        "name": "added_tokens.json",
+        "component": "best",
+        "sha256": "6a95abbb4aa1d12ad47525199232ab10ac6d7891f8d9e353f1456351268beedc",
+        "bytes": 66479
+      },
+      {
+        "name": "tokenizer.json",
+        "component": "best",
+        "sha256": "0114cc3397e88a8abf27bcaf68ddc236e93733e92d44aa3a85c46630e9e1340d",
+        "bytes": 16914321
+      },
+      {
+        "name": "spiece.model",
+        "component": "best",
+        "sha256": "ef78f86560d809067d12bac6c09f19a462cb3af3f54d2b8acbba26e1433125d6",
+        "bytes": 4309802
+      },
+      {
+        "name": "model.safetensors",
+        "component": "best",
+        "sha256": "88a07f1810dc5d03f3ae92b332bc758e5e21411e0752cdbe5c9546ddce8d3544",
+        "bytes": 2348439408
+      }
+    ],
+    "execution": {
+      "device": "cuda",
+      "cpu_threads": 4,
+      "batch_size": 1,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "torch_version": "2.11.0+cu128",
+      "numpy_version": "2.4.6"
+    },
+    "source_records": [
+      "reference.csl.motiongpt_style.test.generation",
+      "reference.csl.motiongpt_style.test.manifest",
+      "reference.csl.motiongpt_style.test.metrics"
+    ]
+  }
+]

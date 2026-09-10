@@ -1,0 +1,129 @@
+{
+  "version": "reviewer55_verified_v1",
+  "status": "fixed_before_any_new_AR_training_or_test_scoring",
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "main_table_training_seed": 42,
+  "generation_seed": 20260910,
+  "random_grouping_seed": 20260910,
+  "main_configs": [
+    "baseline",
+    "pamvq",
+    "tlrvq",
+    "pamrvq"
+  ],
+  "main_datasets": [
+    "phix",
+    "csl"
+  ],
+  "core_additional_configs": [
+    "phix_single_large",
+    "phix_pamrvq_random"
+  ],
+  "repeat_pairs": [
+    [
+      "phix_pamrvq",
+      "phix_pamrvq_random"
+    ],
+    [
+      "phix_single_large",
+      "phix_tlrvq"
+    ],
+    [
+      "csl_baseline",
+      "csl_tlrvq"
+    ]
+  ],
+  "data_mapping": "keypoint_mapping.json",
+  "first_stage": {
+    "normalization": "per-coordinate z-score from eligible training sequences only",
+    "window_frames": 64,
+    "short_sequence_policy": "exclude sequences shorter than64 from first-stage training and validation, as in the inherited implementation; retain full available sets in tokenization and final evaluation",
+    "dev_window": "deterministic center crop",
+    "seed_python_numpy_torch": true,
+    "independent_shuffle_generator": true,
+    "common_objective": "coordinate L2 +0.02 times sum of quantizer commitment losses +0.1 times inherited auxiliary coordinate L2",
+    "auxiliary_coordinate_slice": "flat dimensions4:535, clipped by the actual534-dimensional pose. This is not a temporal velocity loss.",
+    "extra_hand_weight": 1,
+    "model_selection": "validation coordinate MSE, with common maximum iteration and early-stopping rules recorded in each run",
+    "pamvq_revision": "use shared decoder and the same encoder widths/fusion architecture as PAMRVQ, with one quantizer per stream. Historical M1 used independent decoders and is not relabelled as this revised model."
+  },
+  "second_stage": {
+    "max_pose_frames": 320,
+    "cap_selection_rule": "round up the99.5th percentile of TRAINING sequence lengths to a multiple of64, separately for each dataset. PHX278.705 and CSL298 both give320. No test BLEU used in this choice.",
+    "training_cap_counts": {
+      "phix": {
+        "total": 7060,
+        "over_cap": 13
+      },
+      "csl": {
+        "total": 18400,
+        "over_cap": 58
+      }
+    },
+    "truncated_prefix_eos": "mask the unobserved terminal target with ignore_index. Do not train an artificial natural EOS at the crop boundary.",
+    "group_order": [
+      "body",
+      "hand",
+      "face"
+    ],
+    "group_sizes": {
+      "baseline": 1,
+      "pamvq": 3,
+      "tlrvq": 2,
+      "pamrvq": 6,
+      "pamrvq_random": 6
+    },
+    "position_capacity": {
+      "phix": 512,
+      "csl": 1024
+    },
+    "max_motion_tokens": "max_pose_frames / stride_power times group_size: PHX80G, CSL160G",
+    "text_encoding": {
+      "phix": "frozen mBART-50 encoder, de_DE",
+      "csl": "2-layer character Transformer trained from scratch"
+    },
+    "ar_layers": {
+      "phix": 9,
+      "csl": 8
+    },
+    "model_selection": "validation token cross entropy, not test BLEU"
+  },
+  "decoding": {
+    "temperature": 0.9,
+    "top_k": 20,
+    "top_p": 1.0,
+    "repetition": "subtract1.5 from the logits of unique tokens appearing in the last8 positions of the same group",
+    "max_same_group_run": 4,
+    "eos": "only after at least one complete group and only at a complete group boundary",
+    "seed_per_sample": "SHA256 of fixed generation_seed, dataset, split and sample_id; not model name",
+    "end_reason": "record natural EOS separately from pose-frame cap and position-capacity stop"
+  },
+  "back_translation": {
+    "phix_model": "EXTERNAL_EVALUATOR_DIR/phix",
+    "csl_model": "EXTERNAL_EVALUATOR_DIR/csl",
+    "model_policy": "frozen supplied evaluator weights, no adaptation to revised generated outputs; hashes recorded in each evaluation",
+    "phix_preprocessing": "subsample predictions and reference pose once by2, corresponding to official fps25 input handling",
+    "csl_preprocessing": "no temporal subsampling, as required by the supplied CSL evaluator",
+    "text_protocol": "PHX uses reference/prediction text as the supplied SLRTP metrics consume it. CSL removes literal spaces then separates each character with a space, matching the inherited CSL evaluation wrapper.",
+    "bleu_implementation": "copied SLRTP metrics.py and its vendored external_metrics/sacrebleu.py raw_corpus_bleu",
+    "auxiliary_metrics": [
+      "chrF",
+      "ROUGE-L",
+      "WER"
+    ],
+    "sampling_uncertainty": "paired bootstrap must consume exactly the same normalized evaluation strings as the main BLEU computation"
+  },
+  "reporting": {
+    "new_results_only": "Every new figure/table number must be derived from its traceable revised run. Historical values retained in audit files, not silently substituted.",
+    "main_table": "training seed42 for all main configurations",
+    "repetition_table": "all predeclared training seeds, mean and sample standard deviation",
+    "bootstrap": "paired corpus-level resampling of test examples, supplementary sample uncertainty, not a replacement for training repeats",
+    "fairness": "same action coverage is not equal token length. E1 matches token count, nominal index bits, code entries and architecture shapes; E2 matches codebook storage, not nominal bits.",
+    "no_human_evaluation_claim": true
+  },
+  "publication_note": "Public path configuration of separately reported supplementary experiments. Model and sampling semantics are retained."
+}

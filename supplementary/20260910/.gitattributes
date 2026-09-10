@@ -1,0 +1,2 @@
+# Preserve the exact source/export bytes used by the supplied SHA-256 records.
+* -text

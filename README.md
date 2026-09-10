@@ -2,7 +2,15 @@
 
 (Multi-Stream Residual Quantization for Sign Language Production)
 
-本仓库是研究生毕业论文的最终 release 版本，实现并复现两个手语数据集上的 strict gloss-free 文本到 3D 姿态手语生成 (Sign Language Production)，方法包含两个互补创新模块：
+
+## 2026-09-10 补充实验
+
+新增 [补充实验代码、结果与复现说明](supplementary/20260910/README.md)，包含等 token 分组对照、独立单层大码本对照、骨架定量分析，以及生成器和参考方法的补充结果。
+
+该目录使用独立记录的模型配置和评测设置。结果与本页后续保留的原 release 表格分别报告，请按对应目录的配置、训练种子和指标定义阅读。补充结果同时保留不同部位及指标之间的变化，不将不同配置的数字拼成同一组对照。
+
+
+下文保留原 release 的实现说明与结果记录。该实现研究两个手语数据集上的 strict gloss-free 文本到 3D 姿态手语生成 (Sign Language Production)，包含以下模块：
 
 - **M1 (多流码本 Multi-Stream Codebook)** — 把 178 个关键点按身体部位 (body / face / hand) 分流，每个部位独立的 VQ 码本；
 - **M2 (残差量化 Residual VQ)** — 在 VQ 量化器后追加 residual 量化层，逐级补偿主码本误差；
@@ -37,7 +45,7 @@
 
 ### PHIX 对比 (TEST, 统一 SLRTP-canonical 协议下复现)
 
-所有对比方法都在**同一 178-kpt 数据、同一文本编码器 (mBART)、同一 SLRTP-canonical 反向翻译评测器**下复现，因此与本文 MSR **严格可比**（复现代码见 [`baselines/`](baselines/)）。
+下表记录原发布配置下的关键点生成与回译比较（适配代码见 [`baselines/`](baselines/)）。各方法的文本编码器、预训练方式和模型规模并不完全相同，比较需结合各自配置理解。2026-09-10 的补充参考结果在独立目录中报告。
 
 | 方法 | 范式 | B1 | B2 | B3 | B4 | CHRF | ROUGE | WER↓ |
 |---|---|---|---|---|---|---|---|---|
@@ -57,7 +65,7 @@
 | MotionGPT (复现, mT5-587M) | LLM | 13.55 | 5.41 | 2.42 | 1.18 | 3.11 | 16.25 | 96.40 |
 | **本文 M1+M2 (MSR)** ★ | VQ+AR | **18.71** | **9.20** | **5.26** | **3.43** | **4.81** | **20.50** | **93.97** |
 
-> **关于可比性**：上表所有 baseline 均由本文在统一协议下复现（见 [`baselines/`](baselines/)），与 MSR 严格可比。MSR 在两个数据集上几乎全部指标领先；尤其 MotionGPT 使用约 587M 的 mT5（约为本文 10 倍参数）仍未超过 MSR，说明优势来自结构设计而非模型容量。
+> **关于可比性**：上表为原发布实验记录。各适配方法使用不同的模型结构和预训练条件，MotionGPT 风格适配使用 mT5。模型参数量本身不能分离结构设计与表示容量的作用，相关对照和完整配置见 [2026-09-10 补充实验](supplementary/20260910/README.md)。
 >
 > 跨论文的绝对 BLEU **不可直接比较**，因为各家反向翻译评测器不同：例如 GLOS 在其自训评测器下复现 MoMask 得 CSL B4 = 3.57，而同一方法在本文 SLRTP-canonical 评测器下仅 1.19。因此 T2S-GPT、Sign-IDD、DARSLP、A²V-SLP、GLOS、SignPR (CVPR 2026) 等已发表方法（各自使用不同评测器 / 姿态表示 / 监督设定）仅作相关工作引用，不纳入上述对照表。本文开源了 SLRTP 同协议自训的 `backTranslation_CSL_model`，便于后续工作在统一基线下相互对比。
 
