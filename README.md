@@ -179,7 +179,7 @@ GitHub 仓库只含代码 + README + 训练日志 + ablation 表（~31 MB）。�
 | 包 | 大小 | 内容 | 链接 |
 |---|---|---|---|
 | `data_phix.zip` | 1.9 GB | `data/phix/` — PHIX-14T lift3d 数据 (train/dev/test) + 德语 char vocab | [下载](https://drive.google.com/file/d/1jV6O5I9ogh69jeB3mJFJf1ObzHV7GPI3/view?usp=sharing) |
-| `data_csl.zip` | 4.9 GB | `data/csl/` — CSL-Daily lift3d 数据 (train/dev/test) + 中文 char vocab | (!) 受 CSL-Daily 原数据集使用协议约束，不公开转发；请联系作者（chengyaozhu91@gmail.com）获取 |
+| `data_csl.zip` | 4.9 GB | `data/csl/` — CSL-Daily lift3d 数据 (train/dev/test) + 中文 char vocab | (!) 受 CSL-Daily 原数据集使用协议约束，不公开转发；请联系作者获取 |
 | `checkpoints.zip` | 7.8 GB | `checkpoints/` — 全部 VQ (4×2) + Trans (4×2) ablation 权重 + token 缓存 | [下载](https://drive.google.com/file/d/1THicz0DE_88TVOEdVOHe-g5zX_0t5Rbd/view?usp=sharing) |
 | `bt_eval_official.zip` | 2.5 GB | `bt_eval_kit/slrtp_official/data_official/` (SLRTP 官方 PHIX 数据 + oracle GT + PT baseline preds) + 两个 `backTranslation_*_model/best.ckpt` (PHIX + CSL BT 模型权重) | [下载](https://drive.google.com/file/d/1DjQPYFe_z5p7mkNEVpDUzkHickSaAtfw/view?usp=sharing) |
 
