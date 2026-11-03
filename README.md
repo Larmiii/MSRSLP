@@ -231,7 +231,7 @@ zip 内部保留了完整的相对路径，解压后会自动叠加到 `data/`�
 数据来源：
 
 - **PHIX-14T (SLRTP-178)**: 公开 SLRTP CVPR 2025 challenge data ([下载](https://drive.google.com/file/d/1fjKHigsEWHwsMHnwwWdFYZ8dECXslTKi/view))，硬链接到 `data/phix/`。
-- **CSL-Daily (lift3d)**: 我们用 [Ivashechkin et al.] 的 3D-lift 模型预处理 CSL-Daily MediaPipe Holistic 序列，硬链接到 `data/csl/`。**CSL-Daily 受其原数据集使用协议约束，本仓库不公开转发该数据及其 lift3d 衍生版本，请联系作者（chengyaozhu91@gmail.com）获取。**
+- **CSL-Daily (lift3d)**: 我们用 [Ivashechkin et al.] 的 3D-lift 模型预处理 CSL-Daily MediaPipe Holistic 序列，硬链接到 `data/csl/`。**CSL-Daily 受其原数据集使用协议约束，本仓库不公开转发该数据及其 lift3d 衍生版本，请联系作者获取。**
 
 ---
 
