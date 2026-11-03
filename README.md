@@ -593,6 +593,6 @@ A: 见 `slrtp_eval_kit/slt_train/scripts/`（外部目录，未打包到 release
 
 ## 联系
 
-实验细节 / 复现问题：作者 (chengyaozhu91@gmail.com)。
+实验细节 / 复现问题。
 
 数据 / ckpt 不在 GitHub release 里（体积过大），下载链接见上面"数据 / Checkpoints 下载"一节。
